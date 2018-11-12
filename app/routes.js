@@ -51,4 +51,15 @@ router.post('/check-details-check', function (req, res) {
     res.redirect('/check-details-error')
   }
 })
+
+router.post('/declaration-check', function (req, res) {
+  let declaration = req.session.data['declarationConfirm']
+
+  if (declaration === 'yes') {
+    res.redirect('/confirmation')
+  }  else {
+    res.redirect('/confirmation')
+  }
+})
+
 module.exports = router
