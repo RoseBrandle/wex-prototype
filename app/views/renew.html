@@ -1,0 +1,54 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Your registration number
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  alpha
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/renew-check" method="post" class="form">
+        <h2 class="govuk-heading-xl">Enter your registration number</h2>
+        <p>Enter your waste exemptions registration number, and we will send you an email with a sign-in link.</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="registration-number">
+            Registration number
+          </label>
+          <span id="registration-number-hint" class="govuk-hint">
+            For example, WEX123456.
+          </span>
+          <input class="govuk-input govuk-input--width-10" id="registrationNumber" name="registrationNumber" type="text" aria-describedby="registration-number-hint">
+        </div>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I cannot find my registration number
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>Your registration number is on the email we sent you when you registered your exemptions, and your renewal letter.</p>
+            <p>If you cannot find it, call the Environment Agency helpline on <a href="tel:03708506506">03708 506506</a> (Monday to Friday, 8am to 6pm).</p>
+          </div>
+        </details>
+        <button type="submit" class="govuk-button">
+          Continue
+        </button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
