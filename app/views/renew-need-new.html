@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Contact the Environment Agency
+  You need a new registration number
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -21,14 +21,14 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h2 class="govuk-heading-xl">Contact the Environment Agency</h2>
-      <p>If you need to:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>change your contact details</li>
-        <li>update your exemptions</li>
-        <li>ask questions about your registration</li>
-      </ul>
-      <p>Call the Environment Agency helpline on <a href="tel:03708506506">03708 506506</a>.</p>
+      <form action="/start" method="post" class="form">
+        <h2 class="govuk-heading-xl">You need a new registration</h2>
+        <p>Your waste exemption registration has expired. You will need a new registration.</p>
+       
+        <button type="submit" class="govuk-button">
+          Start a new registration
+        </button>
+      </form>
     </div>
   </div>
 

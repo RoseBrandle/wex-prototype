@@ -20,9 +20,23 @@ router.post('/renew-check', function (req, res) {
   if (regNumber === '') {
     res.redirect('/renew-no-number')
   } else if (regNumber === 'WEX123456') {
-    res.redirect('/send-email')
+    res.redirect('/check-email')
+  } else if (regNumber === 'WEX123457') {
+    res.redirect('/renew-need-new')
   } else {
     res.redirect('/renew-wrong-number')
+  }
+})
+
+router.post('/send-email-check', function (req, res) {
+  let emailAddress = req.session.data['emailCorrect']
+
+  if (emailAddress === 'yes') {
+    res.redirect('/send-email')
+  } else if (emailAddress === 'no') {
+    res.redirect('/change')
+  } else {
+    res.redirect('/check-email-error')
   }
 })
 

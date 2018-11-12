@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Your registration number
+  Check your email to sign in
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -22,8 +22,35 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="" method="post" class="form">
-        <h2 class="govuk-heading-xl">Send email</h2>
+        <h1 class="govuk-heading-xl">Check your email to sign in</h1>
+        <p>We have sent an email to <strong>e********e@hotmail.com</strong> that contains a sign-in link.</p>
+        <h2  class="govuk-heading-m">Next steps</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Check your email and follow the instructions to sign in.</li>
+          <li>If you cannot see an email from us, please check your Bulk/Spam folder</li>
+        </ul>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I no longer have access to this email address
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            Call the Environment Agency helpline on 03708 506506 (Monday to Friday, 8am to 6pm) to update your account.
+          </div>
+        </details>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I did not get an email
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <a href="#">Resend email</a>
+          </div>
+        </details>
       </form>
+      <a href="/email.html">(view email text)</a>
     </div>
   </div>
 
