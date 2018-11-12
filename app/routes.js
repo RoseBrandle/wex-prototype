@@ -40,4 +40,15 @@ router.post('/send-email-check', function (req, res) {
   }
 })
 
+router.post('/check-details-check', function (req, res) {
+  let confirmDetails = req.session.data['currentDetails']
+
+  if (confirmDetails === 'yes') {
+    res.redirect('/declaration')
+  } else if (confirmDetails === 'no') {
+    res.redirect('/details-need-new')
+  } else {
+    res.redirect('/check-details-error')
+  }
+})
 module.exports = router

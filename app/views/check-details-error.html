@@ -1,0 +1,174 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirm your waste exemption registration details
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  alpha
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#check-details-error">You need to select a response</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <form action="/check-details-check" method="post" class="form">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="govuk-fieldset__heading">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Confirm your waste exemption registration details
+              </h1>
+            </legend>
+            <p>If your registration details are unchanged, select 'yes' to renew.</p>
+            <table summary="check-details-summary-0"
+                     class="govuk-table summary-table" role="presentation"
+                     id="check-details-yourcontactdetails-0"
+                     caption="summary of registration details">
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row" role="row">
+                    <th class="govuk-table__header" colspan="2" class="bold-small" role="columnheader">Your contact details</th>
+                  </tr>
+                  <tr>
+                    <td class="govuk-table__cell">Your name</td>
+                    <td  class="govuk-table__cell">Robin Baxter</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Your business telephone number</td>
+                    <td class="govuk-table__cell">0117923443</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Your business email</td>
+                    <td  class="govuk-table__cell">r.baxter@aspirewaste.net</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table summary="check-details-summary-1"
+                     class="govuk-table summary-table" role="presentation"
+                     id="check-details-businessdetails-1"
+                     caption="summary of registration details">
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row" role="row">
+                    <th class="govuk-table__header" colspan="2" class="bold-small" role="columnheader">Business details</th>
+                  </tr>
+                  <tr class="govuk-table__row"> 
+                    <td class="govuk-table__cell">Business or organisation type</td>
+                    <td class="govuk-table__cell">Individual</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Person responsible for the waste operation</td>
+                    <td class="govuk-table__cell">Jo Miller</td>
+                  </tr>
+                  <tr class="govuk-table__row">  
+                    <td class="govuk-table__cell">Address of the person responsible</td>
+                    <td class="govuk-table__cell">Deanery Road, Bristol, BS1 5AH</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table summary="check-details-summary-2"
+                     class="govuk-table summary-table" role="presentation"
+                     id="check-details-wasteoperationcontact-2"
+                     caption="summary of registration details">
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row" role="row">
+                    <th class="govuk-table__header" colspan="2" class="bold-small" role="columnheader">Waste operation contact</th>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Name</td>
+                    <td class="govuk-table__cell">Sarah Miller</td>
+                  </tr>
+                  <tr class="govuk-table__row">   
+                    <td class="govuk-table__cell">Telephone number</td>
+                    <td class="govuk-table__cell">01179488422</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Address</td>
+                    <td class="govuk-table__cell">44, Deanery Road, Bristol, BS1 5AH</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Email</td>
+                    <td class="govuk-table__cell">example.email@inter.net</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table summary="check-details-summary-3"
+                     class="govuk-table summary-table" role="presentation"
+                     id="check-details-wasteoperationdetails-3"
+                     caption="summary of registration details">
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row"role="row">
+                    <th class="govuk-table__header" colspan="2" class="bold-small" role="columnheader">Waste operation details</th>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Waste operation location</td>
+                    <td class="govuk-table__cell">Deanery Road, Bristol, BS1 5AH</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Waste exemption</td>
+                    <td class="govuk-table__cell"><a href="https://www.gov.uk/guidance/waste-exemption-s2-storing-waste-in-a-secure-place" target="_blank">S2: Storing waste in a secure place</a></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Waste exemption</td>
+                    <td class="govuk-table__cell"><a href="https://www.gov.uk/guidance/waste-exemption-u9-using-waste-to-manufacture-finished-goods" target="_blank">U9: Using waste to manufacture finished goods</a></td>
+                  </tr>
+                </tbody>
+              </table>
+          </fieldset>
+        </div>
+        <div class="govuk-form-group govuk-form-group--error"">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Are these details still correct?
+              </h1>
+            </legend>
+            <span id="check-details-error" class="govuk-error-message">
+              You need to select a response
+            </span>
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="details-1" name="currentDetails" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="details-1">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="details-2" name="currentDetails" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="details-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <button type="submit" class="govuk-button">
+          Continue
+        </button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
