@@ -16,14 +16,25 @@ router.post('/renewals-check', function (req, res) {
   }
 })
 
+// Branching all renewal scenarios based on specified number
 router.post('/renew-check', function (req, res) {
   let regNumber = req.session.data['registrationNumber']
 
   if (regNumber === '') {
     res.redirect('/renew-no-number')
+  } else if (regNumber === 'WEX123452') {
+    res.redirect('/renew-not-ready-error')
+  } else if (regNumber === 'WEX123453') {
+    res.redirect('/renew-not-ready')
+  } else if (regNumber === 'WEX123454') {
+    res.redirect('/renew-not-recognised-error')
+  } else if (regNumber === 'WEX123455') {
+    res.redirect('/renew-not-recognised')
   } else if (regNumber === 'WEX123456') {
     res.redirect('/check-email')
   } else if (regNumber === 'WEX123457') {
+    res.redirect('/renew-need-new-error')
+  } else if (regNumber === 'WEX123458') {
     res.redirect('/renew-need-new')
   } else {
     res.redirect('/renew-wrong-number')
