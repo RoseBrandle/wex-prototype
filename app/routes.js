@@ -2,15 +2,17 @@ const express = require('express')
 const router = express.Router()
 
 // Branching
-router.post('/renewals-answer', function (req, res) {
+router.post('/renewals-check', function (req, res) {
   let renewalsChoice = req.session.data['wasteExemptionOptions']
 
   if (renewalsChoice === 'start') {
     res.redirect('/start')
+  } else if (renewalsChoice === 'renew') {
+    res.redirect('/renew')
   } else if (renewalsChoice === 'change') {
     res.redirect('/change')
   } else {
-    res.redirect('/renew')
+    res.redirect('/renewals-error')
   }
 })
 
@@ -53,9 +55,8 @@ router.post('/check-details-check', function (req, res) {
 })
 
 router.post('/declaration-check', function (req, res) {
-  let declaration = req.session.data['declarationConfirm']
-
-  if (declaration === 'yes') {
+  let declarationCheck = req.session.data['declarationConfirm']
+  if (declarationCheck === 'yes') {
     res.redirect('/confirmation')
   }  else {
     res.redirect('/confirmation')

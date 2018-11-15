@@ -1,0 +1,10 @@
+// Telephone link styling
+@media (min-width: 786px) {
+  a[href^=tel] {
+    //display: none;
+  }
+}
+
+tr td.govuk-table__cell:first-of-type {
+  width: 50%;
+}
