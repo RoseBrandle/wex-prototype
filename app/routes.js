@@ -18,7 +18,8 @@ router.post('/renewals-check', function (req, res) {
 
 // Branching all renewal scenarios based on specified number
 router.post('/renew-check', function (req, res) {
-  let regNumber = req.session.data['registrationNumber']
+  let regNum = req.session.data['registrationNumber']
+  var regNumber = (regNum.toUpperCase());
 
   if (regNumber === '') {
     res.redirect('/renew-no-number')
