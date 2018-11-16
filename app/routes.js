@@ -66,12 +66,21 @@ router.post('/check-details-check', function (req, res) {
 })
 
 router.post('/declaration-check', function (req, res) {
-  let declarationCheck = req.session.data['declarationConfirm']
-  if (declarationCheck === 'yes') {
+  const isConfirmed = 'declarationConfirm' in req.body;
+  if (isConfirmed) {
     res.redirect('/confirmation')
   }  else {
-    res.redirect('/confirmation')
+    res.redirect('/declaration-error')
   }
 })
+
+/*router.post('/declaration-check', function (req, res) {
+  let declarationCheck = req.session.data['declarationConfirm']
+  if (declarationCheck === 'declarationConfirm=declared') {
+    res.redirect('/confirmation')
+  }  else {
+    res.redirect('/declaration-error')
+  }
+})*/
 
 module.exports = router
