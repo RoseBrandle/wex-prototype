@@ -1,0 +1,35 @@
+// Tidy up table layout for easier reading
+tr td.govuk-table__cell:first-of-type {
+  width: 50%;
+}
+
+// Blue info panel for increased visibility of next actions
+.defra-panel {
+    background-color: #005ea5;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 15px;
+    
+}
+
+.defra-panel .defra-panel__heading,
+.defra-panel .defra-panel__body,
+.defra-panel .defra__link {
+    color: #fff;
+}
+
+@media (min-width: 40.0625em) {
+.defra-panel {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    padding: 15px;
+  }
+}
+
+@media (min-width: 40.0625em) {
+.defra-panel__heading {
+    font-size: 1.5rem;
+    line-height: 1.25;
+    margin-bottom: 20px;
+  }
+}

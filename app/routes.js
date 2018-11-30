@@ -2,26 +2,40 @@ const express = require('express')
 const router = express.Router()
 
 // Branching
-router.post('/renewals-answer', function (req, res) {
+router.post('/renewals-check', function (req, res) {
   let renewalsChoice = req.session.data['wasteExemptionOptions']
 
   if (renewalsChoice === 'start') {
     res.redirect('/start')
+  } else if (renewalsChoice === 'renew') {
+    res.redirect('/renew')
   } else if (renewalsChoice === 'change') {
     res.redirect('/change')
   } else {
-    res.redirect('/renew')
+    res.redirect('/renewals-error')
   }
 })
 
+// Branching all renewal scenarios based on specified number
 router.post('/renew-check', function (req, res) {
-  let regNumber = req.session.data['registrationNumber']
+  let regNum = req.session.data['registrationNumber']
+  var regNumber = (regNum.toUpperCase());
 
   if (regNumber === '') {
     res.redirect('/renew-no-number')
+  } else if (regNumber === 'WEX123452') {
+    res.redirect('/renew-not-ready-error')
+  } else if (regNumber === 'WEX123453') {
+    res.redirect('/renew-not-ready')
+  } else if (regNumber === 'WEX123454') {
+    res.redirect('/renew-not-recognised-error')
+  } else if (regNumber === 'WEX123455') {
+    res.redirect('/renew-not-recognised')
   } else if (regNumber === 'WEX123456') {
     res.redirect('/check-email')
   } else if (regNumber === 'WEX123457') {
+    res.redirect('/renew-need-new-error')
+  } else if (regNumber === 'WEX123458') {
     res.redirect('/renew-need-new')
   } else {
     res.redirect('/renew-wrong-number')
@@ -53,13 +67,21 @@ router.post('/check-details-check', function (req, res) {
 })
 
 router.post('/declaration-check', function (req, res) {
-  let declaration = req.session.data['declarationConfirm']
-
-  if (declaration === 'yes') {
+  const isConfirmed = 'declarationConfirm' in req.body;
+  if (isConfirmed) {
     res.redirect('/confirmation')
   }  else {
-    res.redirect('/confirmation')
+    res.redirect('/declaration-error')
   }
 })
+
+/*router.post('/declaration-check', function (req, res) {
+  let declarationCheck = req.session.data['declarationConfirm']
+  if (declarationCheck === 'declarationConfirm=declared') {
+    res.redirect('/confirmation')
+  }  else {
+    res.redirect('/declaration-error')
+  }
+})*/
 
 module.exports = router
