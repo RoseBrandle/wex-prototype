@@ -25,11 +25,7 @@ router.post('/renew-check', function (req, res) {
     res.redirect('/renew-no-number')
   } else if (regNumber === 'WEX123452') {
     res.redirect('/renew-not-ready-error')
-  } else if (regNumber === 'WEX123453') {
-    res.redirect('/renew-not-ready')
   } else if (regNumber === 'WEX123454') {
-    res.redirect('/renew-not-recognised-error')
-  } else if (regNumber === 'WEX123455') {
     res.redirect('/renew-not-recognised')
   } else if (regNumber === 'WEX123456') {
     res.redirect('/check-email')
