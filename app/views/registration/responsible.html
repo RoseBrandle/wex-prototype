@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What are your contact details?
+  Who’s carrying out the waste operation?
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -21,15 +21,36 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="choosing-organisation" method="post" class="form">
+      <form action="contact-address" method="post" class="form">
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
+          <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-7">
-                What are your contact details?
+              <h1 class="govuk-fieldset__heading">
+                Who’s carrying out the waste operation?
               </h1>
             </legend>
-            <div class="govuk-form-group">
+            <p class="govuk-body-l">This is the person responsible for the waste operation</p>
+            <span id="how-contacted-conditional-hint" class="govuk-hint">
+              Select one option.
+            </span>
+            <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-1">
+                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                  I am
+                </label>
+                <span id="how-contacted-conditional-1-hint" class="govuk-hint govuk-radios__hint">
+                  Charles Windsor, 01179222333, hrh.c.windsor@palace.org
+                </span>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
+                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                  Someone else
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+                <div class="govuk-form-group">
               <label class="govuk-label" for=1">
                 Full name
               </label>
@@ -48,6 +69,10 @@
               </label>
               <span id="3-hint" class="govuk-hint">We'll use this to confirm the registration</span>
               <input class="govuk-input govuk-input--width-20" id="3" name="3" type="text">
+            </div>
+
+              </div>
+
             </div>
           </fieldset>
         </div>
