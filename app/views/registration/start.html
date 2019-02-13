@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Your contact details
+  What are your contact details?
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -24,48 +24,30 @@
       <form action="choosing-organisation" method="post" class="form">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-7">
                 What are your contact details?
               </h1>
             </legend>
             <div class="govuk-form-group">
               <label class="govuk-label" for=1">
-                Your full name
+                Full name
               </label>
               <input class="govuk-input govuk-input--width-20" id="1" name="1" type="text">
             </div>
             <div class="govuk-form-group">
               <label class="govuk-label" for="2">
-                Your business telephone number
+                Business telephone number
               </label>
-              <span id="2-hint" class="govuk-hint">This can be a landline or mobile</span>
+              <span id="2-hint" class="govuk-hint">This can be a landline or mobile.</span>
               <input class="govuk-input govuk-input--width-10" id="2" name="2" type="text">
             </div>
             <div class="govuk-form-group">
               <label class="govuk-label" for="3">
-                Your business email address
+                Business email address
               </label>
-              <span id="3-hint" class="govuk-hint">We'll use this to confirm the registration</span>
+              <span id="3-hint" class="govuk-hint">We'll use this to confirm the registration.</span>
               <input class="govuk-input govuk-input--width-20" id="3" name="3" type="text">
-            </div>
-            <!-- include this for testing, but not neccessary -->
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="3">
-                Confirm your business email address
-              </label>
-
-              <input class="govuk-input govuk-input--width-20" id="4" name="4" type="text">
-            </div>
-          </fieldset>
-          <fieldset class="govuk-fieldset">
-            <div class="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="contact-1" name="waste-contact" type="checkbox" value="same-details">
-                <label class="govuk-label govuk-checkboxes__label" for="contact-1">
-                  Contact this person to discuss the waste operation
-                </label>
-              </div>
             </div>
           </fieldset>
         </div>
