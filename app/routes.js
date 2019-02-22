@@ -8,9 +8,9 @@ router.post('/renewals-check', function (req, res) {
   if (renewalsChoice === 'start') {
     res.redirect('/registration/start')
   } else if (renewalsChoice === 'renew') {
-    res.redirect('renewals/start')
+    res.redirect('renewals/renew')
   } else {
-    res.redirect('/renewals-error')
+    res.redirect('/renewals/start-error')
   }
 })
 
@@ -52,7 +52,7 @@ router.post('/check-details-check', function (req, res) {
   let confirmDetails = req.session.data['currentDetails']
 
   if (confirmDetails === 'yes') {
-    res.redirect('/declaration')
+    res.redirect('renewals/declaration')
   } else if (confirmDetails === 'no') {
     res.redirect('/renewals/details-need-new')
   } else {
@@ -63,19 +63,10 @@ router.post('/check-details-check', function (req, res) {
 router.post('/declaration-check', function (req, res) {
   const isConfirmed = 'declarationConfirm' in req.body;
   if (isConfirmed) {
-    res.redirect('/confirmation')
+    res.redirect('/renewals/confirmation')
   }  else {
-    res.redirect('/declaration-error')
+    res.redirect('/renewals/declaration-error')
   }
 })
-
-/*router.post('/declaration-check', function (req, res) {
-  let declarationCheck = req.session.data['declarationConfirm']
-  if (declarationCheck === 'declarationConfirm=declared') {
-    res.redirect('/confirmation')
-  }  else {
-    res.redirect('/declaration-error')
-  }
-})*/
 
 module.exports = router

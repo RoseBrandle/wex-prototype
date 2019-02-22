@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Your registration number
+  Waste Exemptions Renewals Prototype
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -15,38 +15,51 @@
     </span>
   </p>
 </div>
-<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+<a href="#" class="govuk-back-link">Back</a>
 {% endblock %}
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="/renew-check" method="post" class="form">
-        <h2 class="govuk-heading-xl">Enter your registration number</h2>
-        <p>Enter your waste exemptions registration number, and we will email you a sign-in link.</p>
+      <form action="/renewals-check" method="post" class="form">
         <div class="govuk-form-group">
-          <label class="govuk-label" for="registration-number">
-            Waste exemptions registration number
-          </label>
-          <span id="registration-number-hint" class="govuk-hint">
-            For example, WEX123456
-          </span>
-          <input class="govuk-input govuk-input--width-10" id="registrationNumber" name="registrationNumber" type="text" aria-describedby="registration-number-hint">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading govuk-!-padding-bottom-8">
+                What do you want to do?
+              </h1>
+            </legend>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="wasteExemptionOptions-1" name="wasteExemptionOptions" type="radio" value="start">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="wasteExemptionOptions-1">
+                  Start a new waste exemption registration
+                </label>
+                <span id="wasteExemptionOptions-1-hint" class="govuk-hint govuk-radios__hint">
+                  Register new waste exemptions
+                </span>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="wasteExemptionOptions-2" name="wasteExemptionOptions" type="radio" value="renew">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="wasteExemptionOptions-2">
+                  Renew an exemption that is expiring soon
+                </label>
+                <span id="wasteExemptionOptions-2-hint" class="govuk-hint govuk-radios__hint">
+                  Use our quick renewal service if none of your details have changed
+                </span>
+              </div>
+            </div>
+          </fieldset>
         </div>
-        <details class="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              I cannot find my registration number
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            <p>Your waste exemptions registration number is on the email we sent you when you registered your exemptions, and your renewal letter.</p>
-            <p>If you cannot find it, call the Environment Agency helpline on 03708 506506 (Monday to Friday, 8am to 6pm).</p>
-          </div>
-        </details>
         <button type="submit" class="govuk-button">
           Continue
         </button>
+        <div class="govuk-form-group">
+          <div class="govuk-inset-text">
+            <h3 class="govuk-heading-s">You cannot edit your existing registration online</h3>
+            <p>To update your exemptions or business details, please re-register or call the Environment Agency helpline on 03708 506506.</p>
+          </div>
+        </div>
       </form>
     </div>
   </div>
