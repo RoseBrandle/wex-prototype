@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-// Branching
+// RENEWALS
 router.post('/renewals-check', function (req, res) {
   let renewalsChoice = req.session.data['wasteExemptionOptions']
 
@@ -66,6 +66,21 @@ router.post('/declaration-check', function (req, res) {
     res.redirect('/renewals/confirmation')
   }  else {
     res.redirect('/renewals/declaration-error')
+  }
+})
+
+//ADDRESS-REUSE
+router.post('/address-reuse-check', function (req, res) {
+  let registrationChoice = req.session.data['branching']
+
+  if (registrationChoice === 'start') {
+    res.redirect('/address-reuse/applicant-details')
+  } else if (registrationChoice === 'reregister') {
+    res.redirect('/renewals/renew')
+  } else if (registrationChoice === 'change') {
+    res.redirect('/contact-ea')
+  } else {
+    res.redirect('/address-reuse/start-error')
   }
 })
 
