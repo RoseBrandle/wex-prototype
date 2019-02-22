@@ -42,7 +42,7 @@ router.post('/send-email-check', function (req, res) {
   if (emailAddress === 'yes') {
     res.redirect('/renewals/send-email')
   } else if (emailAddress === 'no') {
-    res.redirect('/change')
+    res.redirect('/renewals/change')
   } else {
     res.redirect('/renewals/check-email-error')
   }
