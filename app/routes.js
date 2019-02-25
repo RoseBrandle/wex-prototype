@@ -1,16 +1,16 @@
 const express = require('express')
 const router = express.Router()
 
-// Branching
+// RENEWALS
 router.post('/renewals-check', function (req, res) {
   let renewalsChoice = req.session.data['wasteExemptionOptions']
 
   if (renewalsChoice === 'start') {
     res.redirect('/registration/start')
   } else if (renewalsChoice === 'renew') {
-    res.redirect('renewals/start')
+    res.redirect('renewals/renew')
   } else {
-    res.redirect('/renewals-error')
+    res.redirect('/renewals/start-error')
   }
 })
 
@@ -42,7 +42,7 @@ router.post('/send-email-check', function (req, res) {
   if (emailAddress === 'yes') {
     res.redirect('/renewals/send-email')
   } else if (emailAddress === 'no') {
-    res.redirect('/change')
+    res.redirect('/renewals/change')
   } else {
     res.redirect('/renewals/check-email-error')
   }
@@ -52,7 +52,7 @@ router.post('/check-details-check', function (req, res) {
   let confirmDetails = req.session.data['currentDetails']
 
   if (confirmDetails === 'yes') {
-    res.redirect('/declaration')
+    res.redirect('renewals/declaration')
   } else if (confirmDetails === 'no') {
     res.redirect('/renewals/details-need-new')
   } else {
@@ -63,19 +63,25 @@ router.post('/check-details-check', function (req, res) {
 router.post('/declaration-check', function (req, res) {
   const isConfirmed = 'declarationConfirm' in req.body;
   if (isConfirmed) {
-    res.redirect('/confirmation')
+    res.redirect('/renewals/confirmation')
   }  else {
-    res.redirect('/declaration-error')
+    res.redirect('/renewals/declaration-error')
   }
 })
 
-/*router.post('/declaration-check', function (req, res) {
-  let declarationCheck = req.session.data['declarationConfirm']
-  if (declarationCheck === 'declarationConfirm=declared') {
-    res.redirect('/confirmation')
-  }  else {
-    res.redirect('/declaration-error')
+//ADDRESS-REUSE
+router.post('/address-reuse-check', function (req, res) {
+  let registrationChoice = req.session.data['branching']
+
+  if (registrationChoice === 'start') {
+    res.redirect('/address-reuse/applicant-details')
+  } else if (registrationChoice === 'reregister') {
+    res.redirect('/renewals/renew')
+  } else if (registrationChoice === 'change') {
+    res.redirect('/contact-ea')
+  } else {
+    res.redirect('/address-reuse/start-error')
   }
-})*/
+})
 
 module.exports = router
