@@ -1,0 +1,13 @@
+nav.guidance-nav {
+  margin-bottom: 60px;
+}
+
+ol.govuk-list {
+  margin-left: 30px;
+}
+
+.list-item--dashed::before {
+  content: '— ';
+  margin-left: -25px;
+  padding-right: 5px;
+}

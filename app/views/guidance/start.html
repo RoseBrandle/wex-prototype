@@ -21,22 +21,34 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Which exemptions are needed for this waste operation?</h1>
+      <p class="govuk-body-l">Select all the waste exemptions you need to add to the registration.</p>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <nav role="navigation" class="guidance-nav">
+        <h3 class="govuk-heading-s">Contents</h3>
+        <ol class="govuk-list govuk-body-s">
+            <li class="list-item--dashed">
+              <a href="#using-waste">using waste</a>
+            </li>
+            <li class="list-item--dashed">
+              <a href="#treating-waste">treating waste</a>
+            </li>
+            <li class="list-item--dashed">
+              <a href="#disposing-of-waste">disposing of waste</a>
+            </li>
+            <li class="list-item--dashed">
+              <a href="#storing-waste">storing waste</a>
+            </li>
+        </ol>
+      </nav>
       <form action="registration-check-details" method="post" class="form">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset govuk-!-margin-bottom-7">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
-                Which exemptions are needed for this waste operation?
-              </h1>
-            </legend>
-            <p class="govuk-body-l">Select all the waste exemptions you need to add to the registration.</p>
             <table class="govuk-table">
-              <thead class="govuk-table__head">
-                <tr class="govuk-table__row">
-                  <th class="govuk-table__header" scope="col">Exemption</th>
-                  <th class="govuk-table__header" scope="col">Description</th>
-                </tr>
-              </thead>
+              <caption id="using-waste" class="govuk-table__caption">Using waste</caption>
               <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
                   <td class="govuk-table__header" scope="row">
@@ -55,8 +67,8 @@
                         </span>
                       </summary>
                       <div class="govuk-details__text">
-                        <p>This exemption allows you to use suitable waste rather than virgin raw material or material which has ceased to be waste - for example by complying with a Quality Protocol.</p>
-                         <p><a target="_blank" href="https://www.gov.uk/guidance/waste-exemptions-using-waste">Full guidance</a></p>
+                        <p>Use suitable waste rather than virgin raw material in construction.</p>
+                         <p><a target="_blank" href="https://www.gov.uk/guidance/waste-exemptions-using-waste">Read full exemption guidance (opens in new tab)</a></p>
                       </div>
                     </details>
                   </td>
@@ -226,6 +238,13 @@
                   </td>
                   <td class="govuk-table__cell">Using depolluted end-of-life vehicles for parts</td>
                 </tr>
+              </tbody>
+            </table>
+
+
+            <table class="govuk-table">
+              <caption id="treating-waste" class="govuk-table__caption">Treating waste</caption>
+              <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
                   <td class="govuk-table__header" scope="row">
                     <div class="govuk-checkboxes__item">
@@ -551,6 +570,18 @@
                   </td>
                   <td class="govuk-table__cell">Recovery of central heating oil by filtration</td>
                 </tr>
+              </tbody>
+            </table>
+
+            <table class="govuk-table">
+              <caption id="disposing-of-waste" class="govuk-table__caption">Disposing of waste</caption>
+<!--              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col">Exemption</th>
+                  <th class="govuk-table__header" scope="col">Description</th>
+                </tr>
+              </thead>-->
+              <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
                   <td class="govuk-table__header" scope="row">
                     <div class="govuk-checkboxes__item">
@@ -639,6 +670,18 @@
                   </td>
                   <td class="govuk-table__cell">Burning waste at a port under a Plant Health Notice</td>
                 </tr>
+              </tbody>
+            </table>
+
+            <table class="govuk-table">
+              <caption id="storing-waste"class="govuk-table__caption">Storing waste</caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col">Exemption</th>
+                  <th class="govuk-table__header" scope="col">Description</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
                   <td class="govuk-table__header" scope="row">
                     <div class="govuk-checkboxes__item">
