@@ -1,0 +1,62 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Who should we contact about this waste exemption operation?
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  alpha
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="contact-address-kew" method="post" class="form">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
+                Who should we contact about this waste exemption operation?
+              </h1>
+            </legend>
+            <p class="govuk-body-l">We’ll contact this person if we need to discuss the waste operation. We’ll also email them a copy of this registration.</p>
+             <div class="govuk-form-group">
+              <label class="govuk-label" for=1">
+                Full name
+              </label>
+              <input class="govuk-input govuk-input--width-20" id="1" name="1" type="text">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="2">
+                Business telephone number
+              </label>
+              <span id="2-hint" class="govuk-hint">This can be a landline or mobile.</span>
+              <input class="govuk-input govuk-input--width-10" id="2" name="2" type="text">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="3">
+                Business email address
+              </label>
+              <span id="3-hint" class="govuk-hint">We'll use this to confirm the registration.</span>
+              <input class="govuk-input govuk-input--width-20" id="3" name="3" type="text">
+            </div>
+          </fieldset>
+        </div>
+        <button type="submit" class="govuk-button">
+          Continue
+        </button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
