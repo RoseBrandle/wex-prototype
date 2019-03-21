@@ -29,7 +29,7 @@
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <strong class="govuk-warning-text__text">
           <span class="govuk-warning-text__assistive">Warning</span>
-          You must sign these changes by using the 'continue' button.
+          You must confirm these changes using the 'continue' button.
         </strong>
       </div>
       <h2 class="govuk-heading-m">Where operation is taking place</h2>
@@ -383,11 +383,11 @@
             </dd>
         </div>
       </dl>
-
-      <button type="submit" class="govuk-button">
-        Continue
-      </button>
-
+      <form action="declaration" method="post" class="form">
+        <button type="submit" class="govuk-button">
+          Continue
+        </button>
+      </form>
     </div>
   </div>
 
