@@ -20,6 +20,12 @@ table.govuk-table .guidance-table {
   }
 }
 
+.guidance-table-one-column {
+  .govuk-table__cell {
+    padding-top: 25px;
+  }
+}
+
 .govuk-checkboxes__label {
   font-weight: bold;
 }
