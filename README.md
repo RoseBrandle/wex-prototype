@@ -1,6 +1,6 @@
 # Waste exemptions prototype
 
-This is the code for the [current prototype for Defra's Waste Exemptions service](https://wex-prototype.herokuapp.com/)
+This is the code for the [current prototype for Defra's Waste Exemptions service](https://wex-prototype.herokuapp.com/).
 
 Ask a member of the team for login details. It is password-protected to ensure it's not confused with a live government service.
 
