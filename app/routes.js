@@ -84,4 +84,14 @@ router.post('/address-reuse-check', function (req, res) {
   }
 })
 
+router.post('/aware-of-pp', function (req, res) {
+  let awareOfPrivacyPolicy = req.session.data['pp-aware']
+
+  if (awareOfPrivacyPolicy === 'yes') {
+    res.redirect('/address-reuse/start')
+  } else if (awareOfPrivacyPolicy === 'no') {
+    res.redirect('/registration/ad-privacy-policy-text')
+  }
+})
+
 module.exports = router
