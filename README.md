@@ -30,6 +30,8 @@ To make changes to the prototype, you will need a GitHub and a Heroku account an
 * Configure Heroku to show your prototype and update it when code is pushed to `master`.
 * In the terminal, navigate to your project folder.
 * Pull the latest code using `git pull`
+* If you're collaborating with a colleague then work from a branch and create pull requests rather than committing directly to `master`. This encourages peer review and reduces the risk of code conflicts.
 * If you've created any new files, then add them using `git add -A`
 * Commit your changes using `git commit -a -m "A message to say what you're committing"`
-* If nothing is broken and you're happy to publish your changes, use `git push -u origin master` to push your changes.
+* If nothing is broken and you're happy to publish your changes directly to `master`, use `git push -u origin master` to push your changes.
+* If you're working from a branch then replace `master` with the name of your branch and create a pull request via the GitHub user interface.
