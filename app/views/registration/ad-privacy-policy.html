@@ -1,0 +1,182 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Privacy policy for assisted registrations
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  alpha
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+			<h1 class="govuk-heading-l">Privacy policy for assisted registrations (work in progress)</h1>
+
+			<p>
+			  Anyone registering an exemption must be aware of our privacy policy.
+			</p><p>
+				If you are registering on behalf of someone on the phone then read the following text to them before you proceed. Or, you can <a href="#">download a copy of the full privacy policy</a> to send via email or post.
+			</p>
+
+			{% from "accordion/macro.njk" import govukAccordion %}
+
+{{ govukAccordion({
+  id: "accordion-with-summary-sections",
+  items: [
+    {
+			expanded: true,
+			heading: {
+        text: "Main policy"
+      },
+      summary: {
+        text: "This is a simplified version of our privacy policy which you must read to all users."
+      },
+			content: {
+        html:
+        '<div class="govuk-inset-text">
+					<p>
+						We are the Environment Agency and the data controller for this service, which means that we determine how and why we process your personal data. We will follow all applicable UK and EU data protection laws in how we treat it.
+					</p>
+
+					<p>
+				    We are the Environment Agency and we run the Register Your Waste Exemptions service. We are the
+				    data controller for this service. A data controller determines how and why personal data
+				    (personal information) is processed.
+				  </p>
+				  <p>
+				    Our <a rel="external" href="https://www.gov.uk/government/organisations/environment-agency/about/personal-information-charter">personal information charter</a>
+				    explains your rights and how we deal with your personal information. You can access the charter
+				    using the link or go to gov.uk and search \'Environment Agency personal information charter’.
+				  </p>
+
+				  <h2 class="govuk-heading-m">The personal data we need</h2>
+				  <p>The personal data we collect about you includes:</p>
+				  <ul class="govuk-list govuk-list--bullet">
+				    <li>the name and address of your business or organisation</li>
+				    <li>contact details</li>
+				    <li>the type of exempt waste operations being carried out</li>
+				    <li>the locations of these operations</li>
+				  </ul>
+				  <p>
+				    We are allowed to process your personal data because we have official authority to register
+				    waste exemptions. The lawful basis for processing your personal data is to perform a task in
+				    the public interest that is set out in law.
+				  </p>
+
+				  <h2 class="govuk-heading-m">
+				    What we do with your personal data
+				  </h2>
+				  <p>
+				    We use your personal data in order to process your registration. If you don\'t provide the
+				    information requested, we can\'t register your waste exemptions.
+				  </p>
+				  <p>
+				    We do not use your personal data to make an automated decision or for automated profiling.
+				  </p>
+				  <p>
+				    We will not share or disclose your personal data to any party outside the Environment Agency
+				    without your explicit consent unless we are lawfully able to do so.
+				  </p>
+				  <p>
+				    We put some of the information from your registration on a public register. This will include
+				    the name and address of your business, the type of exempt waste operations being carried out,
+				    and the locations of these operations. We will not share or disclose your personal data to any
+				    other party outside the Environment Agency without your explicit consent, unless lawfully able
+				    to do so.
+				  </p>
+
+				  <h2 class="govuk-heading-m">
+				    How long we keep your personal data
+				  </h2>
+				  <p>
+				    We will keep your personal data for 7 years after a registration has ended.
+				  </p>
+
+				  <h2 class="govuk-heading-m">
+				    Where your personal data is processed and stored
+				  </h2>
+				  <p>
+				    We store and process your personal data on our servers within the European Economic Area (EEA).
+				    We will not transfer your personal data outside the EEA.
+				  </p>
+				</div>'
+      }
+    },
+        {
+      heading: {
+        text: "Contact details for the Data Protection Officer"
+      },
+			summary: {
+				text: "Ask if the person registering would like this information."
+			},
+      content: {
+        html:
+        '	<div class="govuk-inset-text">
+						<p>
+					    Our Data Protection Officer (DPO) is responsible for independent advice and monitoring of the
+					    Environment Agency’s use of personal information.
+					  </p>
+					  <p>
+					    If you have any concerns or queries about how we process personal data, or if you would like to
+					    make a complaint or request relating to data protection, please contact:
+					  </p>
+					  <p>
+					    Data Protection Officer<br />
+					    Environment Agency<br />
+					    Horizon House<br />
+					    Deanery Road<br />
+					    Bristol<br />
+					    BS1 5AH
+					  </p>
+					  <p>
+					    Email: <a rel="external" href="mailto:dataprotection@environment-agency.gov.uk">dataprotection@environment-agency.gov.uk</a>
+					  </p>
+					</div>'
+      }
+    },
+            {
+      heading: {
+        text: "Details for the Information Commissioner\'s Office"
+      },
+      content: {
+        html:
+      '	   <div class="govuk-inset-text">
+				 			<p>
+						    The Information Commissioner\'s Office (ICO) is the supervisory authority for data protection
+						    legislation. <a rel="external" href="https://ico.org.uk/your-data-matters">The ICO website</a>
+						    has a full list of your rights under data protection legislation.
+						  </p>
+						  <p>
+						    You have the <a rel="external" href="https://ico.org.uk/make-a-complaint">right to lodge a complaint with the ICO</a>
+						    at any time.
+						  </p>
+						</div>'
+      }
+    }
+  ]
+}) }}
+			{% from "button/macro.njk" import govukButton %}
+
+				{{ govukButton({
+				  text: "Continue",
+				  preventDoubleClick: true
+				}) }}
+			<div class="govuk-body-s">
+				This notice was last updated on 14 February 2019.
+			</div>
+    </div>
+  </div>
+
+{% endblock %}
