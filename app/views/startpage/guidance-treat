@@ -1,0 +1,152 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Waste exemptions guidance | How to register | Gov.uk
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Guidance</span>
+      <h1 class="govuk-heading-l">Treating waste: waste exemptions</h1>
+      <p class="govuk-body-l">Read through the list of exemptions for treating waste. The treating waste exemptions cover operations such as preparing, recovering, sorting and treating specific waste materials. You need to comply with the limits and conditions set out. </p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <br />
+      <p class="govuk-body-s">Published 1 February 2016 <br />
+        Last updated 6 April 2018<br />
+        From: <a href="https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs"><b>Department for Environment, Food & Rural Affairs</b></a> and <a href="https://www.gov.uk/government/organisations/environment-agency"><b>Environment Agency</b></a>
+      </p>
+      <br />
+      <!--
+        <strong class="govuk-tag">
+        &nbsp;Applies to: <strong>England (see guidance for Northern Ireland, Scotland, and Wales</strong>)
+      </strong>
+      -->
+      <p>
+A waste exemption is a waste operation that is exempt from needing environmental permit. Each exemption has specific limits and conditions you need to operate within. 
+      </p>
+
+      <p>
+The exemptions for treating waste cover a range of operations, such as treating, sorting, repairing, refurbishing or dismantling waste for transport, reuse or recovery. These include treating organic materials to produce fertiliser and biogas, cleaning waste packaging and textiles for recycling or transportation, and treating oil filters, fluorescent tubes and toner cartridges before recovery.
+      </p>
+
+      <p>
+There are 3 waste treatment exemptions that you need to register with other authorities (not the Environment Agency). These are:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>T3 – treatment of waste metals and metal alloys by heating for the purposes of removing grease</li>
+        <li>T7 – treatment of waste bricks, tiles and concrete by crushing, grinding or reducing in size</li>
+        <li>T22 – treatment of animal by-product waste at a collection centre</li>
+        </ul>
+      <p>
+      <p>
+       You register T3 and T7 with the local authority where you have your principle place of business. If this is outside England and Wales, it should be with the local authority where the operation will be carried out.</p>
+
+      <p>
+You register T22 with the authority responsible for granting an authorisation under the Animal By-products Regulations.
+      </p>
+      <p>
+       A full description of T3, T7 and T22 can be found at Environmental Permitting (England and Wales) Regulations 2010. </p>
+
+
+
+      <h2 class="govuk-heading-m">Treating waste: waste exemptions</h2>
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemptions-treating-waste">T1 cleaning, washing, spraying or coating relevant waste</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t2-recovering-textiles">T2 recovering textiles</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t4-preparatory-treatments-baling-sorting-shredding-etc">T4 preparatory treatments, such as, baling, sorting, shredding</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t5-screening-and-blending-waste">T5 screening and blending waste</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t6-treating-waste-wood-and-waste-plant-matter-by-chipping-shredding-cutting-or-pulverising">T6 treating waste wood and waste plant matter by chipping, shredding, cutting or pulverising</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t8-mechanically-treating-end-of-life-tyres">T8 mechanically treating end-of-life tyres</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t9-recovering-scrap-metal">T9 recovering scrap metal</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t10-sorting-mixed-waste">T10 sorting mixed waste</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t11-repairing-or-refurbishing-waste-electrical-and-electronic-equipment-weee">T11 repairing or refurbishing waste electrical and electronic equipment (WEEE)</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t12-manually-treating-waste">T12 manually treating waste</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t13-treating-waste-food">T13 treating waste food</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t14-crushing-and-emptying-vehicle-waste-oil-filters">T14 crushing and emptying vehicle waste oil filters</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t15-treating-waste-aerosol-cans">T15 treating waste aerosol cans</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t16-treating-waste-toner-and-ink-cartridges">T16 treating waste toner and ink cartridges</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t17-crushing-waste-fluorescent-tubes">T17 crushing waste fluorescent tubes</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t18-using-flocculants-to-remove-water-from-waste">T18 using flocculants to remove water from waste</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t19-physical-and-chemical-treatment-of-waste-edible-oil-and-fat-to-produce-biodiesel">T19 physical and chemical treatment of waste edible oil and fat to produce biodiesel</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t20-treating-waste-at-a-water-treatment-works">T20 treating waste at a water treatment works</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t21-recover-waste-at-a-waste-water-treatment-works">T21 recover waste at a waste water treatment works</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t23-aerobic-composting-and-associated-prior-treatment">T23 aerobic composting and associated prior treatment</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t24-anaerobic-digestion-at-premises-used-for-agriculture-and-burning-resulting-biogas">T24 anaerobic digestion at premises used for agriculture and burning resulting biogas</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t25-anaerobic-digestion-at-premises-not-used-for-agriculture-and-burning-resulting-biogas">T25 anaerobic digestion at premises not used for agriculture and burning resulting biogas</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t26-treatment-of-kitchen-waste-in-a-wormery">T26 treatment of kitchen waste in a wormery</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t27-treatment-of-sheep-dip-using-organophosphate-degrading-enzyme">T27 treatment of sheep dip using organophosphate-degrading enzyme</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t28-sort-and-denature-controlled-drugs-for-disposal">T28 sort and denature controlled drugs for disposal</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t29-treatment-of-non-hazardous-pesticide-washings-by-carbon-filtration-for-disposal">T29 treatment of non-hazardous pesticide washings by carbon filtration for disposal</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t30-recover-silver">T30 recover silver</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t31-recover-monopropylene-glycol-from-aircraft-antifreeze-fluids">T31 recover monopropylene glycol from aircraft antifreeze fluids</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t32-treatment-of-waste-in-a-biobed-or-biofilter">T32 treatment of waste in a biobed or biofilter</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-t33-recover-central-heating-oil-by-filtration">T33 recover central heating oil by filtration</a>
+        </li>
+      </ul>
+</div>
+
+{% endblock %}
