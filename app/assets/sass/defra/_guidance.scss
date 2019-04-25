@@ -44,6 +44,18 @@ h4.guidance-heading {
     margin-top: 0x;
   }
 }
-.govuk-summary-list__key, .govuk-summary-list__value {
-  vertical-align: top;
+
+#start-summary {
+  .govuk-summary-list {
+    &__key {
+      vertical-align: top;
+      width: 20%;
+    }
+
+    &__value {
+      vertical-align: top;
+      width: 60%;
+    }
+  }
+
 }
