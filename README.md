@@ -12,10 +12,13 @@ It is recommended that you have some familiarity with GitHub and using the termi
 
 This section assumes that you're accessing Git using the Mac terminal. Alternatively you can use tools such as the GitHub app or Sourcetree.
 
-* On a Mac terminal, install `homebrew` and use this to install `git` and `npm` on your machine.
+* On a Mac terminal, install [`homebrew`](https://brew.sh/) and use this to install `git` and `npm` on your machine:
+  * `brew install git`
+  * `brew install npm`
 * Create and navigate to a projects folder: `mkdir projects` and `cd projects`
 * Then copy the latest code with `git clone https://github.com/DEFRA/wex-prototype.git`.
 * Navigate to the prototype folder: `cd wex-prototype`.
+* Install `npm` dependecies `npm install`
 * Enter `npm start` to start the prototype.
 * Go to http://localhost:3000/. If everything has worked then you should see the front page.
 * Press `control c` to stop the prototype.
