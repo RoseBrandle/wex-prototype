@@ -1,0 +1,5 @@
+{% macro para( innerHTML, size='4' ) %}
+<div style="margin-top:12pt;margin-bottom:0pt;">
+    <font face="Arial" size="{{ size }}">{{ innerHTML|safe }}</font>
+</div>
+{% endmacro %}

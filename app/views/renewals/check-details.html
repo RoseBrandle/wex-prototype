@@ -32,6 +32,14 @@
             <p>If your registration details are unchanged, select 'yes' to renew.</p>
 
 
+
+{% from "includes/renewal-data-json.html" import apps %}
+
+{% for ID, app in apps %}
+
+  {% if ID==data.appID %}
+
+
 <table summary="check-details-summary-0"
          class="govuk-table summary-table" role="presentation"
          id="check-details-yourcontactdetails-0"
@@ -42,15 +50,15 @@
       </tr>
       <tr>
         <td class="govuk-table__cell">Your name</td>
-        <td  class="govuk-table__cell">Robin Baxter</td>
+        <td  class="govuk-table__cell">{{ app.applicantName }}</td>
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Your business telephone number</td>
-        <td class="govuk-table__cell">0117923443</td>
+        <td class="govuk-table__cell">{{ app.applicantTelephone }}</td>
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Your business email</td>
-        <td  class="govuk-table__cell">r.baxter@aspirewaste.net</td>
+        <td  class="govuk-table__cell">{{ app.applicantEmail }}</td>
       </tr>
     </tbody>
   </table>
@@ -62,17 +70,17 @@
       <tr class="govuk-table__row" role="row">
         <th class="govuk-table__header" colspan="2" class="bold-small" role="columnheader">Business details</th>
       </tr>
-      <tr class="govuk-table__row"> 
+      <tr class="govuk-table__row">
         <td class="govuk-table__cell">Business or organisation type</td>
-        <td class="govuk-table__cell">Individual</td>
+        <td class="govuk-table__cell">{{ app.operatorType }}</td>
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Person responsible for the waste operation</td>
-        <td class="govuk-table__cell">Jo Miller</td>
+        <td class="govuk-table__cell">{{ app.operatorResponsiblePerson }}</td>
       </tr>
-      <tr class="govuk-table__row">  
+      <tr class="govuk-table__row">
         <td class="govuk-table__cell">Address of the person responsible</td>
-        <td class="govuk-table__cell">Deanery Road, Bristol, BS1 5AH</td>
+        <td class="govuk-table__cell">{{ app.operatorAddress }}</td>
       </tr>
     </tbody>
   </table>
@@ -86,19 +94,19 @@
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Name</td>
-        <td class="govuk-table__cell">Sarah Miller</td>
+        <td class="govuk-table__cell">{{ app.operatorContactName }}</td>
       </tr>
-      <tr class="govuk-table__row">   
+      <tr class="govuk-table__row">
         <td class="govuk-table__cell">Telephone number</td>
-        <td class="govuk-table__cell">01179488422</td>
+        <td class="govuk-table__cell">{{ app.operatorContactTelephone }}</td>
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Address</td>
-        <td class="govuk-table__cell">44, Deanery Road, Bristol, BS1 5AH</td>
+        <td class="govuk-table__cell">{{ app.operatorContactAddress }}</td>
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Email</td>
-        <td class="govuk-table__cell">example.email@inter.net</td>
+        <td class="govuk-table__cell">{{ app.operatorContactEmail }}</td>
       </tr>
     </tbody>
   </table>
@@ -112,18 +120,59 @@
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Waste operation location</td>
-        <td class="govuk-table__cell">Deanery Road, Bristol, BS1 5AH</td>
+        <td class="govuk-table__cell">{{ app.siteLocation }}</td>
       </tr>
+
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Waste exemption</td>
-        <td class="govuk-table__cell"><a href="https://www.gov.uk/guidance/waste-exemption-s2-storing-waste-in-a-secure-place" target="_blank">S2: Storing waste in a secure place</a></td>
+        <td class="govuk-table__cell">{{ app.exemption1|safe }}</td>
       </tr>
+
+{% if app.exemption2 != "" %}
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Waste exemption</td>
-        <td class="govuk-table__cell"><a href="https://www.gov.uk/guidance/waste-exemption-u9-using-waste-to-manufacture-finished-goods" target="_blank">U9: Using waste to manufacture finished goods</a></td>
+        <td class="govuk-table__cell">{{ app.exemption2|safe }}</td>
       </tr>
+{% endif %}
+
+{% if app.exemption3 != "" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Waste exemption</td>
+        <td class="govuk-table__cell">{{ app.exemption3|safe }}</td>
+      </tr>
+{% endif %}
+
+{% if app.exemption4 != "" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Waste exemption</td>
+        <td class="govuk-table__cell">{{ app.exemption4|safe }}</td>
+      </tr>
+{% endif %}
+
+{% if app.exemption5 != "" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Waste exemption</td>
+        <td class="govuk-table__cell">{{ app.exemption5|safe }}</td>
+      </tr>
+{% endif %}
+
+{% if app.exemption6 != "" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Waste exemption</td>
+        <td class="govuk-table__cell">{{ app.exemption6|safe }}</td>
+      </tr>
+{% endif %}
+
+
+
     </tbody>
   </table>
+
+  {% endif %}
+
+{% else %}
+  <p>No data</p>
+{% endfor %}
 
 
           </fieldset>

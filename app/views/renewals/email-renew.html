@@ -1,0 +1,62 @@
+
+<html>
+
+{% block content %}
+<div style="margin: 0, auto; padding: 30px; max-width: 600px;">
+<!-- email content starts -->
+
+    <table width="100%" style="color:rgb(0, 0, 0);font-family:Arial;background-color:rgb(0, 0, 0);margin-bottom:20pt;">
+        <tbody>
+            <tr>
+                <td><img src="/public/images/gov-uk-logo.png"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    {% import "includes/macros.html" as macros %}
+
+    {{ macros.para(
+      'Dear Jane Brown'
+    ) }}
+
+    {{ macros.para(
+      '<b>You must renew your waste exemptions before 1 June 2019</b>',6
+    ) }}
+
+    {{ macros.para(
+      'Site: 29 Acacia Road, Oxford<br>
+      Registration number: WEX123456'
+    ) }}
+
+    {{ macros.para(
+      'Exemptions:<br><ul>
+      <li>S2: Storing waste in a secure place</li>
+      <li>U9: Using waste to finish manufactured goods</li></ul>'
+    ) }}
+
+    {{ macros.para(
+      '<b>Renew online at: <a href="check-details?appID=RB">www.gov.uk/wex-renew</a></b>',5
+    ) }}
+
+    {{ macros.para(
+      'Need help? Contact the Environment Agency<br>
+      Call us on 03708 506 506, Monday to Friday (8am to 6pm)<br>
+      or email <a href="mailto:enquiries@environment-agency.gov.uk">enquiries@environment-agency.gov.uk</a>'
+  ) }}
+
+
+
+    <div style="font-family:Arial;max-width:600px;">
+        <div style="margin-top:30pt;margin-bottom:10pt;">
+            <img width="200" height="57" alt="" src="/public/images/ea_logo_sm.png">
+        </div>
+    </div>
+
+    {{ macros.para(
+      '<a href="check-details?appID=AB">Anne test</a>'
+    ) }}
+
+<!-- email content ends -->
+</div>
+{% endblock %}
+</html>
