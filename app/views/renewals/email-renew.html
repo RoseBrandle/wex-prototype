@@ -1,0 +1,79 @@
+
+<html>
+
+{% block content %}
+<div style="margin: 0, auto; padding: 30px; max-width: 600px;">
+<!-- email content starts -->
+
+    <table width="100%" style="color:rgb(0, 0, 0);font-family:Arial;background-color:rgb(0, 0, 0);margin-bottom:20pt;">
+        <tbody>
+            <tr>
+                <td><img src="/public/images/gov-uk-logo.png"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    {% import "includes/macros.html" as macros %}
+
+    {{ macros.para(
+      'Dear Robin Baxter'
+    ) }}
+
+    {{ macros.para(
+      '<b>Your waste exemptions registration WEX123456 expires on 10 June 2019, renew online now.</b>'
+    ) }}
+
+    {{ macros.para(
+      'Waste exemptions registration number: WEX123456<br>
+      Site location: ST 58132 72695'
+    ) }}
+
+    {{ macros.para(
+      'The following waste exemption(s) will expire on 10 June 2019:<br><ul>
+      <li>S2: Storing waste in a secure place</li>
+      <li>U9: Using waste to finish manufactured goods</li></ul>'
+    ) }}
+
+    {{ macros.para(
+      'If your company details and exemptions have not changed since registration, you can use our online renewal service.'
+    ) }}
+
+    {{ macros.para(
+      '<b>Renew online at: <a href="check-details?appID=RB">www.gov.uk/wex-renew</a></b>'
+    ) }}
+
+    {{ macros.para(
+      'You\'ll need your registration number and the email address you registered with.'
+    ) }}
+
+    {{ macros.para(
+      'If you want to update any details about your company or change your exemptions, you will need to complete a new registration:
+      <a href="https://www.gov.uk/wex-register">www.gov.uk/wex-register</a>'
+    ) }}
+
+    {{ macros.para(
+      '<b>View your current registration details </b><br>
+      View your current waste exemptions on the public register at:
+      <a href="https://www.gov.uk/access-the-public-register-for-environmental-information">www.gov.uk/access-the-public-register-for-environmental-information</a>.'
+  ) }}
+
+    {{ macros.para(
+      '<b>Need help? Contact the Environment Agency</b><br>
+      Call us on 03708 506 506, Monday to Friday (8am to 6pm)<br>
+      or email <a href="mailto:enquiries@environment-agency.gov.uk">enquiries@environment-agency.gov.uk</a>'
+  ) }}
+
+
+
+    <div style="font-family:Arial;max-width:600px;">
+        <div style="margin-top:30pt;margin-bottom:10pt;">
+            <img width="200" height="57" alt="" src="/public/images/ea_logo_sm.png">
+        </div>
+    </div>
+
+
+
+<!-- email content ends -->
+</div>
+{% endblock %}
+</html>

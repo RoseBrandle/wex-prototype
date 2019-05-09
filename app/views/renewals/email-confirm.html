@@ -1,0 +1,77 @@
+
+<html>
+
+{% block content %}
+<div style="margin: 0, auto; padding: 30px; max-width: 600px;">
+<!-- email content starts -->
+
+    <table width="100%" style="color:rgb(0, 0, 0);font-family:Arial;background-color:rgb(0, 0, 0);margin-bottom:20pt;">
+        <tbody>
+            <tr>
+                <td><img src="/public/images/gov-uk-logo.png"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    {% import "includes/macros.html" as macros %}
+
+    {{ macros.panel(
+      'Renewal complete',
+      'Your reference number is',
+      'WEX123456'
+    ) }}
+
+
+    {{ macros.inset(
+      'This is not a permit'
+    ) }}
+
+    {{ macros.para(
+      '<b>Responsibilities</b>',5
+    ) }}
+
+    {{ macros.para(
+      ''
+    ) }}
+
+    {{ macros.para(
+      'The business or organisation responsible for carrying out the exempt waste operations agrees to:<br>
+      <ul>
+      <li>comply with all limits on waste types and quantities</li>
+      <li>comply with all conditions governing how waste must be stored, handled and treated</li>
+      <li>carry out the operations without endangering human health or harming the environment</li>
+      </ul>'
+    ) }}
+
+    {{ macros.para(
+      'For the operations to remain exempt they must be carried out without:<br>
+      <ul>
+      <li>causing risk to water, air, soil, plants or animals</li>
+      <li>causing a nuisance through noise and odours</li>
+      <li>negatively affecting the countryside or places of special interest</li>
+      </ul>'
+    ) }}
+
+    {{ macros.para(
+      'In sensitive locations extra controls may be needed over and above those set out in the exemptions to make sure this happens.'
+    ) }}
+
+    {{ macros.para(
+      '<ul>
+      <li>If you have enquiries please contact the Environment Agency helpline: 03708 506506</li>
+      <li>This is an automated email, please do not reply</li>
+      </ul>'
+    ) }}
+
+
+    <div style="font-family:Arial;max-width:600px;">
+        <div style="margin-top:30pt;margin-bottom:10pt;">
+            <a href="/public/images/certificate.pdf" target="_blank" style="border:none;"><img width="190px" height="130px" alt="" src="/public/images/pdf_attachment.png"></a>
+        </div>
+    </div>
+
+
+<!-- email content ends -->
+</div>
+{% endblock %}
+</html>
