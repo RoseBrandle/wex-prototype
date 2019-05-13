@@ -1,0 +1,34 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  You need a new registration number
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  alpha
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/registration/start" method="post" class="form">
+        <h2 class="govuk-heading-l">You need to register again because your details have changed</h2>
+
+        <button type="submit" class="govuk-button">
+          Start a new registration
+        </button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

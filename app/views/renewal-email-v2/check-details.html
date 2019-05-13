@@ -1,0 +1,233 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Do you want to renew using these details?
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  alpha
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <form action="/check-details-check-v2" method="post" class="form">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="govuk-fieldset__heading">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Do you want to renew using these details?
+              </h1>
+            </legend>
+
+{% from "includes/renewal-data-json.html" import apps %}
+
+{% for ID, app in apps %}
+
+  {% if ID==data.appID %}
+
+
+  <table summary="check-details-summary-3"
+         class="govuk-table summary-table" role="presentation"
+         id="check-details-wasteoperationdetails-3"
+         caption="summary of registration details">
+    <tbody class="govuk-table__body">
+
+      <tr class="govuk-table__row">
+        <th class="govuk-table__cell govuk-!-width-one-quarter">Waste exemption</th>
+        <td class="govuk-table__cell">{{ app.exemption1|safe }}</td>
+        <td class="govuk-table__cell"><a href="#">Check {{ app.exemption1|truncate(3, true, "") }} rules</a></td>
+      </tr>
+
+{% if app.exemption2 != "" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-width-one-quarter"></td>
+        <td class="govuk-table__cell">{{ app.exemption2|safe }}</td>
+        <td class="govuk-table__cell"><a href="#">Check {{ app.exemption2|truncate(3, true, "") }} rules</a></td>
+      </tr>
+{% endif %}
+
+{% if app.exemption3 != "" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-width-one-quarter"></td>
+        <td class="govuk-table__cell">{{ app.exemption3|safe }}</td>
+        <td class="govuk-table__cell"><a href="#">Check {{ app.exemption3|truncate(3, true, "") }} rules</a></td>
+      </tr>
+{% endif %}
+
+{% if app.exemption4 != "" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-width-one-quarter"></td>
+        <td class="govuk-table__cell">{{ app.exemption4|safe }}</td>
+        <td class="govuk-table__cell"><a href="#">Check {{ app.exemption4|truncate(3, true, "") }} rules</a></td>
+      </tr>
+{% endif %}
+
+{% if app.exemption5 != "" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-width-one-quarter"></td>
+        <td class="govuk-table__cell">{{ app.exemption5|safe }}</td>
+        <td class="govuk-table__cell"><a href="#">Check {{ app.exemption5|truncate(3, true, "") }} rules</a></td>
+      </tr>
+{% endif %}
+
+{% if app.exemption6 != "" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-width-one-quarter"></td>
+        <td class="govuk-table__cell">{{ app.exemption6|safe }}</td>
+        <td class="govuk-table__cell"><a href="#">Check {{ app.exemption6|truncate(3, true, "") }} rules</a></td>
+      </tr>
+{% endif %}
+
+    </tbody>
+  </table>
+
+  <table summary="check-details-summary-3"
+         class="govuk-table summary-table" role="presentation"
+         id="check-details-wasteoperationdetails-3"
+         caption="summary of registration details">
+    <tbody class="govuk-table__body">
+
+      <tr class="govuk-table__row">
+        <th class="govuk-table__cell" colspan="2">Waste operation location</th>
+      </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-width-one-quarter">Description</td>
+      <td class="govuk-table__cell">{{ app.siteLocation }}</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-width-one-quarter">Grid reference</td>
+      <td class="govuk-table__cell">SR 12345 67890</td>
+    </tr>
+
+    </tbody>
+  </table>
+
+  <table summary="check-details-summary-1"
+         class="govuk-table summary-table" role="presentation"
+         id="check-details-businessdetails-1"
+         caption="summary of registration details">
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row" role="row">
+        <th class="govuk-table__header" colspan="2" class="bold-small" role="columnheader">Waste operator</th>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-width-one-quarter">Person responsible</td>
+        <td class="govuk-table__cell">{{ app.operatorResponsiblePerson }}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-width-one-quarter">Address</td>
+        <td class="govuk-table__cell">{{ app.operatorAddress }}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-width-one-quarter">Organisation type</td>
+        <td class="govuk-table__cell">{{ app.operatorType }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+<!--
+  <table summary="check-details-summary-0"
+         class="govuk-table summary-table" role="presentation"
+         id="check-details-yourcontactdetails-0"
+         caption="summary of registration details">
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row" role="row">
+        <th class="govuk-table__header" colspan="2" class="bold-small" role="columnheader">Your contact details</th>
+      </tr>
+      <tr>
+        <td class="govuk-table__cell govuk-!-width-one-quarter">Your name</td>
+        <td  class="govuk-table__cell">{{ app.applicantName }}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-width-one-quarter">Your business telephone number</td>
+        <td class="govuk-table__cell">{{ app.applicantTelephone }}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-width-one-quarter">Your business email</td>
+        <td  class="govuk-table__cell">{{ app.applicantEmail }}</td>
+      </tr>
+    </tbody>
+  </table>
+  -->
+
+
+
+  <table summary="check-details-summary-2"
+         class="govuk-table summary-table" role="presentation"
+         id="check-details-wasteoperationcontact-2"
+         caption="summary of registration details">
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row" role="row">
+        <th class="govuk-table__header" colspan="2" class="bold-small" role="columnheader">Waste operation contact</th>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-width-one-quarter">Name</td>
+        <td class="govuk-table__cell">{{ app.operatorContactName }}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-width-one-quarter">Telephone</td>
+        <td class="govuk-table__cell">{{ app.operatorContactTelephone }}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-width-one-quarter">Address</td>
+        <td class="govuk-table__cell">{{ app.operatorContactAddress }}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-width-one-quarter">Email</td>
+        <td class="govuk-table__cell">{{ app.operatorContactEmail }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+  {% endif %}
+
+{% else %}
+  <p>No data</p>
+{% endfor %}
+
+
+        </div>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+
+            <div class="govuk-radios govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="details-1" name="currentDetails" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="details-1">
+                  Yes, renew with these details
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="details-2" name="currentDetails" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="details-2">
+                  No, I need to make changes
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <button type="submit" class="govuk-button">
+          Continue
+        </button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
