@@ -72,6 +72,30 @@ router.post('/check-details-check-v2', function (req, res) {
   }
 })
 
+router.post('/check-details-check-v3', function (req, res) {
+  let confirmDetails = req.session.data['currentDetails']
+
+  if (confirmDetails === 'yes') {
+    res.redirect('renewal-email-v3/check-details-3')
+  } else if (confirmDetails === 'no') {
+    res.redirect('/renewal-email-v3/details-need-new')
+  } else {
+    res.redirect('/renewals/check-details-error')
+  }
+})
+
+router.post('/check-details-check-v4', function (req, res) {
+  let confirmDetails = req.session.data['currentDetails']
+
+  if (confirmDetails === 'yes') {
+    res.redirect('renewal-email-v3/declaration')
+  } else if (confirmDetails === 'no') {
+    res.redirect('/renewal-email-v3/details-need-new')
+  } else {
+    res.redirect('/renewals/check-details-error')
+  }
+})
+
 router.post('/declaration-check', function (req, res) {
   const isConfirmed = 'declarationConfirm' in req.body;
   if (isConfirmed) {

@@ -1,0 +1,82 @@
+
+<html>
+
+{% block content %}
+<div style="margin: 0, auto; padding: 30px; max-width: 600px;">
+<!-- email content starts -->
+
+    <table width="100%" style="color:rgb(0, 0, 0);font-family:Arial;background-color:rgb(0, 0, 0);margin-bottom:20pt;">
+        <tbody>
+            <tr>
+                <td><img src="/public/images/gov-uk-logo.png"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    {% import "includes/macros.html" as macros %}
+
+    {{ macros.para(
+      'Dear Jane Brown'
+    ) }}
+
+    {{ macros.para(
+      '<b>You must renew your waste exemptions before 1 June 2019</b>',6
+    ) }}
+
+    {{ macros.para(
+      'If your details are the same, you can renew in one minute.<br>
+      Renewals are free.'
+    ) }}
+
+    {{ macros.para(
+      '<b>Renew online at:<br><a href="check-details-1?appID=RB">https://wasteexemptions.service.gov.uk/renew/124d7abfc2d1c1b</a></b>'
+    ) }}
+
+    {{ macros.para(
+      'Site: 29 Acacia Road, Oxford'
+    ) }}
+
+    {{ macros.para(
+      'Your current exemptions:<br><ul>
+      <li>D1 Depositing waste from dredging inland waters</li>
+      <li>D7 Burning waste in the open</li>
+      <li>U1 Use of waste in construction</li>
+      <li>U8 Using waste for a specified purpose</li>
+      <li>U10 Spreading waste to benefit agricultural land</li>
+      <li>T6 Treating waste wood and waste plant matter by chipping, shredding, cutting or pulverising</li>
+    </ul>'
+    ) }}
+
+    {{ macros.para(
+      'Registration number: WEX123456'
+    ) }}
+
+    <div style="font-family:Arial;max-width:600px;">
+        <div style="margin-top:30pt;margin-bottom:10pt;">
+            <img width="200" height="57" alt="" src="/public/images/ea_logo_sm.png">
+        </div>
+    </div>
+
+    {{ macros.para(
+      'Environment Agency<br>
+      Telephone 03708 506 506, Monday to Friday (8am to 6pm)<br>
+      <a href="mailto:enquiries@environment-agency.gov.uk">enquiries@environment-agency.gov.uk</a>'
+  ) }}
+
+  {{ macros.para(
+    'This is an automated email, please do not reply.'
+  ) }}
+
+  {{ macros.para(
+    '&nbsp;'
+  ) }}
+
+
+    {{ macros.para(
+      '<a href="check-details?appID=AB">Anne test</a>',3
+    ) }}
+
+<!-- email content ends -->
+</div>
+{% endblock %}
+</html>

@@ -1,0 +1,53 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Renew your waste exemptions
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  alpha
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <form action="/renewal-email-v3/check-details-2" method="post" class="form">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="govuk-fieldset__heading">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Renew your waste exemptions
+              </h1>
+            </legend>
+
+            <p>
+              &nbsp;
+            </p>
+            <p>
+
+            <p>
+              If you need the same exemptions and your details are the same, you can renew for another 3 years.
+            </p>
+            <p>
+              If they have changed you should <a href="/registration/start">register again</a>.
+            </p>
+
+
+        <button type="submit" class="govuk-button">
+          Check your exemptions
+        </button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

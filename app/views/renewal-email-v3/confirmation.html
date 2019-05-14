@@ -1,0 +1,60 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmation
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  alpha
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            You have renewed your exemptions for 3 years
+          </h1>
+          <div class="govuk-panel__body">
+            Your reference number is
+            <br><strong>WEX123456</strong>
+          </div>
+        </div>
+
+        <p class="govuk-body">We have sent a confirmation to e****e@hotmail.com</p>
+        <p class="govuk-body">These exemptions will expire in May 2022. We will send you a reminder when they are due to expire.</p>
+        <p class="govuk-body">We will add details about your exemption to the public register within 5 working days.</p>
+
+
+        <p class="govuk-body">&nbsp;</p>
+
+        <p class="govuk-body">
+          If you have any queries, contact the Environment Agency.<br>
+          <a href="mailto:enquiries@environment-agency.gov.uk">enquiries@environment-agency.gov.uk</a><br>
+          03708 506 506 Monday to Friday, 8am to 6pm.
+        </p>
+
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        <p class="govuk-body">
+          <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <p style="margin-left:4em;">
+    <a href="email-confirm">Email (for testing)</a>
+  </p>
+
+{% endblock %}
