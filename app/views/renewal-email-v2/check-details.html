@@ -46,14 +46,14 @@
       <tr class="govuk-table__row">
         <th class="govuk-table__cell govuk-!-width-one-quarter">Waste exemption</th>
         <td class="govuk-table__cell">{{ app.exemption1|safe }}</td>
-        <td class="govuk-table__cell"><a href="#">Check {{ app.exemption1|truncate(3, true, "") }} rules</a></td>
+        <td class="govuk-table__cell"><a href="{{ app.exemption1url }}" target="_blank">Check {{ app.exemption1|truncate(3, true, "") }} rules</a></td>
       </tr>
 
 {% if app.exemption2 != "" %}
       <tr class="govuk-table__row">
         <td class="govuk-table__cell govuk-!-width-one-quarter"></td>
         <td class="govuk-table__cell">{{ app.exemption2|safe }}</td>
-        <td class="govuk-table__cell"><a href="#">Check {{ app.exemption2|truncate(3, true, "") }} rules</a></td>
+        <td class="govuk-table__cell"><a href="{{ app.exemption2url }}" target="_blank">Check {{ app.exemption2|truncate(3, true, "") }} rules</a></td>
       </tr>
 {% endif %}
 
@@ -61,7 +61,7 @@
       <tr class="govuk-table__row">
         <td class="govuk-table__cell govuk-!-width-one-quarter"></td>
         <td class="govuk-table__cell">{{ app.exemption3|safe }}</td>
-        <td class="govuk-table__cell"><a href="#">Check {{ app.exemption3|truncate(3, true, "") }} rules</a></td>
+        <td class="govuk-table__cell"><a href="{{ app.exemption3url }}" target="_blank">Check {{ app.exemption3|truncate(3, true, "") }} rules</a></td>
       </tr>
 {% endif %}
 
@@ -69,7 +69,7 @@
       <tr class="govuk-table__row">
         <td class="govuk-table__cell govuk-!-width-one-quarter"></td>
         <td class="govuk-table__cell">{{ app.exemption4|safe }}</td>
-        <td class="govuk-table__cell"><a href="#">Check {{ app.exemption4|truncate(3, true, "") }} rules</a></td>
+        <td class="govuk-table__cell"><a href="{{ app.exemption4url }}" target="_blank">Check {{ app.exemption4|truncate(3, true, "") }} rules</a></td>
       </tr>
 {% endif %}
 
@@ -77,7 +77,7 @@
       <tr class="govuk-table__row">
         <td class="govuk-table__cell govuk-!-width-one-quarter"></td>
         <td class="govuk-table__cell">{{ app.exemption5|safe }}</td>
-        <td class="govuk-table__cell"><a href="#">Check {{ app.exemption5|truncate(3, true, "") }} rules</a></td>
+        <td class="govuk-table__cell"><a href="{{ app.exemption5url }}" target="_blank">Check {{ app.exemption5|truncate(3, true, "") }} rules</a></td>
       </tr>
 {% endif %}
 
@@ -85,7 +85,7 @@
       <tr class="govuk-table__row">
         <td class="govuk-table__cell govuk-!-width-one-quarter"></td>
         <td class="govuk-table__cell">{{ app.exemption6|safe }}</td>
-        <td class="govuk-table__cell"><a href="#">Check {{ app.exemption6|truncate(3, true, "") }} rules</a></td>
+        <td class="govuk-table__cell"><a href="{{ app.exemption6url }}" target="_blank">Check {{ app.exemption6|truncate(3, true, "") }} rules</a></td>
       </tr>
 {% endif %}
 
