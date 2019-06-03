@@ -1,0 +1,3 @@
+table tr.wex_has_reason td {border-bottom:none;}
+a.wex_reason_link,a.wex_reason_link:visited,a.wex_reason_link:active  {color:inherit;text-decoration: none;}
+table tr,table tr td, table td{vertical-align: top;}
