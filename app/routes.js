@@ -1,6 +1,9 @@
 const express = require('express')
 const router = express.Router()
 
+// all routes for registration v1
+router.use('/registration-v1', require('./routes_registration_v1'))
+
 // RENEWALS
 router.post('/renewals-check', function (req, res) {
   let renewalsChoice = req.session.data['wasteExemptionOptions']

@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What are your contact details?
+  Who should we contact about this waste exemption operation?
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -21,15 +21,16 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="choosing-organisation" method="post" class="form">
+      <form action="contact-address" method="post" class="form">
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
+          <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-7">
-                What are your contact details?
+              <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
+                Who should we contact about this waste exemption operation?
               </h1>
             </legend>
-            <div class="govuk-form-group">
+            <p class="govuk-body-l">We’ll contact this person if we need to discuss the waste operation. We’ll also email them a copy of this registration.</p>
+             <div class="govuk-form-group">
               <label class="govuk-label" for=1">
                 Full name
               </label>

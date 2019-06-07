@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What are your contact details?
+  What do you want to do?
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -21,39 +21,38 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="choosing-organisation" method="post" class="form">
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-7">
-                What are your contact details?
-              </h1>
-            </legend>
-            <div class="govuk-form-group">
-              <label class="govuk-label" for=1">
-                Full name
-              </label>
-              <input class="govuk-input govuk-input--width-20" id="1" name="1" type="text">
-            </div>
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="2">
-                Business telephone number
-              </label>
-              <span id="2-hint" class="govuk-hint">This can be a landline or mobile.</span>
-              <input class="govuk-input govuk-input--width-10" id="2" name="2" type="text">
-            </div>
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="3">
-                Business email address
-              </label>
-              <span id="3-hint" class="govuk-hint">We'll use this to confirm the registration.</span>
-              <input class="govuk-input govuk-input--width-20" id="3" name="3" type="text">
-            </div>
-          </fieldset>
-        </div>
-        <button type="submit" class="govuk-button">
-          Continue
-        </button>
+      <form action="/{{folder}}/start-check" method="post" class="form">
+
+        {{ govukRadios({
+          idPrefix: "registerChoice",
+          name: "registerChoice",
+          fieldset: {
+            legend: {
+              text: "What do you want to do?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "startNew",
+              text: "Start a new waste exemption registration"
+            },
+            {
+              value: "reRegister",
+              text: "Re-register an exemption that’s expiring soon"
+            },
+            {
+              value: "change",
+              text: "Change the details of an existing registration"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
       </form>
     </div>
   </div>
