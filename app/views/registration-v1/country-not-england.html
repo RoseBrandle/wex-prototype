@@ -1,8 +1,9 @@
+{% set pageHead = "You cannot register your exemption here" %}
 
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  You cannot register your exemption here
+  {{ pageHead }}
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -22,7 +23,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">You cannot register your exemption here</h1>
+      <h1 class="govuk-heading-l">{{ pageHead }}</h1>
 
       <p class="govuk-body">This service only covers waste operations in England. So you will need to register with the appropriate authority for your region.</p>
 

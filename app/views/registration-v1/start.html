@@ -1,8 +1,9 @@
+{% set pageHead = "What do you want to do?" %}
 
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What do you want to do?
+  {{ pageHead }}
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -28,7 +29,7 @@
           name: "registerChoice",
           fieldset: {
             legend: {
-              text: "What do you want to do?",
+              text: pageHead,
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
@@ -52,6 +53,15 @@
         {{ govukButton({
           text: "Continue"
         }) }}
+
+
+        {% set a =  [1,2,3,4,5,6,7,8,9]|random %}
+        {% set b =  [1,2,3,4,5,6,7,8,9]|random %}
+        {% set c =  [1,2,3,4,5,6,7,8,9]|random %}
+        {% set d =  [1,2,3,4,5,6,7,8,9]|random %}
+        {% set e =  [1,2,3,4,5,6,7,8,9]|random %}
+        {% set regNumber =  'WEX3'+a+b+c+d+e %}
+        <input type="hidden" name="regNumber" value="{{regNumber}}">
 
       </form>
     </div>

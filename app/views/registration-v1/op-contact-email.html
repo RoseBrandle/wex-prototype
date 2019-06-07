@@ -1,8 +1,9 @@
+{% set pageHead = "What is the contact's email address?" %}
 
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is the contact's email address?
+  {{ pageHead }}
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -23,7 +24,7 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="op-contact-postcode" method="post" class="form">
 
-        <h1 class="govuk-heading-l">What is the contact's email address?</h1>
+        <h1 class="govuk-heading-l">{{ pageHead }}</h1>
 
         {{ govukInput({
           label: {
@@ -42,7 +43,7 @@
           classes: "govuk-!-width-two-thirds",
           id: "opContactEmailConfirfm",
           name: "opContactEmailConfirfm",
-          value: data.opContactEmailConfirfm
+          value: data.opContactEmailConfirm
         }) }}
 
         {{ govukButton({

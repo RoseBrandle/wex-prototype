@@ -1,8 +1,9 @@
+{% set pageHead = "What is your contact email address?" %}
 
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your contact email address?
+  {{ pageHead }}
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -23,7 +24,7 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="operator-type" method="post" class="form">
 
-        <h1 class="govuk-heading-l">What is your contact email address?</h1>
+        <h1 class="govuk-heading-l">{{ pageHead }}</h1>
 
         {{ govukInput({
           label: {
@@ -31,7 +32,8 @@
           },
           classes: "govuk-!-width-two-thirds",
           id: "appEmail",
-          name: "appEmail"
+          name: "appEmail",
+          value: data.appEmail
         }) }}
 
         {{ govukInput({
@@ -40,7 +42,8 @@
           },
           classes: "govuk-!-width-two-thirds",
           id: "appEmailConfirm",
-          name: "appEmailConfirm"
+          name: "appEmailConfirm",
+          value: data.appEmailConfirm
         }) }}
 
         {{ govukButton({

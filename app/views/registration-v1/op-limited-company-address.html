@@ -1,8 +1,9 @@
+{% set pageHead = "What's the company address?" %}
 
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What's the company address?
+  {{ pageHead }}
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -23,10 +24,11 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="op-contact-name" method="post" class="form">
 
-        <h1 class="govuk-heading-l">What's the company address?</h1>
+        <h1 class="govuk-heading-l">{{ pageHead }}</h1>
 
         <p class="govuk-body">Postcode<br>
-        <strong>{{ data.opLtdCompanyPostcode if data.opLtdCompanyPostcode else "BS1 2DF" }}</strong> <a href="javascript:history.back();">Change postcode</a>
+        <strong>{{ data.opLtdCompanyPostcode if data.opLtdCompanyPostcode else "BS1 2DF" }}</strong>
+        &nbsp; <a href="javascript:history.back();">Change postcode</a>
 
           {{ govukSelect({
             id: "opLtdCompanyAddress",
@@ -47,9 +49,7 @@
             ]
           }) }}
 
-
         <p class="govuk-body"><a href="#">I cannot find the address in the list</a></p>
-
 
         {{ govukButton({
           text: "Continue"

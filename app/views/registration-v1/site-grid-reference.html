@@ -1,8 +1,9 @@
+{% set pageHead = "Where will this waste operation take place?" %}
 
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Where will this waste operation take place?
+  {{ pageHead }}
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -21,9 +22,9 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="site-grid-reference" method="post" class="form">
+      <form action="exemptions" method="post" class="form">
 
-        <h1 class="govuk-heading-l">Where will this waste operation take place?</h1>
+        <h1 class="govuk-heading-l">{{ pageHead }}</h1>
 
         {{ govukInsetText({
           html: '<strong>Enter a grid reference or <a href="">use an address instead</a><strong>'
@@ -57,8 +58,9 @@
 
 
         {{ govukTextarea({
-          name: "more-detail",
-          id: "more-detail",
+          name: "siteDescription",
+          id: "siteDescription",
+          value: data.siteDescription,
           label: {
             text: "Site details"
           },

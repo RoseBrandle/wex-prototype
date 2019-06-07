@@ -1,8 +1,9 @@
+{% set pageHead = "What's the registration number of the company?" %}
 
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What's the registration number of the company?
+  {{ pageHead }}
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -23,7 +24,7 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="op-limited-company-name" method="post" class="form">
 
-        <h1 class="govuk-heading-l">What's the registration number of the company?</h1>
+        <h1 class="govuk-heading-l">{{ pageHead }}</h1>
 
         {{ govukInput({
           label: {
@@ -34,7 +35,8 @@
           },
           classes: "govuk-input--width-10",
           id: "opLtdCompanyRegNumber",
-          name: "opLtdCompanyRegNumber"
+          name: "opLtdCompanyRegNumber",
+          value: data.opLtdCompanyRegNumber
         }) }}
 
         {{ govukDetails({

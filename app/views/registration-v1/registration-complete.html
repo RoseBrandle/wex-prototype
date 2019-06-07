@@ -27,11 +27,11 @@
           </h1>
           <div class="govuk-panel__body">
             Your reference number
-            <br><strong>WEX123456</strong>
+            <br><strong>{{data.regNumber}}</strong>
           </div>
         </div>
 
-        <p class="govuk-body">We have sent a confirmation email to: hrh.c.windsor@palace.org</p>
+        <p class="govuk-body">We have sent a confirmation email to: {{ data.appEmail }} and {{ data.opContactEmail }}</p>
 
 
         <h2 class="govuk-heading-m">What happens next</h2>

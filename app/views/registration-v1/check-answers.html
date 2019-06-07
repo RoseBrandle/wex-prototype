@@ -24,79 +24,72 @@
 
       <form action="{{folder}}declaration" method="post" class="form">
 
-        {{data|dump}}
-
         <h1 class="govuk-heading-l">Check your answers before completing your registration</h1>
 
          <p class="govuk-body">We will send a copy of this summary in a confirmation email</p>
 
          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
          <h2 class="govuk-heading-m">You told us</h2>
-         <p>the waste operation will take place in <strong>England</strong></p>
+         <p>the waste operation will take place in <strong>{{ data.countryChoice }}</strong></p>
 
          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
          <h2 class="govuk-heading-m">Your details</h2>
          <ul class="govuk-list govuk-list--bullet">
-           <li>your name is <strong>sdfgsdfg sdfgsdfg</strong></li>
-           <li>your phone number is <strong>01179856639</strong></li>
-           <li>your email is <strong>nivik@mailinator.com</strong></li>
+           <li>your name is <strong>{{ data.appFirstName }} {{ data.appLastName }}</strong></li>
+           <li>your phone number is <strong>{{ data.appTelephoneNumber }}</strong></li>
+           <li>your email is <strong>{{ data.appEmail }}</strong></li>
          </ul>
 
          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
          <h2 class="govuk-heading-m">Operator details</h2>
          <ul class="govuk-list govuk-list--bullet">
-           <li>the operator is a <strong>limited company</strong></li>
-           <li>the company name is <strong>Company name here Ltd</strong></li>
-           <li>the Companies House number is <strong>11304870</strong></li>
+           <li>the operator is a <strong>{{ data.operatorType|lower }}</strong></li>
+           <li>the company name is <strong>{{ data.opLtdCompanyName }}</strong></li>
+           <li>the Companies House number is <strong>{{ data.opLtdCompanyRegNumber }}</strong></li>
          </ul>
 
          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
          <h2 class="govuk-heading-m">Operator address</h2>
-         <ul class="govuk-list govuk-list--bullet">
-             <li>ENVIRONMENT AGENCY</li>
-             <li>HORIZON HOUSE</li>
-             <li>DEANERY ROAD</li>
-             <li>BRISTOL</li>
-             <li>BS1 5AH</li>
-         </ul>
+          <p class="govuk-body">
+          {{data.opLtdCompanyAddress}}<br>
+          {{data.opLtdCompanyPostcode}}
+          </p>
 
          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
          <h2 class="govuk-heading-m">Contact details</h2>
          <ul class="govuk-list govuk-list--bullet">
-           <li>the contact's name is <strong>Candace Steele</strong></li>
-           <li>the contact's position is <strong>manager</strong></li>
-           <li>the contact's phone number is <strong>01181234567</strong></li>
-           <li>the contact's email is <strong>mikyj@mailinator.com</strong></li>
+           <li>the contact's name is <strong>{{ data.opFirstName }} {{ data.opLastName }}</strong></li>
+           <li>the contact's position is <strong>{{ data.opContactPosition }} {{ data.opContactPosition if data.opContactPosition else "not given" }}</strong></li>
+           <li>the contact's phone number is <strong>{{ data.opContactTelephone }}</strong></li>
+           <li>the contact's email is <strong>{{ data.opContactEmail }}</strong></li>
          </ul>
 
          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
          <h2 class="govuk-heading-m">Contact address</h2>
-         <ul class="govuk-list govuk-list--bullet">
-             <li>THRIVE RENEWABLES PLC</li>
-             <li>DEANERY ROAD</li>
-             <li>BRISTOL</li>
-             <li>BS1 5AH</li>
-         </ul>
+         <p class="govuk-body">
+         {{ data.opContactAddress }}<br>
+         {{ data.opContactPostcode }}
+         </p>
 
          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
          <h2 class="govuk-heading-m">Farming information</h2>
          <ul class="govuk-list govuk-list--bullet">
-           <li>the operation <strong>will</strong> take place on a farm</li>
-           <li>the operator <strong>is</strong> a farmer</li>
+           <li>the operation <strong>will{{ "" if data.isFarm=="yes" else " not" }}</strong> take place on a farm</li>
+           <li>the operator <strong>is{{ "" if data.isFarmer=="yes" else " not" }}</strong> a farmer</li>
          </ul>
 
          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
          <h2 class="govuk-heading-m">Site location</h2>
          <ul class="govuk-list govuk-list--bullet">
-           <li>the site is located at grid reference <strong>ST 12345 67890</strong></li>
-           <li>fgbhdfghdh</li>
+           <li>the site is located at grid reference <strong>{{ data.siteGridRef }}</strong></li>
+           <li>the site description is <strong>{{ data.siteDescription }}</strong></li>
          </ul>
 
          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
          <h2 class="govuk-heading-m">Selected exemptions</h2>
          <ul class="govuk-list govuk-list--bullet">
            {% for exemption in data.Exemptions %}
-            <li>{{ exemption }}</li>
+             <li>{{ exemption }}</li>
            {% else %}
              <p>No exemptions selected</p>
            {% endfor %}

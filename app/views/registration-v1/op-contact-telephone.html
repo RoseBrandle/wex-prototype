@@ -1,8 +1,9 @@
+{% set pageHead = "What is the contact's telephone number?" %}
 
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is the contact's telephone number?
+  {{ pageHead }}
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -23,7 +24,7 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="op-contact-email" method="post" class="form">
 
-        <h1 class="govuk-heading-l">What is the contact's telephone number?</h1>
+        <h1 class="govuk-heading-l">{{ pageHead }}</h1>
 
         {{ govukInput({
           label: {

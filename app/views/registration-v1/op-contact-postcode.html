@@ -1,8 +1,9 @@
+{% set pageHead = "What is the postcode for the contact's address?" %}
 
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is the postcode for the contact's address?
+  {{ pageHead }}
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -23,7 +24,7 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="op-contact-address" method="post" class="form">
 
-        <h1 class="govuk-heading-l">What is the postcode for the contact's address?</h1>
+        <h1 class="govuk-heading-l">{{ pageHead }}</h1>
 
         {{ govukInput({
           label: {

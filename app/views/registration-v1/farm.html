@@ -1,8 +1,9 @@
+{% set pageHead = "Will this waste operation take place on a farm?" %}
 
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Will this waste operation take place on a farm?
+  {{ pageHead }}
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -29,7 +30,7 @@
           name: "isFarm",
           fieldset: {
             legend: {
-              text: "Will this waste operation take place on a farm?",
+              text: pageHead,
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }

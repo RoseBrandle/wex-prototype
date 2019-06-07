@@ -1,8 +1,9 @@
+{% set pageHead = "What is their position?" %}
 
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is their position?
+  {{ pageHead }}
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -23,7 +24,7 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="op-contact-telephone" method="post" class="form">
 
-        <h1 class="govuk-heading-l">What is their position?</h1>
+        <h1 class="govuk-heading-l">{{ pageHead }}</h1>
 
         {{ govukInput({
           label: {
@@ -33,8 +34,9 @@
             text: "For example, Manager"
           },
           classes: "govuk-input--width-20",
-          id: "opFirstName",
-          name: "opFirstName"
+          id: "opContactPosition",
+          name: "opContactPosition",
+          value: data.opContactPosition
         }) }}
 
         {{ govukButton({

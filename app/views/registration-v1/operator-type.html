@@ -1,8 +1,9 @@
+{% set pageHead = "What kind of business or organisation is carrying out the waste operation?" %}
 
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What kind of business or organisation is carrying out the waste operation?
+  {{ pageHead }}
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -22,8 +23,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">What kind of business or organisation is carrying out the waste operation?
-</h1>
+      <h1 class="govuk-heading-l">{{ pageHead }}</h1>
 
       <p class="govuk-body">Choose the option that most closely describes the business or organisation registering the waste operation</p>
 
@@ -34,7 +34,7 @@
           name: "operatorType",
           fieldset: {
             legend: {
-              text: "What kind of business or organisation is carrying out the waste operation?",
+              text: pageHead,
               isPageHeading: false,
               classes: "govuk-visually-hidden"
             }

@@ -1,8 +1,9 @@
+{% set pageHead = "Contact the Environment Agency" %}
 
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Contact the Environment Agency
+  {{ pageHead }}
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -22,7 +23,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Contact the Environment Agency</h1>
+      <h1 class="govuk-heading-l">{{ pageHead }}</h1>
 
       <p class="govuk-body">You'll need to contact the Environment Agency to:</p>
 

@@ -1,8 +1,9 @@
+{% set pageHead = "In which country will this waste operation take place?" %}
 
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  In which country will this waste operation take place?
+  {{ pageHead }}
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -22,7 +23,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">In which country will this waste operation take place?</h1>
+      <h1 class="govuk-heading-l">{{ pageHead }}</h1>
 
       {{ govukDetails({
         summaryText: "What is a waste operation?",
@@ -36,7 +37,7 @@
           name: "countryChoice",
           fieldset: {
             legend: {
-              text: "In which country will this waste operation take place?",
+              text: pageHead,
               isPageHeading: false,
               classes: "govuk-visually-hidden"
             }
