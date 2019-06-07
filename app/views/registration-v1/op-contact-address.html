@@ -7,7 +7,7 @@
 {% block beforeContent %}
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
-  alpha
+  beta
 </strong>
     <span class="govuk-phase-banner__text">
       This is a new service – your
@@ -21,7 +21,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="op-contact-name" method="post" class="form">
+      <form action="farm" method="post" class="form">
 
         <h1 class="govuk-heading-l">What's the company address?</h1>
 
@@ -29,8 +29,8 @@
         <strong>{{ data.ContactPostcode if data.ContactPostcode else "BS1 2DF" }}</strong> <a href="javascript:history.back();">Change postcode</a>
 
           {{ govukSelect({
-            id: "sort",
-            name: "sort",
+            id: "opContactAddress",
+            name: "opContactAddress",
             items: [
                 {value: "",text: "11 addresses found"},
                 {value: "3, GRANGE ROAD, BRISTOL",text: "3, GRANGE ROAD, BRISTOL"},

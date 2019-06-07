@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your contact email address?
+  Is the person carrying out the waste operation a farmer?
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -21,26 +21,29 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="operator-type" method="post" class="form">
+      <form action="site-grid-reference" method="post" class="form">
 
-        <h1 class="govuk-heading-l">What is your contact email address?</h1>
-
-        {{ govukInput({
-          label: {
-            text: "Email address"
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "isFarmer",
+          name: "isFarmer",
+          fieldset: {
+            legend: {
+              text: "Is the person carrying out the waste operation a farmer?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
           },
-          classes: "govuk-!-width-two-thirds",
-          id: "appEmail",
-          name: "appEmail"
-        }) }}
-
-        {{ govukInput({
-          label: {
-            text: "Confirm email address"
-          },
-          classes: "govuk-!-width-two-thirds",
-          id: "appEmailConfirm",
-          name: "appEmailConfirm"
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
         }) }}
 
         {{ govukButton({

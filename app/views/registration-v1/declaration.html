@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  In which country will this waste operation take place?
+  Declaration
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -21,46 +21,37 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <form action="registration-complete" method="post" class="form">
 
-      <h1 class="govuk-heading-l">In which country will this waste operation take place?</h1>
+        <h1 class="govuk-heading-l">Declaration</h1>
 
-      {{ govukDetails({
-        summaryText: "What is a waste operation?",
-        text: "A waste operation is any activity that involves using, treating, recovering, storing or disposing of waste."
-      }) }}
+        {{ govukWarningText({
+          text: "You can be prosecuted and fined if you provide false or misleading information",
+          iconFallbackText: "Warning"
+        }) }}
 
-      <form action="{{folder}}country-check" method="post" class="form">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>By registering, you confirm that the information you have provided is true</li>
+          <li>The business or organisation carrying out the waste operation has authorised me to provide this information</li>
+        </ul>
 
-        {{ govukRadios({
-          idPrefix: "countryChoice",
-          name: "countryChoice",
+        {{ govukCheckboxes({
+          idPrefix: "declaration",
+          name: "declaration",
           fieldset: {
             legend: {
-              text: "In which country will this waste operation take place?",
+              text: "Declaration",
               isPageHeading: false,
               classes: "govuk-visually-hidden"
             }
           },
           items: [
             {
-              value: "England",
-              text: "England"
-            },
-            {
-              value: "Wales",
-              text: "Wales"
-            },
-            {
-              value: "Scotland",
-              text: "Scotland"
-            },
-            {
-              value: "Northern Ireland",
-              text: "Northern Ireland"
+              value: "Agree",
+              text: "I understand and agree with the declaration above"
             }
           ]
         }) }}
-
 
 
         {{ govukButton({

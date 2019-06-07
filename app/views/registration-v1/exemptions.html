@@ -1,0 +1,258 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Which exemptions are needed for this waste operation?
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="check-answers" method="post" class="form">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset govuk-!-margin-bottom-7">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
+                Which exemptions are needed for this waste operation?
+              </h1>
+            </legend>
+
+            <p class="govuk-body">Select all the waste exemptions you need to add to the registration.</p>
+            <table class="govuk-table">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col">Exemption</th>
+                  <th class="govuk-table__header" scope="col">Description</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+
+<!--
+Exemption data stored in Google sheet: https://docs.google.com/spreadsheets/d/1ffp1oSjtVTtV0OuFy59bnv4P5iyBkimd8UdUpXUQbLY/edit#gid=0
+
+Convert CSV to JSON here: http://www.convertcsv.com/csv-to-json.htm
+-->
+
+                {% set exemptions =
+
+                  {
+                   "U1": {
+                      "Title": "Use of waste in construction"
+                   },
+                   "U2": {
+                      "Title": "Use of baled end-of-life tyres in construction"
+                   },
+                   "U3": {
+                      "Title": "Construction of entertainment or educational installations"
+                   },
+                   "U4": {
+                      "Title": "Burning of waste as a fuel in a small appliance"
+                   },
+                   "U5": {
+                      "Title": "Using biodiesel produced from waste as fuel"
+                   },
+                   "U6": {
+                      "Title": "Using sludge to re-seed a waste water treatment plant"
+                   },
+                   "U7": {
+                      "Title": "Using effluent to clean a highway gravel bed"
+                   },
+                   "U8": {
+                      "Title": "Using waste for a specified purpose"
+                   },
+                   "U9": {
+                      "Title": "Using waste to manufacture finished goods"
+                   },
+                   "U10": {
+                      "Title": "Spreading waste to benefit agricultural land"
+                   },
+                   "U11": {
+                      "Title": "Spreading waste to benefit non-agricultural land"
+                   },
+                   "U12": {
+                      "Title": "Using mulch"
+                   },
+                   "U13": {
+                      "Title": "Spreading plant matter to provide benefits"
+                   },
+                   "U14": {
+                      "Title": "Incorporating ash into soil"
+                   },
+                   "U15": {
+                      "Title": "Spreading of pig and poultry ash"
+                   },
+                   "U16": {
+                      "Title": "Using depolluted end-of-life vehicles for parts"
+                   },
+                   "T1": {
+                      "Title": "Cleaning, washing, spraying or coating relevant waste"
+                   },
+                   "T2": {
+                      "Title": "Recovering textiles"
+                   },
+                   "T4": {
+                      "Title": "Preparatory treatments (baling, sorting, shredding etc)"
+                   },
+                   "T5": {
+                      "Title": "Screening and blending waste"
+                   },
+                   "T6": {
+                      "Title": "Treating waste wood and waste plant matter by chipping, shredding, cutting or pulverising"
+                   },
+                   "T8": {
+                      "Title": "Mechanically treating end-of-life tyres"
+                   },
+                   "T9": {
+                      "Title": "Recovering scrap metal"
+                   },
+                   "T10": {
+                      "Title": "Sorting mixed waste"
+                   },
+                   "T12": {
+                      "Title": "Manually treating waste"
+                   },
+                   "T13": {
+                      "Title": "Treating waste food"
+                   },
+                   "T14": {
+                      "Title": "Crushing and emptying vehicle waste oil filters"
+                   },
+                   "T15": {
+                      "Title": "Treating waste aerosol cans"
+                   },
+                   "T16": {
+                      "Title": "Treating waste toner and ink cartridges"
+                   },
+                   "T17": {
+                      "Title": "Crushing waste fluorescent tubes"
+                   },
+                   "T18": {
+                      "Title": "Using flocculants to remove water from waste"
+                   },
+                   "T19": {
+                      "Title": "Physical and chemical treatment of waste edible oil and fat to produce biodiesel"
+                   },
+                   "T20": {
+                      "Title": "Treating waste at a water treatment works"
+                   },
+                   "T21": {
+                      "Title": "Recovery of waste at a waste water treatment works"
+                   },
+                   "T23": {
+                      "Title": "Aerobic composting and associated prior treatment"
+                   },
+                   "T24": {
+                      "Title": "Anaerobic digestion at premises used for agriculture and burning resulting biogas"
+                   },
+                   "T25": {
+                      "Title": "Anaerobic digestion at premises not used for agriculture and burning resulting biogas"
+                   },
+                   "T26": {
+                      "Title": "Treatment of kitchen waste in a wormery"
+                   },
+                   "T27": {
+                      "Title": "Treatment of sheep dip using organophosphate-degrading enzyme"
+                   },
+                   "T28": {
+                      "Title": "Sort and denature controlled drugs for disposal"
+                   },
+                   "T29": {
+                      "Title": "Treatment of non-hazardous pesticide washings by carbon filtration for disposal"
+                   },
+                   "T30": {
+                      "Title": "Recovery of silver"
+                   },
+                   "T31": {
+                      "Title": "Recovery of monopropylene glycol from aircraft antifreeze fluids"
+                   },
+                   "T32": {
+                      "Title": "Treatment of waste in a biobed or biofilter"
+                   },
+                   "T33": {
+                      "Title": "Recovery of central heating oil by filtration"
+                   },
+                   "D1": {
+                      "Title": "Depositing waste from dredging inland waters"
+                   },
+                   "D2": {
+                      "Title": "Depositing waste from a railway sanitary convenience"
+                   },
+                   "D3": {
+                      "Title": "Depositing waste from a portable sanitary convenience"
+                   },
+                   "D4": {
+                      "Title": "Depositing agricultural waste consisting of plant tissue under a Plant Health Notice"
+                   },
+                   "D5": {
+                      "Title": "Depositing waste samples for testing or analysis"
+                   },
+                   "D6": {
+                      "Title": "Disposal by incineration"
+                   },
+                   "D7": {
+                      "Title": "Burning waste in the open"
+                   },
+                   "D8": {
+                      "Title": "Burning waste at a port under a Plant Health Notice"
+                   },
+                   "S1": {
+                      "Title": "Storing waste in secure containers"
+                   },
+                   "S2": {
+                      "Title": "Storing waste in a secure place"
+                   },
+                   "S3": {
+                      "Title": "Storing sludge"
+                   }
+                }
+
+                -%}
+
+              {% for exCode, exData in exemptions %}
+
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__header" scope="row">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="{{ exCode }}" name="Exemptions" type="checkbox" value="{{ exCode }} {{ exData.Title }}">
+                      <label class="govuk-label govuk-checkboxes__label" for="{{ exCode }}">
+                        {{ exCode }}
+                        <span class="govuk-visually-hidden"> {{ exData.Title }}</span>
+                      </label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">{{ exData.Title }}</td>
+                </tr>
+
+              {% else %}
+                <p>No data</p>
+              {% endfor %}
+
+              </tbody>
+            </table>
+
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

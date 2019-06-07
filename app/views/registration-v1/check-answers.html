@@ -1,0 +1,114 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  In which country will this waste operation take place?
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="{{folder}}declaration" method="post" class="form">
+
+        {{data|dump}}
+
+        <h1 class="govuk-heading-l">Check your answers before completing your registration</h1>
+
+         <p class="govuk-body">We will send a copy of this summary in a confirmation email</p>
+
+         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+         <h2 class="govuk-heading-m">You told us</h2>
+         <p>the waste operation will take place in <strong>England</strong></p>
+
+         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+         <h2 class="govuk-heading-m">Your details</h2>
+         <ul class="govuk-list govuk-list--bullet">
+           <li>your name is <strong>sdfgsdfg sdfgsdfg</strong></li>
+           <li>your phone number is <strong>01179856639</strong></li>
+           <li>your email is <strong>nivik@mailinator.com</strong></li>
+         </ul>
+
+         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+         <h2 class="govuk-heading-m">Operator details</h2>
+         <ul class="govuk-list govuk-list--bullet">
+           <li>the operator is a <strong>limited company</strong></li>
+           <li>the company name is <strong>Company name here Ltd</strong></li>
+           <li>the Companies House number is <strong>11304870</strong></li>
+         </ul>
+
+         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+         <h2 class="govuk-heading-m">Operator address</h2>
+         <ul class="govuk-list govuk-list--bullet">
+             <li>ENVIRONMENT AGENCY</li>
+             <li>HORIZON HOUSE</li>
+             <li>DEANERY ROAD</li>
+             <li>BRISTOL</li>
+             <li>BS1 5AH</li>
+         </ul>
+
+         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+         <h2 class="govuk-heading-m">Contact details</h2>
+         <ul class="govuk-list govuk-list--bullet">
+           <li>the contact's name is <strong>Candace Steele</strong></li>
+           <li>the contact's position is <strong>manager</strong></li>
+           <li>the contact's phone number is <strong>01181234567</strong></li>
+           <li>the contact's email is <strong>mikyj@mailinator.com</strong></li>
+         </ul>
+
+         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+         <h2 class="govuk-heading-m">Contact address</h2>
+         <ul class="govuk-list govuk-list--bullet">
+             <li>THRIVE RENEWABLES PLC</li>
+             <li>DEANERY ROAD</li>
+             <li>BRISTOL</li>
+             <li>BS1 5AH</li>
+         </ul>
+
+         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+         <h2 class="govuk-heading-m">Farming information</h2>
+         <ul class="govuk-list govuk-list--bullet">
+           <li>the operation <strong>will</strong> take place on a farm</li>
+           <li>the operator <strong>is</strong> a farmer</li>
+         </ul>
+
+         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+         <h2 class="govuk-heading-m">Site location</h2>
+         <ul class="govuk-list govuk-list--bullet">
+           <li>the site is located at grid reference <strong>ST 12345 67890</strong></li>
+           <li>fgbhdfghdh</li>
+         </ul>
+
+         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+         <h2 class="govuk-heading-m">Selected exemptions</h2>
+         <ul class="govuk-list govuk-list--bullet">
+           {% for exemption in data.Exemptions %}
+            <li>{{ exemption }}</li>
+           {% else %}
+             <p>No exemptions selected</p>
+           {% endfor %}
+         </ul>
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
