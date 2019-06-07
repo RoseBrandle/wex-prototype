@@ -1,0 +1,232 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Which exemptions are needed for this waste operation?
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  alpha
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="choosing-organisation-gridref" method="post" class="form">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset govuk-!-margin-bottom-7">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
+                Which exemptions are needed for this waste operation?
+              </h1>
+            </legend>
+            <p class="govuk-body-l">Select all the waste exemptions you need to add to the registration.</p>
+            <table class="govuk-table">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col">Exemption</th>
+                  <th class="govuk-table__header" scope="col">Description</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__header" scope="row">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+                        U1
+                      </label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">Use of waste in construction</td>
+                </tr>
+                                <tr class="govuk-table__row">
+                  <td class="govuk-table__header" scope="row">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+                        U2
+                      </label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">Use of baled end-of-life tyres in construction</td>
+                </tr>
+
+                                <tr class="govuk-table__row">
+                  <td class="govuk-table__header" scope="row">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+                        U3
+                      </label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">Construction of entertainment or educational installations</td>
+                </tr>
+
+                                <tr class="govuk-table__row">
+                  <td class="govuk-table__header" scope="row">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+                        U4
+                      </label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">Burning of waste as a fuel in a small appliance</td>
+                </tr>
+                                <tr class="govuk-table__row">
+                  <td class="govuk-table__header" scope="row">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+                        U5
+                      </label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">Using biodiesel produced from waste as fuel</td>
+                </tr>
+                                <tr class="govuk-table__row">
+                  <td class="govuk-table__header" scope="row">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+                        U6
+                      </label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">Using sludge to re-seed a waste water treatment plant</td>
+                </tr>
+                                <tr class="govuk-table__row">
+                  <td class="govuk-table__header" scope="row">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+                        U7
+                      </label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">Using effluent to clean a highway gravel bed</td>
+                </tr>
+                                <tr class="govuk-table__row">
+                  <td class="govuk-table__header" scope="row">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+                        U8
+                      </label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">Using waste for a specified purpose</td>
+                </tr>
+                                <tr class="govuk-table__row">
+                  <td class="govuk-table__header" scope="row">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+                        U9
+                      </label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">Using waste to manufacture finished goods</td>
+                </tr>
+                                <tr class="govuk-table__row">
+                  <td class="govuk-table__header" scope="row">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+                        U10
+                      </label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">Spreading waste to benefit agricultural land</td>
+                </tr>
+                                <tr class="govuk-table__row">
+                  <td class="govuk-table__header" scope="row">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+                        U11
+                      </label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">Spreading waste to benefit non-agricultural land</td>
+                </tr>
+                                <tr class="govuk-table__row">
+                  <td class="govuk-table__header" scope="row">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+                        U12
+                      </label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">Using mulch</td>
+                </tr>
+                                <tr class="govuk-table__row">
+                  <td class="govuk-table__header" scope="row">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+                        U13
+                      </label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">Spreading plant matter to provide benefits</td>
+                </tr>
+                                <tr class="govuk-table__row">
+                  <td class="govuk-table__header" scope="row">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+                        U14
+                      </label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">Incorporating ash into soil</td>
+                </tr>
+                                <tr class="govuk-table__row">
+                  <td class="govuk-table__header" scope="row">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+                        U15
+                      </label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">Spreading of pig and poultry ash</td>
+                </tr>
+                                <tr class="govuk-table__row">
+                  <td class="govuk-table__header" scope="row">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+                        U16
+                      </label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">Using depolluted end-of-life vehicles for parts</td>
+                </tr>
+
+              </tbody>
+            </table>
+
+          </fieldset>
+        </div>
+        <button type="submit" class="govuk-button">
+          Continue
+        </button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

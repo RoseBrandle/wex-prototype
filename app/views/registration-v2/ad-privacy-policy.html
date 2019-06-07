@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Privacy policy for assisted registrations
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  alpha
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/aware-of-pp" method="post" class="form">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
+                Privacy policy for assisted registrations
+              </h1>
+            </legend>
+            <div class="govuk-inset-text">
+              Ask the customer:
+            </div>
+            <p class="govuk-body-m">Have you seen the Privacy Policy for the Waste Exemptions service?</p>
+            <div class="govuk-form-group">
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="branching-1" name="pp-aware" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="choose-org-1">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="branching-2" name="pp-aware" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="choose-org-2">
+                    No
+                  </label>
+                </div>
+            </div>
+          </fieldset>
+        </div>
+        <button type="submit" class="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

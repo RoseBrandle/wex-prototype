@@ -1,0 +1,107 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Where will this waste operation take place?
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  alpha
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/site-check" method="post" class="form">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset govuk-!-margin-bottom-7">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
+                Where will this waste operation take place?
+              </h1>
+            </legend>
+            <span id="how-contacted-conditional-hint" class="govuk-hint">
+              Select one option.
+            </span>
+            <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="site-address-conditional-1" name="siteAddress" type="radio" value="gridref" data-aria-controls="conditional-site-address-conditional-1">
+                <label class="govuk-label govuk-radios__label" for="site-address-conditional-1">Grid reference
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-site-address-conditional-1">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="national-grid-reference">
+                    National Grid reference
+                  </label>
+                  <span id="national-grid-reference-hint" class="govuk-hint">
+                    Enter 2 letters and 10 digits. For example, ST 58132 72695.
+                  </span>
+                  <input class="govuk-input govuk-input--width-10" id="national-grid-reference" name="national-grid-reference" type="text" aria-describedby="national-grid-reference-hint">
+                </div>
+                <details class="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help finding a grid reference
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p>Use the free <a rel="external" target="_blank" href="http://gridreferencefinder.com/">UK Grid Reference Finder (opens new window).</a>
+                    </p>
+                    <ul class="list list-number">
+                      <li>Search for the location or postcode on the left of the page.</li>
+                      <li>Right-click to display the grid reference.</li>
+                      <li>Select the grid reference then copy and paste back on this page.</li>
+                    </ul>
+                  </div>
+                </details>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="more-detail">
+                    More site details
+                  </label>
+                  <span id="more-detail-hint" class="govuk-hint">Useful information includes: nearby landmarks, description of the site, man-made features (for example roads, walls or buildings), natural features (for example rivers, trees or hedges).
+                  </span>
+                  <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="site-address-conditional-2" name="siteAddress" type="radio" value="postcode" data-aria-controls="conditional-site-address-conditional-2">
+                <label class="govuk-label govuk-radios__label" for="site-address-conditional-2">Postcode
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-site-address-conditional-2">
+                <div class="govuk-form-group govuk-!-padding-bottom-8">
+                  <label class="govuk-label" for="name">
+                    Enter a UK postcode
+                  </label>
+                  <input class="govuk-input govuk-input--width-10" id="name" name="name" type="text">
+                </div>
+                  <button type="submit" class="govuk-button">
+                    Find address
+                  </button>
+                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break govuk-section-break--visible">
+                  <p class="govuk-body-s">
+              © Crown copyright and database rights 2018 Ordnance Survey 100024198. Use of this addressing data is subject to the <a target="_blank" href="/pages/os-terms">address data terms and conditions (opens new tab)</a>.
+            </p>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <button type="submit" class="govuk-button">
+          Continue
+        </button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
