@@ -1,0 +1,67 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Will this waste operation take place on a farm?
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  alpha
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="op-contact-name" method="post" class="form">
+
+        <h1 class="govuk-heading-l">Will this waste operation take place on a farm?</h1>
+
+        <p class="govuk-body">Postcode<br>
+        <strong>{{ data.ContactPostcode if data.ContactPostcode else "BS1 2DF" }}</strong> <a href="javascript:history.back();">Change postcode</a>
+
+          {{ govukSelect({
+            id: "sort",
+            name: "sort",
+            items: [
+                {value: "",text: "11 addresses found"},
+                {value: "3, GRANGE ROAD, BRISTOL",text: "3, GRANGE ROAD, BRISTOL"},
+                {value: "5, GRANGE ROAD, BRISTOL",text: "5, GRANGE ROAD, BRISTOL"},
+                {value: "7, GRANGE ROAD, BRISTOL",text: "7, GRANGE ROAD, BRISTOL"},
+                {value: "9a, GRANGE ROAD, BRISTOL",text: "9a, GRANGE ROAD, BRISTOL"},
+                {value: "9b, GRANGE ROAD, BRISTOL",text: "9b, GRANGE ROAD, BRISTOL"},
+                {value: "10, GRANGE ROAD, BRISTOL",text: "10, GRANGE ROAD, BRISTOL"},
+                {value: "11, GRANGE ROAD, BRISTOL",text: "11, GRANGE ROAD, BRISTOL"},
+                {value: "12, GRANGE ROAD, BRISTOL",text: "12, GRANGE ROAD, BRISTOL"},
+                {value: "13, GRANGE ROAD, BRISTOL",text: "13, GRANGE ROAD, BRISTOL"},
+                {value: "15, GRANGE ROAD, BRISTOL",text: "15, GRANGE ROAD, BRISTOL"},
+                {value: "21, GRANGE ROAD, BRISTOL",text: "21, GRANGE ROAD, BRISTOL"}
+            ]
+          }) }}
+
+
+        <p class="govuk-body"><a href="#">I cannot find the address in the list</a></p>
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <p class="govuk-body-s">&copy; Crown copyright and database rights 2018 Ordnance Survey 100024198. Use of this addressing data is subject to the <a target="_blank" href="https://wex-tst.aws.defra.cloud/pages/os-terms">address data terms and conditions (opens new tab)</a>.</p>
+
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

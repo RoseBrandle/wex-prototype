@@ -1,0 +1,48 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What is your telephone number?
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  alpha
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="app-email" method="post" class="form">
+
+        <h1 class="govuk-heading-l">What is your telephone number?</h1>
+
+        {{ govukInput({
+          label: {
+            text: "Telephone number"
+          },
+          hint: {
+            text: "This can be a landline or mobile"
+          },
+          classes: "govuk-input--width-10",
+          id: "appTelephoneNumber",
+          name: "appTelephoneNumber"
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
