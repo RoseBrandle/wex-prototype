@@ -1,0 +1,91 @@
+{% set pageHead = "What is the address of the waste operation?" %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{ pageHead }}
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="exemptions" method="post" class="form">
+
+        <h1 class="govuk-heading-l">{{ pageHead }}</h1>
+
+        <p class="govuk-body">Postcode<br>
+        <strong>{{ data.sitePostcode if data.sitePostcode else "BS1 2DF" }}</strong>
+        &nbsp; <a href="javascript:history.back();">Change postcode</a>
+
+        <input type="hidden" name="siteAddressType" value="manual">
+
+        {{ govukInput({
+          label: {
+            text: "Building name or number"
+          },
+          hint: {
+            text: "For example, a business premises name or house number"
+          },
+          classes: "govuk-input--width-30",
+          id: "siteAddressNumber",
+          name: "siteAddressNumber",
+          value: data.siteAddressNumber
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 1"
+          },
+          classes: "govuk-input--width-30",
+          id: "siteAddress1",
+          name: "siteAddress1",
+          value: data.siteAddress1
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Address line 2 (optional)"
+          },
+          classes: "govuk-input--width-30",
+          id: "siteAddress2",
+          name: "siteAddress2",
+          value: data.siteAddress2
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Town or city"
+          },
+          classes: "govuk-input--width-30",
+          id: "siteTown",
+          name: "siteTown",
+          value: data.siteTown
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <p class="govuk-body-s">&copy; Crown copyright and database rights 2018 Ordnance Survey 100024198. Use of this addressing data is subject to the <a target="_blank" href="https://wex-tst.aws.defra.cloud/pages/os-terms">address data terms and conditions (opens new tab)</a>.</p>
+
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
