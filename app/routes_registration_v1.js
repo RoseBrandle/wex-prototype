@@ -48,5 +48,52 @@ router.post('/operator-type-check', function (req, res) {
 })
 
 
+// Sample data: company
+const companySampleData = {
+  registerChoice:'startNew',
+  regNumber:'WEX339257',
+  countryChoice:'England',
+  appFirstName:'Rachel',
+  appLastName:'Conway',
+  appTelephoneNumber:'0117 978 1234',
+  appEmail:'mike@ap-email.com',
+  appEmailConfirm:'mike@ap-email.com',
+  operatorType:'Limited company',
+  opLtdCompanyRegNumber:'AB123456',
+  opLtdCompanyName:'Farm Techniques Ltd',
+  opLtdCompanyPostcode:'BS4 5FT',
+  opLtdCompanyAddress:'9a, GRANGE ROAD, BRISTOL',
+  opFirstName:'Bruce',
+  opLastName:'Patel',
+  opContactPosition:'Site manager',
+  opContactTelephone:'07806 123 456',
+  opContactEmail:'darici@mailinator.net',
+  opContactEmailConfirm:'darici@mailinator.net',
+  opContactPostcode:'BS34 9GH',
+  opContactAddress:'13, GRANGE ROAD, BRISTOL',
+  isFarm:'yes',
+  isFarmer:'yes',
+  siteGridRef:'ST 58132 72695',
+  siteDescription:'Lower field, Oak Tree Farm. Parcel ED/1234',
+  siteAddressNumber: 'Oak Farm',
+  siteAddress1: 'Windmill Lane',
+  siteAddress2: 'Rosehurst',
+  siteTown: 'Cullingford',
+  Exemptions: [
+    'U1 Use of waste in construction',
+    'U8 Using waste for a specified purpose',
+    'T1 Cleaning, washing, spraying or coating relevant waste',
+    'D7 Burning waste in the open',
+    'S2 Storing waste in a secure place',
+    'S3 Storing sludge'
+  ]
+}
+
+// Load sample data
+router.get('/sample', function (req, res) {
+    req.session.data = companySampleData
+})
+
+
 
 module.exports = router
