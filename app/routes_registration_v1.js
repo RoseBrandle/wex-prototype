@@ -49,6 +49,4 @@ router.post('/operator-type-check', function (req, res) {
 
 
 
-
-
 module.exports = router
