@@ -37,14 +37,17 @@
           items: [
             {
               value: "startNew",
+              checked: data.registerChoice==="startNew",
               text: "Start a new waste exemption registration"
             },
             {
               value: "reRegister",
+              checked: data.registerChoice==="reRegister",
               text: "Re-register an exemption that’s expiring soon"
             },
             {
               value: "change",
+              checked: data.registerChoice==="change",
               text: "Change the details of an existing registration"
             }
           ]
