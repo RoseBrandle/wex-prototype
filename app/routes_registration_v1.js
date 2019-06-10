@@ -80,18 +80,19 @@ const companySampleData = {
   siteAddress2: 'Rosehurst',
   siteTown: 'Cullingford',
   Exemptions: [
-    'U1 Use of waste in construction',
-    'U8 Using waste for a specified purpose',
-    'T1 Cleaning, washing, spraying or coating relevant waste',
-    'D7 Burning waste in the open',
-    'S2 Storing waste in a secure place',
-    'S3 Storing sludge'
+    'U1',
+    'U8',
+    'T1',
+    'D7',
+    'S2',
+    'S3'
   ]
 }
 
 // Load sample data
 router.get('/sample', function (req, res) {
     req.session.data = companySampleData
+    res.redirect(folder + 'check-answers')
 })
 
 
