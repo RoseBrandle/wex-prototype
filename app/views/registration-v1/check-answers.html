@@ -96,7 +96,7 @@
 
                {% for exCode, exData in exemptions %}
                   {% if( code==exCode ) %}
-                      <li>{{ exCode }} {{ exData.Title }}</li>
+                      <li>{{ exCode }} - {{ exData.Title }}</li>
                   {% endif %}
                {% else %}
                  <p>No data</p>
