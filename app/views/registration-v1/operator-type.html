@@ -1,0 +1,83 @@
+{% set pageHead = "What kind of business or organisation is carrying out the waste operation?" %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{ pageHead }}
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">{{ pageHead }}</h1>
+
+      <p class="govuk-body">Choose the option that most closely describes the business or organisation registering the waste operation</p>
+
+      <form action="/{{folder}}/operator-type-check" method="post" class="form">
+
+        {{ govukRadios({
+          idPrefix: "operatorType",
+          name: "operatorType",
+          fieldset: {
+            legend: {
+              text: pageHead,
+              isPageHeading: false,
+              classes: "govuk-visually-hidden"
+            }
+          },
+          items: [
+            {
+              value: "Individual or sole trader",
+              text: "Individual or sole trader"
+            },
+            {
+              value: "Limited company",
+              text: "Limited company"
+            },
+            {
+              value: "Partnership",
+              text: "Partnership"
+            },
+            {
+              value: "Limited liability partnership",
+              text: "Limited liability partnership"
+            },
+            {
+              value: "Local authority or public body",
+              text: "Local authority or public body"
+            },
+            {
+              value: "Charity or trust",
+              text: "Charity or trust"
+            }
+          ]
+        }) }}
+
+
+
+
+        <p class="govuk-body">Not sure? Call our helpline on 03708 506 506.</p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
