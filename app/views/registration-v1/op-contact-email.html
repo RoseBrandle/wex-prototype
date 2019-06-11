@@ -22,7 +22,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="op-contact-postcode" method="post" class="form">
+      <form action="{{ formAction if formAction else data.formAction }}" method="post" class="form">
 
         <h1 class="govuk-heading-l">{{ pageHead }}</h1>
 

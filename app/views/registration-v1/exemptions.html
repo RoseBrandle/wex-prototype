@@ -52,8 +52,10 @@ Convert CSV to JSON here: http://www.convertcsv.com/csv-to-json.htm
 
                 {# Check if the exemption has been selected #}
                 {% set isChecked="" %}
-                {% if( data.Exemptions.indexOf(exCode) > -1 ) %}
-                  {% set isChecked=" checked" %}
+                {% if( data.Exemptions ) %}
+                  {% if( data.Exemptions.indexOf(exCode) > -1 ) %}
+                    {% set isChecked=" checked" %}
+                  {% endif %}
                 {% endif %}
 
                 <tr class="govuk-table__row">
