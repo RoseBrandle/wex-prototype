@@ -61,11 +61,29 @@ router.post('/operator-type-check', function (req, res) {
 
   if (operatorType === 'Limited company') {
     res.redirect('/' + folder + '/op-limited-company-reg-number?formAction=op-limited-company-name')
+  } else if (operatorType === 'Individual or sole trader') {
+    res.redirect('/' + folder + '/op-individual-name?formAction=op-individual-postcode')
   } else {
     res.redirect('/' + folder + '/op-type-not-covered')
   }
 })
 
+// INDIVIDUAL ================================================
+
+router.post('/op-individual-postcode', function (req, res) {
+  res.render(folder + '/op-individual-postcode',{
+    "formAction":"op-individual-address"
+  })
+})
+
+router.post('/op-individual-address', function (req, res) {
+  res.render(folder + '/op-individual-address',{
+    "formAction":"op-contact-name"
+  })
+})
+
+
+// COMPANY ================================================
 router.post('/op-limited-company-name', function (req, res) {
   res.render(folder + '/op-limited-company-name',{
     "formAction":"op-limited-company-postcode"
@@ -186,6 +204,9 @@ const companySampleData = {
   opLtdCompanyName:'Farm Techniques Ltd',
   opLtdCompanyPostcode:'BS4 5FT',
   opLtdCompanyAddress:'9a, GRANGE ROAD, BRISTOL',
+  individualName:'Sarah Individual',
+  individualPostcode:'BS34 9GH',
+  individualAddress:'9a, GRANGE ROAD, BRISTOL',
   opFirstName:'Bruce',
   opLastName:'Patel',
   opContactPosition:'Site manager',
