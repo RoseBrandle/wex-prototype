@@ -214,7 +214,7 @@ const companySampleData = {
   opContactEmail:'darici@mailinator.net',
   opContactEmailConfirm:'darici@mailinator.net',
   opContactPostcode:'BS34 9GH',
-  opContactAddress:'13, GRANGE ROAD, BRISTOL',
+  opContactAddress:'9a, GRANGE ROAD, BRISTOL',
   isFarm:'yes',
   isFarmer:'yes',
   siteGridRef:'ST 58132 72695',
