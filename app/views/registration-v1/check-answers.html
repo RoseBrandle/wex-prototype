@@ -64,9 +64,18 @@
               {{data.opLtdCompanyAddress}}<br>
               {{data.opLtdCompanyPostcode}}
             {% endif %}
+            
             {% if data.operatorType=="Individual or sole trader" %}
               {{data.individualAddress}}<br>
               {{data.individualPostcode}}
+            {% endif %}
+
+            {% if data.operatorType=="Partnership" %}
+              Partnership name: {{data.opPartnershipName}}<br>
+              Partners:<br>
+              {{data.opPartner1FirstName}} {{data.opPartner1LastName}}
+              {{data.opPartner2FirstName}} {{data.opPartner2LastName}}<br>
+              Address: {{data.opPartnershipAddress}} {{data.opPartnershipPostcode}}
             {% endif %}
 
           </p>

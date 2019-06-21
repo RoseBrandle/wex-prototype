@@ -63,6 +63,8 @@ router.post('/operator-type-check', function (req, res) {
     res.redirect('/' + folder + '/op-limited-company-reg-number?formAction=op-limited-company-name')
   } else if (operatorType === 'Individual or sole trader') {
     res.redirect('/' + folder + '/op-individual-name?formAction=op-individual-postcode')
+  } else if (operatorType === 'Partnership') {
+    res.redirect('/' + folder + '/op-partner-name-1?formAction=op-partner-name-2')
   } else {
     res.redirect('/' + folder + '/op-type-not-covered')
   }
@@ -101,6 +103,35 @@ router.post('/op-limited-company-address', function (req, res) {
     "formAction":"op-contact-name"
   })
 })
+
+// PARTNER ================================================
+
+router.post('/op-partner-name-2', function (req, res) {
+  res.render(folder + '/op-partner-name-2',{
+    "formAction":"op-partnership-name"
+  })
+})
+
+router.post('/op-partnership-name', function (req, res) {
+  res.render(folder + '/op-partnership-name',{
+    "formAction":"op-partnership-postcode"
+  })
+})
+
+router.post('/op-partnership-postcode', function (req, res) {
+  res.render(folder + '/op-partnership-postcode',{
+    "formAction":"op-partnership-address"
+  })
+})
+
+router.post('/op-partnership-address', function (req, res) {
+  res.render(folder + '/op-partnership-address',{
+    "formAction":"op-contact-name"
+  })
+})
+
+
+// CONTACT ================================================
 
 router.post('/op-contact-name', function (req, res) {
   res.render(folder + '/op-contact-name',{
@@ -207,6 +238,13 @@ const companySampleData = {
   individualName:'Sarah Individual',
   individualPostcode:'BS34 9GH',
   individualAddress:'9a, GRANGE ROAD, BRISTOL',
+  opPartner1FirstName:'Roger',
+  opPartner1LastName:'Brown',
+  opPartner2FirstName:'Jane',
+  opPartner2LastName:'Brown',
+  opPartnershipName:'Our Waste Partnership',
+  opPartnershipPostcode:'BS34 9GH',
+  opPartnershipAddress:'9a, GRANGE ROAD, BRISTOL',
   opFirstName:'Bruce',
   opLastName:'Patel',
   opContactPosition:'Site manager',
