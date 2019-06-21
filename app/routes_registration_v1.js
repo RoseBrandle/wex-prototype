@@ -230,7 +230,7 @@ const companySampleData = {
   appTelephoneNumber:'0117 978 1234',
   appEmail:'mike@ap-email.com',
   appEmailConfirm:'mike@ap-email.com',
-  operatorType:'Limited company',
+  operatorType:'Partnership',
   opLtdCompanyRegNumber:'AB123456',
   opLtdCompanyName:'Farm Techniques Ltd',
   opLtdCompanyPostcode:'BS4 5FT',
