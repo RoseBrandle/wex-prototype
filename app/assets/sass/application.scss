@@ -18,3 +18,9 @@ $govuk-global-styles: true;
 @import "defra/guidance.scss";
 @import "defra/renewals.scss";
 @import "defra/back-to-top.scss";
+
+
+
+.govuk-summary-list__key.wex_code  {
+    width: 1em;
+  }

@@ -274,7 +274,7 @@ const companySampleData = {
 // Load sample data
 router.get('/sample', function (req, res) {
     req.session.data = companySampleData
-    res.redirect('/' + folder + '/check-answers')
+    res.redirect('/' + folder + '/renew-check-answers')
 })
 
 
