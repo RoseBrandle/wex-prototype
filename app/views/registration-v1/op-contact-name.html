@@ -24,7 +24,7 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="{{ formAction if formAction else data.formAction }}" method="post" class="form">
 
-        <h1 class="govuk-heading-l">{{ pageHead }}</h1>
+        <h1 class="govuk-heading-l">{{ pageHead }}</h1> 
 
         <p class="govuk-body">We will contact this person if we need to discuss the waste operation</p>
 
@@ -44,7 +44,8 @@
           },
           classes: "govuk-input--width-20",
           id: "opLastName",
-          name: "opLastName"
+          name: "opLastName",
+          value: data.opLastName
         }) }}
 
         {{ govukButton({
