@@ -204,8 +204,7 @@
             Name
         </dt>
         <dd class="govuk-summary-list__value">
-            {{ data.opFirstName }} {{ data.opLastName }}
-            {{ ", "+data.opContactPosition if data.opContactPosition else "" }}
+            {{ data.opFirstName }} {{ data.opLastName }}{{ ", "+data.opContactPosition if data.opContactPosition else "" }}
         </dd>
         <dd class="govuk-summary-list__actions"></dd>
     </div>

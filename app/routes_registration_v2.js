@@ -34,10 +34,24 @@ router.post('/country-check', function (req, res) {
   let countryChoice = req.session.data['countryChoice']
 
   if (countryChoice === 'England') {
-    res.redirect('/' + folder + '/app-contact-name?formAction=app-telephone-number')
+    res.redirect('/' + folder + '/exemptions?formAction=app-contact-name')
   } else {
     res.redirect('/' + folder + '/country-not-england')
   }
+})
+
+// Exemptions
+router.post('/exemptions', function (req, res) {
+  res.render(folder + '/exemptions',{
+    "formAction":"app-contact-name"
+  })
+})
+
+// /app-telephone-number
+router.post('/app-contact-name', function (req, res) {
+  res.render(folder + '/app-contact-name',{
+    "formAction":"app-telephone-number"
+  })
 })
 
 // /app-telephone-number
@@ -183,7 +197,7 @@ router.post('/farmer', function (req, res) {
 
 router.post('/site-grid-reference', function (req, res) {
   res.render(folder + '/site-grid-reference',{
-    "formAction":"exemptions"
+    "formAction":"check-answers"
   })
 })
 
@@ -196,15 +210,10 @@ router.get('/site-postcode', function (req, res) {
 
 router.post('/site-address', function (req, res) {
   res.render(folder + '/site-address',{
-    "formAction":"exemptions"
-  })
-})
-
-router.post('/exemptions', function (req, res) {
-  res.render(folder + '/exemptions',{
     "formAction":"check-answers"
   })
 })
+
 
 router.post('/check-answers', function (req, res) {
   res.render(folder + '/check-answers',{
@@ -224,7 +233,7 @@ router.post('/declaration', function (req, res) {
 const companySampleData = {
   registerChoice:'startNew',
   regNumber:'WEX339257',
-  countryChoice:'England',
+  countryChoice:'',
   appFirstName:'Rachel',
   appLastName:'Conway',
   appTelephoneNumber:'0117 978 1234',
@@ -270,6 +279,31 @@ const companySampleData = {
     'S3'
   ]
 }
+
+// Participants ###############
+// 10:00 am: WEX026225
+// 11:00 am: WEX047274
+// 12:00 am: WEX024426
+// 13:00 pm: WEX055034
+// 14:00 pm: WEX024900
+
+// Backup 12:00: WEX033970
+
+// July 2nd sessions: ###############
+// WEX155754
+// WEX155905
+// WEX155967
+
+// July 4th session: ###############
+// WEX155897
+
+// July 9th sessions: ###############
+// WEX064386
+// WEX155625
+
+// July 11 session: ###############
+// WEX155541
+
 
 // Load sample data
 router.get('/sample', function (req, res) {
