@@ -1,8 +1,9 @@
+{% set pageHead = "Do you want to renew using these details?" %}
 
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  In which country will this waste operation take place?
+  {{ pageHead }}
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -25,7 +26,7 @@
 
       <form action="{{ formAction if formAction else data.formAction }}" method="post" class="form">
 
-        <h1 class="govuk-heading-l">Do you want to renew using these details?</h1>
+        <h1 class="govuk-heading-l">{{ pageHead }}</h1>
 
 
 <!-- ###################################################################### -->
