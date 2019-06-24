@@ -1,0 +1,58 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Renewal information
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      {% if data.renewalChoice=="Yes" %}
+          {% set formAction = "declaration" %}
+      {% endif %}
+
+      {% if data.renewalChoice=="No" %}
+          {% set formAction = "country" %}
+      {% endif %}
+
+      <form action="{{ formAction }}" method="post" class="form">
+
+        {% if data.renewalChoice=="Yes" %}
+            <h1 class="govuk-heading-l">
+              You are about to renew with the current details<br><br>
+              You’ll get a new registration number
+            </h1>
+        {% endif %}
+
+        {% if data.renewalChoice=="No" %}
+            <h1 class="govuk-heading-l">
+              You now need to check or change your data on the following screens<br><br>
+              You’ll get a new registration number
+            </h1>
+        {% endif %}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
