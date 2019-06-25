@@ -270,6 +270,7 @@ const companySampleData = {
   siteAddress1: 'Windmill Lane',
   siteAddress2: 'Rosehurst',
   siteTown: 'Cullingford',
+  sitePostcode: 'TA1 5RF',
   Exemptions: [
     'U1',
     'U8',

@@ -16,11 +16,11 @@
     {% import "includes/macros.html" as macros %}
 
     {{ macros.para(
-      'Dear Jane Brown'
+      'Dear ' + data.opFirstName + ' ' + data.opLastName
     ) }}
 
     {{ macros.para(
-      '<b>You must renew your waste exemptions before 1 June 2019</b>',6
+      '<b>You must renew your waste exemptions before 31 July 2019</b>',6
     ) }}
 
     {{ macros.para(
@@ -33,22 +33,44 @@
     ) }}
 
     {{ macros.para(
-      'Site: 29 Acacia Road, Oxford'
+      'Site: '
+      + data.siteAddressNumber + ', '
+      + data.siteAddress1 + ', '
+      + data.siteAddress2 + ' '
+      + data.siteTown + ' '
+      + data.sitePostcode
     ) }}
 
-    {{ macros.para(
-      'Your current exemptions:<br><ul>
-      <li>D1 Depositing waste from dredging inland waters</li>
-      <li>D7 Burning waste in the open</li>
-      <li>U1 Use of waste in construction</li>
-      <li>U8 Using waste for a specified purpose</li>
-      <li>U10 Spreading waste to benefit agricultural land</li>
-      <li>T6 Treating waste wood and waste plant matter by chipping, shredding, cutting or pulverising</li>
-    </ul>'
-    ) }}
+    <div style="margin-top:12pt;margin-bottom:0pt;">
+        <font face="Arial" size="4">
+        Your current exemptions:<br>
+          <ul>
+
+            {% from "./json/exemption-json.html" import exemptions %}
+
+            {% for code in data.Exemptions %}
+
+                {% for exCode, exData in exemptions %}
+                   {% if( code==exCode ) %}
+
+                    <li>{{ exCode }} {{ exData.Title }}</li>
+
+                   {% endif %}
+                {% else %}
+                  <p>No data</p>
+                {% endfor %}
+
+            {% else %}
+              <p>No exemptions selected</p>
+            {% endfor %}
+
+      </ul>
+    </font>
+    </div>
+
 
     {{ macros.para(
-      'Registration number: WEX123456'
+      'Registration number: ' + data.regNumber
     ) }}
 
     <div style="font-family:Arial;max-width:600px;">
@@ -71,10 +93,6 @@
     '&nbsp;'
   ) }}
 
-
-    {{ macros.para(
-      '<a href="check-details?appID=AB">Anne test</a>',3
-    ) }}
 
 <!-- email content ends -->
 </div>
