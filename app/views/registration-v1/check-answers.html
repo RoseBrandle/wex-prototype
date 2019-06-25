@@ -1,8 +1,9 @@
+{% set pageHead = "Check your answers before completing your registration" %}
 
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  In which country will this waste operation take place?
+  {{ pageHead }}
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -25,7 +26,7 @@
 
       <form action="{{ formAction if formAction else data.formAction }}" method="post" class="form">
 
-        <h1 class="govuk-heading-l">Check your answers before completing your registration</h1>
+        <h1 class="govuk-heading-l">{{ pageHead }}</h1>
 
          <p class="govuk-body">We will send a copy of this summary in a confirmation email</p>
 
