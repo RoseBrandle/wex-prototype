@@ -56,6 +56,15 @@
         <p><a href="#" target="_blank">Privacy: how we use your personal information (opens new tab)</a></p>
 
 
+        {% set a =  [1,2,3,4,5,6,7,8,9]|random %}
+        {% set b =  [1,2,3,4,5,6,7,8,9]|random %}
+        {% set c =  [1,2,3,4,5,6,7,8,9]|random %}
+        {% set d =  [1,2,3,4,5,6,7,8,9]|random %}
+        {% set e =  [1,2,3,4,5,6,7,8,9]|random %}
+        {% set newRegNumber =  'WEX3'+a+b+c+d+e %}
+        <input type="hidden" name="newRegNumber" value="{{newRegNumber}}">
+
+
         {{ govukButton({
           text: "Continue"
         }) }}

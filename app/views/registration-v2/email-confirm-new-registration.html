@@ -16,7 +16,7 @@
     {% import "includes/macros.html" as macros %}
 
     {{ macros.para(
-      'Dear Jane Brown'
+      'Dear ' + data.opFirstName + ' ' + data.opLastName
     ) }}
 
     {{ macros.para(
@@ -24,7 +24,7 @@
     ) }}
 
     {{ macros.para(
-      'Registration number '+ data.regNumber
+      'Registration number '+ data.newRegNumber
     ) }}
 
     {{ macros.para(

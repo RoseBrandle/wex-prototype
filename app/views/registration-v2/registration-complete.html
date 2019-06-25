@@ -27,11 +27,15 @@
           </h1>
           <div class="govuk-panel__body">
             Your reference number
-            <br><strong>{{data.regNumber}}</strong>
+            <br><strong>{{ data.newRegNumber }}</strong>
           </div>
         </div>
 
-        <p class="govuk-body">We have sent a confirmation email to: {{ data.appEmail }} and {{ data.opContactEmail }}</p>
+        <p class="govuk-body">We have sent a confirmation email to: {{ data.appEmail }}
+          {% if data.appEmail != data.opContactEmail %}
+                    and {{ data.opContactEmail }}
+          {% endif %}
+        </p>
 
 
         <h2 class="govuk-heading-m">What happens next</h2>

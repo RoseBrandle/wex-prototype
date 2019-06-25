@@ -191,8 +191,18 @@ router.post('/farm', function (req, res) {
 
 router.post('/farmer', function (req, res) {
   res.render(folder + '/farmer',{
-    "formAction":"site-grid-reference"
+    "formAction":"site-address-check"
   })
+})
+
+router.post('/site-address-check', function (req, res) {
+  let siteDescription = req.session.data['siteDescription']
+
+  if (siteDescription === '') {
+    res.redirect('/' + folder + '/site-postcode?formAction=site-address')
+  } else {
+    res.redirect('/' + folder + '/site-grid-reference?formAction=check-answers')
+  }
 })
 
 router.post('/site-grid-reference', function (req, res) {
@@ -233,6 +243,7 @@ router.post('/declaration', function (req, res) {
 const companySampleData = {
   registerChoice:'startNew',
   regNumber:'WEX339257',
+  expiryDate:'31 July 2019',
   countryChoice:'',
   appFirstName:'Rachel',
   appLastName:'Conway',
@@ -265,6 +276,7 @@ const companySampleData = {
   isFarm:'yes',
   isFarmer:'yes',
   siteGridRef:'ST 58132 72695',
+  siteAddress:'9a, GRANGE ROAD, BRISTOL',
   siteDescription:'Lower field, Oak Tree Farm. Parcel ED/1234',
   siteAddressNumber: 'Oak Farm',
   siteAddress1: 'Windmill Lane',
@@ -278,6 +290,53 @@ const companySampleData = {
     'D7',
     'S2',
     'S3'
+  ]
+}
+
+// Sample data: company
+const WEX026225Data = {
+  registerChoice:'startNew',
+  regNumber:'WEX026225',
+  expiryDate:'13 July 2019',
+  countryChoice:'',
+  appFirstName:'R',
+  appLastName:'Withers',
+  appTelephoneNumber:'01761 456123',
+  appEmail:'rodney.way@email.co.uk',
+  appEmailConfirm:'rodney.way@email.co.uk',
+  operatorType:'Individual or sole trader',
+  individualName:'R Withers',
+  individualPostcode:'BS40 7UY',
+  individualAddress:'HOWGROVE FARM, THE BATCH, BUTCOMBE, BRISTOL',
+  opFirstName:'R',
+  opLastName:'Withers',
+  opContactPosition:'',
+  opContactTelephone:'01761 456123',
+  opContactEmail:'rodney.way@email.co.uk',
+  opContactEmailConfirm:'rodney.way@email.co.uk',
+  opContactPostcode:'BS40 7UY',
+  opContactAddress:'HOWGROVE FARM, THE BATCH, BUTCOMBE, BRISTOL',
+  isFarm:'yes',
+  isFarmer:'yes',
+  siteGridRef:'ST5220762142',
+  siteDescription:'',
+  siteAddress:'HOWGROVE FARM, THE BATCH, BUTCOMBE, BRISTOL',
+  siteAddressNumber: 'HOWGROVE FARM',
+  siteAddress1: 'THE BATCH',
+  siteAddress2: 'BUTCOMBE',
+  siteTown: 'BRISTOL',
+  sitePostcode: 'BS40 7UY',
+  Exemptions: [
+    'U1',
+    'U2',
+    'U4',
+    'U8',
+    'U10',
+    'U13',
+    'T1',
+    'D1',
+    'D7',
+    'S2'
   ]
 }
 
@@ -309,6 +368,13 @@ const companySampleData = {
 // Load sample data
 router.get('/sample', function (req, res) {
     req.session.data = companySampleData
+    res.redirect('/' + folder + '/email-renew')
+})
+
+// Load sample data
+router.get('/WEX026225', function (req, res) {
+    req.session.data = WEX026225Data
+    req.session.data.selectAddress = WEX026225Data.siteAddress
     res.redirect('/' + folder + '/email-renew')
 })
 
