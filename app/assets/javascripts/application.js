@@ -12,7 +12,7 @@ $(document).ready(function () {
   // Hide new tab span
   $("span.newtab").toggleClass('govuk-visually-hidden')
   // Show new tab message on click
-  $("a[target='_blank']").one("click", function(e){
+  $("a.newtab_wrap[target='_blank']").one("click", function(e){
       e.preventDefault()
       $(this).blur()
       $(this).children( 'span.newtab' ).toggleClass('govuk-visually-hidden').addClass('bold-small')

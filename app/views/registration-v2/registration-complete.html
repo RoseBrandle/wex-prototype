@@ -1,0 +1,70 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmation
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Registration complete
+          </h1>
+          <div class="govuk-panel__body">
+            Your reference number
+            <br><strong>{{ data.newRegNumber }}</strong>
+          </div>
+        </div>
+
+        <p class="govuk-body">We have sent a confirmation email to: {{ data.appEmail }}
+          {% if data.appEmail != data.opContactEmail %}
+                    and {{ data.opContactEmail }}
+          {% endif %}
+        </p>
+
+
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>your organisation's details will appear on the public register within 5 days</li>
+          <li>we'll send you a reminder when the exemptions are due to expire</li>
+        </ul>
+
+        <h2 class="govuk-heading-m">Registration checks</h2>
+
+        <p class="govuk-body">Waste exemption registrations are subject to checks. Deliberately providing false details, or not complying with exemption rules, can lead to de-registration and prosecution.</p>
+
+        <div class="govuk-inset-text">
+          Call our helpline on 03708 506 506 if you have any questions about your registration.
+        </div>
+
+        <p class="govuk-body">
+          <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <p class="govuk-body" style="margin-left:3em;">
+
+    <a href="email-confirm-new-registration" target="_blank" class="govuk-link">Email for research (new tab)</a>
+  </p>
+
+{% endblock %}

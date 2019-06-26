@@ -22,149 +22,125 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-<!--
       <h1 class="govuk-heading-xl">
-        Show and tell
-      </h1>
-      <p>
-        <a href="/back-office/index" target="_blank">Reason for revoked or ceased</a>
-      </p>
-      <p>
-        <a href="/renewal-email-v2/email-renew" target="_blank">Renewal email used in testing</a>
-      </p>
-      <p>
-        <a href="https://docs.google.com/drawings/d/1IvQWnDn7b2sIFbxilKCf8CmOklTh3xhFdsTceL0j5nI/edit" target="_blank">Renewal with edits options considered</a>
-      </p>
-      <p>
-        <a href="https://docs.google.com/drawings/d/1lhazmK1Nnfd0WI9gY7KMIwFQxqPtV_aTnubB5UfY8dw/edit" target="_blank">Two main options</a>
-      </p>
-      <p>
-        <a href="https://docs.google.com/drawings/d/1FlmV9tCPwDkARSaVa9B-Tia2tCwrTgIBMJq-dJu9NxE/edit" target="_blank">Possible release steps</a>
-      </p>
-      <hr>
-      <p>&nbsp;</p>
-
--->
-
-
-
-      <h1 class="govuk-heading-xl">
-        Waste exemptions renewals prototype
+        Waste exemptions prototype
       </h1>
       <p class="govuk-body-l">This is not the live service, the live service is <a href="https://wasteexemptions.service.gov.uk/">register your waste exemptions</a>. There is also <a href="https://www.gov.uk/guidance/register-your-waste-exemptions-environmental-permits">guidance on how to register</a>, which is currently considered the service start page.</p>
       <p class="govuk-body">This prototype is for testing new approaches to delivering the online part of the service, it contains the complete user journey as per the live service, as well as specific deviations where we are trying out a new approach. Details on how to access all of this can be found in the handy table below.</p>
-      <table class="govuk-table">
-        <caption class="govuk-table__caption">Versions and paths</caption>
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="col">Version</th>
-            <th class="govuk-table__header" scope="col">Location</th>
-          </tr>
-        </thead>
+
+
+{% import "includes/macros.html" as macros %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<!-- ########################################################################### -->
+
+      <h2 class="govuk-heading-m">
+        Current research
+      </h2>
+
+      <p class="govuk-body">
+        <a href="/prototype-admin/clear-data">Clear stored data</a>
+      </p>
+
+      <h3 class="govuk-heading-s">
+        WEX renewal from email
+      </h3>
+
+      <ul class="govuk-list govuk-list--bullet">
+        {{ macros.list( "Renew journey (company, individual, partnership)", "/registration-v2/sample" ) }}
+        {{ macros.list( "Pre-load check your answers (for later use)", "/registration-v1/sample" ) }}
+        {{ macros.list( "Sample data for a typical renewal", "/WEX026225" ) }}
+      </ul>
+
+      <h3 class="govuk-heading-s">
+        WEX renewal from GOV.UK
+      </h3>
+      <ul class="govuk-list govuk-list--bullet">
+        {{ macros.list( "Renewal from GOV.UK", "/renewals/start" ) }}
+        {{ macros.list( "Renewal from the web Magic link destination", "/renewals/check-details" ) }}
+      </ul>
 
 
 
 
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="row">Clear stored data</th>
-            <td class="govuk-table__cell"><a href="/prototype-admin/clear-data">/prototype-admin/clear-data</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="row">Registration journey (happy path, company)</th>
-            <td class="govuk-table__cell"><a href="/registration-v1/start">/registration-v1/start</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="row">Pre-load check your answers (for later use)</th>
-            <td class="govuk-table__cell"><a href="/registration-v1/sample">/registration-v1/sample</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="row">Registration journey (Liam's version, March 2019)</th>
-            <td class="govuk-table__cell"><a href="/registration-liam/start">/registration-liam/start</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="row">Address reuse</th>
-            <td class="govuk-table__cell"><a href="/address-reuse/start">/address-reuse/start</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="row">Exemption Guidance</th>
-            <td class="govuk-table__cell">
-              <a href="/guidance/start-summary">/guidance/start-summary</a>
-<!--
-              <h5>Older iterations</h5>
-              <ul>
-                <li><a href="/guidance/start-no-guidance">No guidance</a></li>
-                <li><a href="/guidance/start-format">Inline guidance</a></li>
-                <li><a href="/guidance/start-details">Guidance in <strong>Details</strong> pattern</a></li>
-                <li><a href="/guidance/start">Simplified formating</a></li>
-                <li><a href="/guidance/start">Full guidance displayed</a></li>
-              </ul>
--->
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="row"></th>
-            <td class="govuk-table__cell"><a href="/guidance/start-details">/guidance/start-details</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="row"></th>
-            <td class="govuk-table__cell"><a href="/startpage/guidance-treat">/startpage/guidance-treat</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="row">WEX AD privacy policy</th>
-            <td class="govuk-table__cell"><a href="/registration/wex-ad-privacy-policy-text">/registration-liam/wex-ad-privacy-policy-text</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="row">WCR AD privacy policy</th>
-            <td class="govuk-table__cell"><a href="/registration/wcr-ad-privacy-policy-text">/registration-liam/wcr-ad-privacy-policy-text</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="row">Renewal from email v1</th>
-            <td class="govuk-table__cell">
-              <a href="/renewals/email-renew">/renewals/email-renew</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="row">Renewal from email v2</th>
-            <td class="govuk-table__cell">
-              <a href="/renewal-email-v2/email-renew">/renewal-email-v2/email-renew</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="row">Renewal from email v3</th>
-            <td class="govuk-table__cell">
-              <a href="/renewal-email-v3/email-renew">/renewal-email-v3/email-renew</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="row">Renewal from the web</th>
-            <td class="govuk-table__cell">
-              <a href="/renewals/start">/renewals/start</a><br />
-              <a href="/renewals/check-details">Magic link destination</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="row">Edit (back office)</th>
-            <td class="govuk-table__cell"><a href="/edit/index">/edit/index</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="row">Start page</th>
-            <td class="govuk-table__cell"><a href="/startpage/accordion">/startpage/accordion</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="row"></th>
-            <td class="govuk-table__cell"><a href="/startpage/button">/startpage/button</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="row">Backoffice revoke reason</th>
-            <td class="govuk-table__cell"><a href="/back-office/index">/back-office/index</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="row">New tab test</th>
-            <td class="govuk-table__cell"><a href="/newtab/index">/newtab/index</a></td>
-          </tr>
-        </tbody>
-      </table>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <!-- ########################################################################### -->
+
+      <h2 class="govuk-heading-m">
+        WEX new registrations
+      </h2>
+      <ul class="govuk-list govuk-list--bullet">
+        {{ macros.list( "Registration journey (happy path, company)", "/registration-v1/start" ) }}
+        {{ macros.list( "Registration journey (Liam's version, March 2019)", "/registration-liam/start" ) }}
+      </ul>
+
+
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <!-- ########################################################################### -->
+
+      <h2 class="govuk-heading-m">
+        Previous research
+      </h2>
+
+      <h3 class="govuk-heading-s">
+        WEX renew from email
+      </h3>
+      <ul class="govuk-list govuk-list--bullet">
+        {{ macros.list( "Renewal from email v1", "/renewals/email-renew" ) }}
+        {{ macros.list( "Renewal from email v2", "/renewal-email-v2/email-renew" ) }}
+        {{ macros.list( "Renewal from email v3", "/renewal-email-v3/email-renew" ) }}
+      </ul>
+
+      <h3 class="govuk-heading-s">
+        AD privacy policy
+      </h3>
+      <ul class="govuk-list govuk-list--bullet">
+        {{ macros.list( "WEX AD privacy policy", "/registration/wex-ad-privacy-policy-text" ) }}
+        {{ macros.list( "WCR AD privacy policy", "/registration/wcr-ad-privacy-policy-text" ) }}
+      </ul>
+
+      <h3 class="govuk-heading-s">
+        Backoffice revoke reason
+      </h3>
+      <ul class="govuk-list govuk-list--bullet">
+        {{ macros.list( "Backoffice revoke reason", "/back-office/index" ) }}
+      </ul>
+
+      <h3 class="govuk-heading-s">
+        WEX guidance
+      </h3>
+      <ul class="govuk-list govuk-list--bullet">
+        {{ macros.list( "Exemption Guidance summary", "/guidance/start-summary" ) }}
+        {{ macros.list( "Exemption Guidance details", "/guidance/start-details" ) }}
+        {{ macros.list( "Exemption Guidance - treat", "/startpage/guidance-treat" ) }}
+        {{ macros.list( "Older iterations: No guidance", "/guidance/start-no-guidance" ) }}
+        {{ macros.list( "Older iterations: Inline guidance", "/guidance/start-format" ) }}
+        {{ macros.list( "Older iterations: Guidance in Details pattern", "/guidance/start-details" ) }}
+        {{ macros.list( "Older iterations: Simplified formating", "/guidance/start" ) }}
+        {{ macros.list( "Older iterations: Full guidance displayed", "/guidance/start" ) }}
+      </ul>
+
+
+      <h3 class="govuk-heading-s">
+        Other
+      </h3>
+      <ul class="govuk-list govuk-list--bullet">
+        {{ macros.list( "Address reuse", "/address-reuse/start" ) }}
+        {{ macros.list( "Edit (back office)", "/edit/index" ) }}
+        {{ macros.list( "Start page accordion", "/startpage/accordion" ) }}
+        {{ macros.list( "Start page button", "/startpage/button" ) }}
+      </ul>
+
+      <h2 class="govuk-heading-m">
+        Testing
+      </h2>
+      <ul class="govuk-list govuk-list--bullet">
+        {{ macros.list( "New tab test", "/newtab/index" ) }}
+      </ul>
+
+
+
     </div>
   </div>
 
