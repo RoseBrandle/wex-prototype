@@ -20,4 +20,8 @@
       <br><strong><font face="Arial" size="6">{{ ref }}</font></strong>
     </div>
   </div>
-  {% endmacro %}
+{% endmacro %}
+
+{% macro list( text, url ) %}
+  <li><a href="{{url}}">{{text}}</a> <span class="wex-url">{{url}}</span></li>
+{% endmacro %}
