@@ -233,7 +233,7 @@ router.post('/check-answers', function (req, res) {
 
 router.post('/declaration', function (req, res) {
   res.render(folder + '/declaration',{
-    "formAction":"registration-complete"
+    "formAction":"renewal-complete"
   })
 })
 
