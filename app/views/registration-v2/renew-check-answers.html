@@ -51,7 +51,7 @@
     </dd>
     <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="{{ exData.URL }}" target="_blank">
-        Check {{ exCode }} rules <span class="govuk-visually-hidden">opens new tab</span>
+        Check {{ exCode }} rules <span class="govuk-visually-hidden">- opens new tab</span>
         </a>
     </dd>
 </div>
@@ -70,7 +70,7 @@
 
 <!-- ###################################################################### -->
 
-<h2 class="govuk-heading-m">Site location / Site or address for waste operation</h2>
+<h2 class="govuk-heading-m">Site or address for waste operation</h2>
 
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
@@ -94,7 +94,10 @@
                 Grid reference
             </dt>
             <dd class="govuk-summary-list__value">
-                {{ data.siteGridRef }}
+                {{ data.siteGridRef }}<br>
+                <a href="https://gridreferencefinder.com/os.php?gr={{ data.siteGridRef | replace(" ", "") }}|{{ data.siteDescription | replace(" ", "_s_") | replace(",", "_c_") }}" target="_blank">
+                  Check on Grid Reference Finder site (opens new tab)
+                </a>
             </dd>
             <dd class="govuk-summary-list__actions"></dd>
         </div>
@@ -115,7 +118,7 @@
 
 
 <!-- ###################################################################### -->
-<h2 class="govuk-heading-m">Operator details / Business or organisation carrying out the waste operation</h2>
+<h2 class="govuk-heading-m">Business or organisation carrying out the waste operation</h2>
 
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
@@ -213,7 +216,7 @@
 
 
 <!-- ###################################################################### -->
-<h2 class="govuk-heading-m">Operator contact details / Contact for the waste operation</h2>
+<h2 class="govuk-heading-m">Contact for the waste operation</h2>
 
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
@@ -276,7 +279,7 @@
 </dl>
 
 <!-- ###################################################################### -->
-<h2 class="govuk-heading-m">Your details / Person who did previous registration</h2>
+<h2 class="govuk-heading-m">Person who registered the exemptions</h2>
 
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
