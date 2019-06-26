@@ -293,7 +293,7 @@ const companySampleData = {
   ]
 }
 
-// Sample data: company
+// Sample data: WEX026225
 const WEX026225Data = {
   registerChoice:'startNew',
   regNumber:'WEX026225',
@@ -340,6 +340,89 @@ const WEX026225Data = {
   ]
 }
 
+// Sample data: WEX047274
+const WEX047274Data = {
+  registerChoice:'startNew',
+  regNumber:'WEX047274',
+  expiryDate:'27 August 2019',
+  countryChoice:'',
+  appFirstName:'Richard',
+  appLastName:'Dury',
+  appTelephoneNumber:'07711456123',
+  appEmail:'summerleafarm@email.com',
+  appEmailConfirm:'summerleafarm@email.com',
+  operatorType:'Individual or sole trader',
+  individualName:'Richard Dury',
+  individualPostcode:'BS40 6NQ',
+  individualAddress:'SUMMERLEA FARM, BRISTOL ROAD, COMPTON MARTIN, BRISTOL',
+  opFirstName:'Jonathan',
+  opLastName:'Dury',
+  opContactPosition:'',
+  opContactTelephone:'07711456123',
+  opContactEmail:'summerleafarm@email.com',
+  opContactEmailConfirm:'summerleafarm@email.com',
+  opContactPostcode:'BS40 6NQ',
+  opContactAddress:'SUMMERLEA FARM, BRISTOL ROAD, COMPTON MARTIN, BRISTOL',
+  isFarm:'yes',
+  isFarmer:'yes',
+  siteGridRef:'ST5564758136',
+  siteDescription:'',
+  siteAddress:'SUMMERLEA FARM, BRISTOL ROAD, COMPTON MARTIN, BRISTOL',
+  siteAddressNumber: 'SUMMERLEA FARM',
+  siteAddress1: 'BRISTOL ROAD',
+  siteAddress2: 'COMPTON MARTIN',
+  siteTown: 'BRISTOL',
+  sitePostcode: 'BS40 6NQ',
+  Exemptions: [
+    'U1',
+    'U10',
+    'D1',
+    'D7'
+  ]
+}
+
+
+// Sample data: WEX024426
+const WEX024426Data = {
+  registerChoice:'startNew',
+  regNumber:'WEX024426',
+  expiryDate:'9 July 2019',
+  countryChoice:'',
+  appFirstName:'Andrew',
+  appLastName:'Tanner',
+  appTelephoneNumber:'07711456123',
+  appEmail:'andrew@email.com',
+  appEmailConfirm:'andrew@email.com',
+  operatorType:'Individual or sole trader',
+  individualName:'Andrew Tanner',
+  individualPostcode:'BS40 8DU',
+  individualAddress:'GLENMORE HOUSE, OLD HILL, WINFORD, BRISTOL',
+  opFirstName:'Andrew',
+  opLastName:'Tanner',
+  opContactPosition:'',
+  opContactTelephone:'07711456123',
+  opContactEmail:'andrew@email.com',
+  opContactEmailConfirm:'andrew@email.com',
+  opContactPostcode:'BS40 8DU',
+  opContactAddress:'GLENMORE HOUSE, OLD HILL, WINFORD, BRISTOL',
+  isFarm:'yes',
+  isFarmer:'yes',
+  siteGridRef:'ST5269564728',
+  siteDescription:'',
+  siteAddress:'GLENMORE HOUSE, OLD HILL, WINFORD, BRISTOL',
+  siteAddressNumber: 'GLENMORE HOUSE',
+  siteAddress1: 'OLD HILL',
+  siteAddress2: 'WINFORD',
+  siteTown: 'BRISTOL',
+  sitePostcode: 'BS40 8DU',
+  Exemptions: [
+    'U1',
+    'U10',
+    'D1',
+    'D7'
+  ]
+}
+
 // Participants ###############
 // 10:00 am: WEX026225
 // 11:00 am: WEX047274
@@ -371,10 +454,21 @@ router.get('/sample', function (req, res) {
     res.redirect('/' + folder + '/email-renew')
 })
 
-// Load sample data
 router.get('/WEX026225', function (req, res) {
     req.session.data = WEX026225Data
     req.session.data.selectAddress = WEX026225Data.siteAddress
+    res.redirect('/' + folder + '/email-renew')
+})
+
+router.get('/WEX047274', function (req, res) {
+    req.session.data = WEX047274Data
+    req.session.data.selectAddress = WEX047274Data.siteAddress
+    res.redirect('/' + folder + '/email-renew')
+})
+
+router.get('/WEX024426', function (req, res) {
+    req.session.data = WEX024426Data
+    req.session.data.selectAddress = WEX024426Data.siteAddress
     res.redirect('/' + folder + '/email-renew')
 })
 
