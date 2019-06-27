@@ -293,7 +293,6 @@ const companySampleData = {
   ]
 }
 
-// Sample data: WEX026225
 const WEX026225Data = {
   registerChoice:'startNew',
   regNumber:'WEX026225',
@@ -340,7 +339,6 @@ const WEX026225Data = {
   ]
 }
 
-// Sample data: WEX047274
 const WEX047274Data = {
   registerChoice:'startNew',
   regNumber:'WEX047274',
@@ -386,7 +384,6 @@ const WEX047274Data = {
 }
 
 
-// Sample data: WEX024426
 const WEX024426Data = {
   registerChoice:'startNew',
   regNumber:'WEX024426',
@@ -428,7 +425,6 @@ const WEX024426Data = {
 }
 
 
-// Sample data: WEX055034
 const WEX055034Data = {
   registerChoice:'startNew',
   regNumber:'WEX055034',
@@ -443,7 +439,7 @@ const WEX055034Data = {
   opPartner1FirstName:'Lesley',
   opPartner1LastName:'Bowes',
   opPartner2FirstName:'Robert',
-  opPartner2LastName:'Boweshg',
+  opPartner2LastName:'Bowes',
   individualName:'Lesley Bowes',
   individualPostcode:'BS31 2ST',
   individualAddress:'CHEWTON FARM HOUSE, CHEWTON KEYNSHAM, KEYNSHAM, BRISTOL',
@@ -469,6 +465,128 @@ const WEX055034Data = {
     'U10',
     'T6',
     'D1',
+    'D7'
+  ]
+}
+
+const WEX064386Data = {
+  registerChoice:'startNew',
+  regNumber:'WEX064386',
+  expiryDate:'27 September 2019',
+  countryChoice:'',
+  appFirstName:'James',
+  appLastName:'Gibbs',
+  appTelephoneNumber:'07966456123',
+  appEmail:'westerleighhill@email.com',
+  appEmailConfirm:'westerleighhill@email.com',
+  operatorType:'Partnership',
+  opPartner1FirstName:'James',
+  opPartner1LastName:'Gibbs',
+  opPartner2FirstName:'Michael',
+  opPartner2LastName:'Gibbs',
+  individualName:'James Gibbs',
+  individualPostcode:'BS37 8RB',
+  individualAddress:'WESTERLEIGH HILL FARM, WESTERLEIGH HILL, WESTERLEIGH, BRISTOL',
+  opFirstName:'James',
+  opLastName:'Gibbs',
+  opContactPosition:'',
+  opContactTelephone:'07966456123',
+  opContactEmail:'westerleighhill@email.com',
+  opContactEmailConfirm:'westerleighhill@email.com',
+  opContactPostcode:'BS37 8RB',
+  opContactAddress:'WESTERLEIGH HILL FARM, WESTERLEIGH HILL, WESTERLEIGH, BRISTOL',
+  isFarm:'yes',
+  isFarmer:'yes',
+  siteGridRef:'ST7017379136',
+  siteDescription:'',
+  siteAddress:'WESTERLEIGH HILL FARM, WESTERLEIGH HILL, WESTERLEIGH, BRISTOL',
+  siteAddressNumber: 'WESTERLEIGH HILL FARM',
+  siteAddress1: 'WESTERLEIGH HILL',
+  siteAddress2: 'WESTERLEIGH',
+  siteTown: 'BRISTOL',
+  sitePostcode: 'BS37 8RB',
+  Exemptions: [
+    'D4',
+    'D7'
+  ]
+}
+
+
+const WEX024900Data = {
+  registerChoice:'startNew',
+  regNumber:'WEX024900',
+  expiryDate:'10 July 2019',
+  countryChoice:'',
+  appFirstName:'Stuart',
+  appLastName:'Tibbs',
+  appTelephoneNumber:'07702456123',
+  appEmail:'stuart@email.com',
+  appEmailConfirm:'stuart@email.com',
+  operatorType:'Individual or sole trader',
+  individualName:'Stuart Tibbs',
+  individualPostcode:'BS39 7SH',
+  individualAddress:'SPRINGFIELD FARM, CLANDOWN ROAD, PAULTON, BRISTOL',
+  opFirstName:'Stuart',
+  opLastName:'Tibbs',
+  opContactPosition:'',
+  opContactTelephone:'07702456123',
+  opContactEmail:'stuart@email.com',
+  opContactEmailConfirm:'stuart@email.com',
+  opContactPostcode:'BS39 7SH',
+  opContactAddress:'SPRINGFIELD FARM, CLANDOWN ROAD, PAULTON, BRISTOL',
+  isFarm:'yes',
+  isFarmer:'yes',
+  siteGridRef:'ST6600655911',
+  siteDescription:'',
+  siteAddress:'SPRINGFIELD FARM, CLANDOWN ROAD, PAULTON, BRISTOL',
+  siteAddressNumber: 'SPRINGFIELD FARM',
+  siteAddress1: 'CLANDOWN ROAD',
+  siteAddress2: 'PAULTON',
+  siteTown: 'BRISTOL',
+  sitePostcode: 'BS39 7SH',
+  Exemptions: [
+    'D7'
+  ]
+}
+
+
+const WEX033970Data = {
+  registerChoice:'startNew',
+  regNumber:'WEX033970',
+  expiryDate:'1 August 2019',
+  countryChoice:'',
+  appFirstName:'Christine',
+  appLastName:'Hayes',
+  appTelephoneNumber:'07890 456123',
+  appEmail:'christine.hayes@email.co.uk',
+  appEmailConfirm:'christine.hayes@email.co.uk',
+  operatorType:'Individual or sole trader',
+  individualName:'Christine Hayes',
+  individualPostcode:'BS40 7AX',
+  individualAddress:'HILL FARM, BURRINGTON, BRISTOL',
+  opFirstName:'Christine',
+  opLastName:'Hayes',
+  opContactPosition:'',
+  opContactTelephone:'07890 456123',
+  opContactEmail:'christine.hayes@email.co.uk',
+  opContactEmailConfirm:'christine.hayes@email.co.uk',
+  opContactPostcode:'BS40 7AX',
+  opContactAddress:'HILL FARM, BURRINGTON, BRISTOL',
+  isFarm:'yes',
+  isFarmer:'yes',
+  siteGridRef:'ST4690758633',
+  siteDescription:'',
+  siteAddress:'HILL FARM, BURRINGTON, BRISTOL',
+  siteAddressNumber: 'HILL FARM',
+  siteAddress1: 'BURRINGTON',
+  siteAddress2: '',
+  siteTown: 'BRISTOL',
+  sitePostcode: 'BS40 7AX',
+  Exemptions: [
+    'U4',
+    'U8',
+    'T6',
+    'T23',
     'D7'
   ]
 }
@@ -521,6 +639,31 @@ router.get('/WEX024426', function (req, res) {
     req.session.data.selectAddress = WEX024426Data.siteAddress
     res.redirect('/' + folder + '/email-renew')
 })
+
+router.get('/WEX055034', function (req, res) {
+    req.session.data = WEX055034Data
+    req.session.data.selectAddress = WEX055034Data.siteAddress
+    res.redirect('/' + folder + '/email-renew')
+})
+
+router.get('/WEX064386', function (req, res) {
+    req.session.data = WEX064386Data
+    req.session.data.selectAddress = WEX064386Data.siteAddress
+    res.redirect('/' + folder + '/email-renew')
+})
+
+router.get('/WEX024900', function (req, res) {
+    req.session.data = WEX024900Data
+    req.session.data.selectAddress = WEX024900Data.siteAddress
+    res.redirect('/' + folder + '/email-renew')
+})
+
+router.get('/WEX033970', function (req, res) {
+    req.session.data = WEX033970Data
+    req.session.data.selectAddress = WEX033970Data.siteAddress
+    res.redirect('/' + folder + '/email-renew')
+})
+
 
 
 
