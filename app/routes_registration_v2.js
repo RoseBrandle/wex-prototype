@@ -351,7 +351,11 @@ const WEX047274Data = {
   appTelephoneNumber:'07711456123',
   appEmail:'summerleafarm@email.com',
   appEmailConfirm:'summerleafarm@email.com',
-  operatorType:'Individual or sole trader',
+  operatorType:'Partnership',
+  opPartner1FirstName:'Jonathan',
+  opPartner1LastName:'Dury',
+  opPartner2FirstName:'Richard',
+  opPartner2LastName:'Dury',
   individualName:'Richard Dury',
   individualPostcode:'BS40 6NQ',
   individualAddress:'SUMMERLEA FARM, BRISTOL ROAD, COMPTON MARTIN, BRISTOL',
@@ -418,6 +422,52 @@ const WEX024426Data = {
   Exemptions: [
     'U1',
     'U10',
+    'D1',
+    'D7'
+  ]
+}
+
+
+// Sample data: WEX055034
+const WEX055034Data = {
+  registerChoice:'startNew',
+  regNumber:'WEX055034',
+  expiryDate:'10 September 2019',
+  countryChoice:'',
+  appFirstName:'Lesley',
+  appLastName:'Bowes',
+  appTelephoneNumber:'044117456123',
+  appEmail:'lesley.bowes@email.com',
+  appEmailConfirm:'lesley.bowes@email.com',
+  operatorType:'Partnership',
+  opPartner1FirstName:'Lesley',
+  opPartner1LastName:'Bowes',
+  opPartner2FirstName:'Robert',
+  opPartner2LastName:'Boweshg',
+  individualName:'Lesley Bowes',
+  individualPostcode:'BS31 2ST',
+  individualAddress:'CHEWTON FARM HOUSE, CHEWTON KEYNSHAM, KEYNSHAM, BRISTOL',
+  opFirstName:'Lesley',
+  opLastName:'Bowes',
+  opContactPosition:'Partner',
+  opContactTelephone:'044117456123',
+  opContactEmail:'lesley.bowes@email.com',
+  opContactEmailConfirm:'lesley.bowes@email.com',
+  opContactPostcode:'BS31 2ST',
+  opContactAddress:'CHEWTON FARM HOUSE, CHEWTON KEYNSHAM, KEYNSHAM, BRISTOL',
+  isFarm:'yes',
+  isFarmer:'yes',
+  siteGridRef:'ST6525266503',
+  siteDescription:'',
+  siteAddress:'CHEWTON FARM HOUSE, CHEWTON KEYNSHAM, KEYNSHAM, BRISTOL',
+  siteAddressNumber: 'CHEWTON FARM HOUSE',
+  siteAddress1: 'CHEWTON KEYNSHAM',
+  siteAddress2: 'KEYNSHAM',
+  siteTown: 'BRISTOL',
+  sitePostcode: 'BS31 2ST',
+  Exemptions: [
+    'U10',
+    'T6',
     'D1',
     'D7'
   ]
