@@ -595,6 +595,187 @@ const WEX033970Data = {
   ]
 }
 
+
+const WEX155754Data = {
+  registerChoice:'startNew',
+  regNumber:'WEX155754',
+  expiryDate:'13 January 2022',
+  countryChoice:'',
+  appFirstName:'Kitty',
+  appLastName:'Campbell',
+  appTelephoneNumber:'01935123456',
+  appEmail:'kitty@email.com',
+  appEmailConfirm:'kitty@email.com',
+  operatorType:'Limited company',
+  opLtdCompanyRegNumber:'09558423',
+  opLtdCompanyName:'OLD MILL JACKSON LTD',
+  opLtdCompanyPostcode:'EX1 3LJ',
+  opLtdCompanyAddress:'OLD MILL JACKSON LTD, LEEWARD HOUSE, FITZROY ROAD, EXETER',
+  opFirstName:'Shaun',
+  opLastName:'Moulton',
+  opContactPosition:'Director',
+  opContactTelephone:'07806 123 456',
+  opContactEmail:'shaun@email.com',
+  opContactEmailConfirm:'shaun@email.com',
+  opContactPostcode:'EX1 3LJ',
+  opContactAddress:'OLD MILL JACKSON LTD, LEEWARD HOUSE, FITZROY ROAD, EXETER',
+  isFarm:'yes',
+  isFarmer:'yes',
+  siteGridRef:'',
+  siteAddress:'TREGADGWITH, VELANSAGA BARTON FARM, ST. BURYAN, PENZANCE',
+  siteDescription:'',
+  siteAddressNumber: 'TREGADGWITH',
+  siteAddress1: 'VELANSAGA BARTON FARM',
+  siteAddress2: 'ST. BURYAN',
+  siteTown: 'PENZANCE',
+  sitePostcode: 'TR19 6BS',
+  Exemptions: [
+    'U1'
+  ]
+}
+
+
+const WEX155967Data = {
+  registerChoice:'startNew',
+  regNumber:'WEX155967',
+  expiryDate:'14 January 2022',
+  countryChoice:'',
+  appFirstName:'Martin',
+  appLastName:'Caunce',
+  appTelephoneNumber:'07976123456',
+  appEmail:'martin@email.com',
+  appEmailConfirm:'martin@email.com',
+  operatorType:'Limited company',
+  opLtdCompanyRegNumber:'05381657',
+  opLtdCompanyName:'Brow Farm Ltd',
+  opLtdCompanyPostcode:'L40 1UH',
+  opLtdCompanyAddress:'BROW FARM, SMITHY LANE, HOLMESWOOD, ORMSKIRK',
+  opFirstName:'Martin',
+  opLastName:'Caunce',
+  opContactPosition:'Director',
+  opContactTelephone:'07976123456',
+  opContactEmail:'martin@email.com',
+  opContactEmailConfirm:'martin@email.com',
+  opContactPostcode:'L40 1UH',
+  opContactAddress:'BROW FARM, SMITHY LANE, HOLMESWOOD, ORMSKIRK',
+  isFarm:'yes',
+  isFarmer:'yes',
+  siteGridRef:'',
+  siteAddress:'BROW FARM, SMITHY LANE, HOLMESWOOD, ORMSKIRK',
+  siteDescription:'',
+  siteAddressNumber: 'BROW FARM',
+  siteAddress1: 'SMITHY LANE',
+  siteAddress2: 'HOLMESWOOD',
+  siteTown: 'ORMSKIRK',
+  sitePostcode: 'L40 1UH',
+  Exemptions: [
+    'U4',
+    'U10',
+    'U12',
+    'T4',
+    'T6',
+    'T9',
+    'S2'
+  ]
+}
+
+
+const WEX155905Data = {
+  registerChoice:'startNew',
+  regNumber:'WEX155905',
+  expiryDate:'14 January 2022',
+  countryChoice:'',
+  appFirstName:'Iain',
+  appLastName:'Mortimer',
+  appTelephoneNumber:'07966 123456',
+  appEmail:'iain@email.com',
+  appEmailConfirm:'iain@email.com',
+  operatorType:'Partnership',
+  opPartnershipName: 'Iain Mortimer',
+  opPartner1FirstName:'Iain',
+  opPartner1LastName:'Mortimer',
+  opPartner2FirstName:'Jenny',
+  opPartner2LastName:'Mortimer',
+  opPartnershipPostcode:'EX17 3QB',
+  opPartnershipAddress:'COURT BARTON, VENNY TEDBURN, CREDITON',
+  opFirstName:'Iain',
+  opLastName:'Mortimer',
+  opContactPosition:'',
+  opContactTelephone:'07966 123456',
+  opContactEmail:'iain@email.com',
+  opContactEmailConfirm:'iain@email.com',
+  opContactPostcode:'EX17 3QB',
+  opContactAddress:'COURT BARTON, VENNY TEDBURN, CREDITON',
+  isFarm:'yes',
+  isFarmer:'yes',
+  siteGridRef:'',
+  siteDescription:'',
+  siteAddress:'CIDERCOURT, VENNY TEDBURN, CREDITON',
+  siteAddressNumber: 'CIDERCOURT',
+  siteAddress1: 'VENNY TEDBURN',
+  siteAddress2: '',
+  siteTown: 'CREDITON',
+  sitePostcode: 'EX17 3QB',
+  Exemptions: [
+    'U1',
+    'S2'
+  ]
+}
+
+
+const WEX155897Data = {
+  registerChoice:'startNew',
+  regNumber:'WEX155897',
+  expiryDate:'14 January 2022 ',
+  countryChoice:'',
+  appFirstName:'Thomas',
+  appLastName:'Heritage',
+  appTelephoneNumber:'01295123456',
+  appEmail:'thomas@email.com',
+  appEmailConfirm:'thomas@email.com',
+  operatorType:'Partnership',
+  opPartnershipName: 'Thomas Heritage',
+  opPartner1FirstName:'Thomas',
+  opPartner1LastName:'Heritage',
+  opPartner2FirstName:'Paul',
+  opPartner2LastName:'Heritage',
+  opPartnershipPostcode:'CV35 0RA',
+  opPartnershipAddress:'HERITAGE FARMS, CHURCH FARM, WHATCOTE ROAD, OXHILL, WARWICK',
+  opFirstName:'Thomas',
+  opLastName:'Mortimer',
+  opContactPosition:'Partner',
+  opContactTelephone:'07966 123456',
+  opContactEmail:'iain@email.com',
+  opContactEmailConfirm:'iain@email.com',
+  opContactPostcode:'CV35 0RA',
+  opContactAddress:'HERITAGE FARMS, CHURCH FARM, WHATCOTE ROAD, OXHILL, WARWICK',
+  isFarm:'yes',
+  isFarmer:'yes',
+  siteGridRef:'',
+  siteDescription:'',
+  siteAddress:'HERITAGE FARMS, CHURCH FARM, WHATCOTE ROAD, OXHILL, WARWICK',
+  siteAddressNumber: 'HERITAGE FARMS',
+  siteAddress1: 'CHURCH FARM',
+  siteAddress2: 'WHATCOTE ROAD, OXHILL',
+  siteTown: 'WARWICK',
+  sitePostcode: 'CV35 0RA',
+  Exemptions: [
+    'U1',
+    'U8',
+    'U10',
+    'U12',
+    'U13',
+    'U16',
+    'T5',
+    'T9',
+    'D1',
+    'D7',
+    'S1',
+    'S2',
+    'S3'
+  ]
+}
+
 // Participants ###############
 // 10:00 am: WEX026225
 // 11:00 am: WEX047274
@@ -667,6 +848,34 @@ router.get('/WEX033970', function (req, res) {
     req.session.data.selectAddress = WEX033970Data.siteAddress
     res.redirect('/' + folder + '/email-renew')
 })
+
+router.get('/WEX155754', function (req, res) {
+    req.session.data = WEX155754Data
+    req.session.data.selectAddress = WEX155754Data.siteAddress
+    res.redirect('/' + folder + '/email-renew')
+})
+
+router.get('/WEX155967', function (req, res) {
+    req.session.data = WEX155967Data
+    req.session.data.selectAddress = WEX155967Data.siteAddress
+    res.redirect('/' + folder + '/email-renew')
+})
+
+router.get('/WEX155905', function (req, res) {
+    req.session.data = WEX155905Data
+    req.session.data.selectAddress = WEX155905Data.siteAddress
+    res.redirect('/' + folder + '/email-renew')
+})
+
+router.get('/WEX155897', function (req, res) {
+    req.session.data = WEX155897Data
+    req.session.data.selectAddress = WEX155897Data.siteAddress
+    res.redirect('/' + folder + '/email-renew')
+})
+
+
+WEX155897Data
+
 
 
 
