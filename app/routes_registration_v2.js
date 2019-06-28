@@ -248,25 +248,15 @@ const companySampleData = {
   appFirstName:'Rachel',
   appLastName:'Conway',
   appTelephoneNumber:'0117 978 1234',
-  appEmail:'mike@ap-email.com',
-  appEmailConfirm:'mike@ap-email.com',
-  operatorType:'Partnership',
+  appEmail:'rachel@ap-email.com',
+  appEmailConfirm:'rachel@ap-email.com',
+  operatorType:'Limited company',
   opLtdCompanyRegNumber:'AB123456',
   opLtdCompanyName:'Farm Techniques Ltd',
   opLtdCompanyPostcode:'BS4 5FT',
   opLtdCompanyAddress:'9a, GRANGE ROAD, BRISTOL',
-  individualName:'Sarah Individual',
-  individualPostcode:'BS34 9GH',
-  individualAddress:'9a, GRANGE ROAD, BRISTOL',
-  opPartner1FirstName:'Roger',
-  opPartner1LastName:'Brown',
-  opPartner2FirstName:'Jane',
-  opPartner2LastName:'Brown',
-  opPartnershipName:'Our Waste Partnership',
-  opPartnershipPostcode:'BS34 9GH',
-  opPartnershipAddress:'9a, GRANGE ROAD, BRISTOL',
   opFirstName:'Bruce',
-  opLastName:'Patel',
+  opLastName:'Wallace',
   opContactPosition:'Site manager',
   opContactTelephone:'07806 123 456',
   opContactEmail:'darici@mailinator.net',
@@ -278,11 +268,11 @@ const companySampleData = {
   siteGridRef:'ST 58132 72695',
   siteAddress:'9a, GRANGE ROAD, BRISTOL',
   siteDescription:'Lower field, Oak Tree Farm. Parcel ED/1234',
-  siteAddressNumber: 'Oak Farm',
-  siteAddress1: 'Windmill Lane',
-  siteAddress2: 'Rosehurst',
+  siteAddressNumber: 'Oak Tree Farm',
+  siteAddress1: 'Windy Miller Lane',
+  siteAddress2: 'Rosehurstford',
   siteTown: 'Cullingford',
-  sitePostcode: 'TA1 5RF',
+  sitePostcode: 'TA17 5RF',
   Exemptions: [
     'U1',
     'U8',
@@ -290,6 +280,98 @@ const companySampleData = {
     'D7',
     'S2',
     'S3'
+  ]
+}
+
+const individualSampleData = {
+  registerChoice:'startNew',
+  regNumber:'WEX354267',
+  expiryDate:'14 July 2019',
+  countryChoice:'',
+  appFirstName:'Sarah',
+  appLastName:'Williams',
+  appTelephoneNumber:'01342 456123',
+  appEmail:'sarah.williams@email.co.uk',
+  appEmailConfirm:'sarah.williams@email.co.uk',
+  operatorType:'Individual or sole trader',
+  individualName:'Sarah Williams',
+  individualPostcode:'BD45 3UY',
+  individualAddress:'THE OLD FARM, TRUSCOTT, BEDFORDSHIRE',
+  opFirstName:'Sarah',
+  opLastName:'Williams',
+  opContactPosition:'',
+  opContactTelephone:'01761 456123',
+  opContactEmail:'sarah.williams@email.co.uk',
+  opContactEmailConfirm:'sarah.williams@email.co.uk',
+  opContactPostcode:'BD45 3UY',
+  opContactAddress:'THE OLD FARM, TRUSCOTT, BEDFORDSHIRE',
+  isFarm:'yes',
+  isFarmer:'yes',
+  siteGridRef:'ST5320762142',
+  siteDescription:'',
+  siteAddress:'THE OLD FARM, TRUSCOTT, BEDFORDSHIRE',
+  siteAddressNumber: 'THE OLD FARM',
+  siteAddress1: 'TRUSCOTT',
+  siteAddress2: '',
+  siteTown: 'BEDFORDSHIRE',
+  sitePostcode: 'BD45 3UY',
+  Exemptions: [
+    'U1',
+    'U2',
+    'U4',
+    'U8',
+    'U10',
+    'U13',
+    'T1',
+    'D1',
+    'D7',
+    'S2'
+  ]
+}
+
+
+const partnershipSampleData = {
+  registerChoice:'startNew',
+  regNumber:'WEX432123',
+  expiryDate:'7 August 2019',
+  countryChoice:'',
+  appFirstName:'Brian',
+  appLastName:'Purdy',
+  appTelephoneNumber:'06611456123',
+  appEmail:'b.purdy@email.com',
+  appEmailConfirm:'b.purdy@email.com',
+  operatorType:'Partnership',
+  opPartnershipName: 'Brian Purdy',
+  opPartner1FirstName:'Brian',
+  opPartner1LastName:'Purdy',
+  opPartner2FirstName:'Jane',
+  opPartner2LastName:'Purdy',
+  individualName:'Brian Purdy',
+  opPartnershipPostcode:'TS23 6NQ',
+  opPartnershipAddress:'SUMMER FARM, LONDON ROAD, COMPTON PUGWORTH, NEATON',
+  opFirstName:'Brian',
+  opLastName:'Purdy',
+  opContactPosition:'Partner',
+  opContactTelephone:'06611456123',
+  opContactEmail:'b.purdy@email.com',
+  opContactEmailConfirm:'b.purdy@email.com',
+  opContactPostcode:'TS23 6NQ',
+  opContactAddress:'SUMMER FARM, LONDON ROAD, COMPTON PUGWORTH, NEATON',
+  isFarm:'yes',
+  isFarmer:'no',
+  siteGridRef:'ST5564758136',
+  siteDescription:'',
+  siteAddress:'SUMMER FARM, LONDON ROAD, COMPTON PUGWORTH, NEATON',
+  siteAddressNumber: 'SUMMER FARM',
+  siteAddress1: 'LONDON ROAD',
+  siteAddress2: 'COMPTON PUGWORTH',
+  siteTown: 'NEATON',
+  sitePostcode: 'TS23 6NQ',
+  Exemptions: [
+    'U1',
+    'U10',
+    'D1',
+    'D7'
   ]
 }
 
@@ -878,12 +960,27 @@ const WEX155541Data = {
 }
 
 
-// Load sample data
-router.get('/sample', function (req, res) {
+// Load sample data #############################
+router.get('/sample-company', function (req, res) {
     req.session.data = companySampleData
+    req.session.data.selectAddress = companySampleData.siteAddress
     res.redirect('/' + folder + '/email-renew')
 })
 
+router.get('/sample-partnership', function (req, res) {
+    req.session.data = partnershipSampleData
+    req.session.data.selectAddress = partnershipSampleData.siteAddress
+    res.redirect('/' + folder + '/email-renew')
+})
+
+router.get('/sample-individual', function (req, res) {
+    req.session.data = individualSampleData
+    req.session.data.selectAddress = individualSampleData.siteAddress
+    res.redirect('/' + folder + '/email-renew')
+})
+
+
+// Load research participants #############################
 router.get('/WEX026225', function (req, res) {
     req.session.data = WEX026225Data
     req.session.data.selectAddress = WEX026225Data.siteAddress
