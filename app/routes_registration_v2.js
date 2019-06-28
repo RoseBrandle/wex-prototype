@@ -726,7 +726,7 @@ const WEX155905Data = {
 const WEX155897Data = {
   registerChoice:'startNew',
   regNumber:'WEX155897',
-  expiryDate:'14 January 2022 ',
+  expiryDate:'14 January 2022',
   countryChoice:'',
   appFirstName:'Thomas',
   appLastName:'Heritage',
@@ -776,29 +776,106 @@ const WEX155897Data = {
   ]
 }
 
-// Participants ###############
-// 10:00 am: WEX026225
-// 11:00 am: WEX047274
-// 12:00 am: WEX024426
-// 13:00 pm: WEX055034
-// 14:00 pm: WEX024900
+const WEX155625Data = {
+  registerChoice:'startNew',
+  regNumber:'WEX155625',
+  expiryDate:'13 January 2022',
+  countryChoice:'',
+  appFirstName:'Turney',
+  appLastName:'Partners',
+  appTelephoneNumber:'01604 123456',
+  appEmail:'luke@email.com',
+  appEmailConfirm:'luke@email.com',
+  operatorType:'Partnership',
+  opPartnershipName: 'Turney Partners',
+  opPartner1FirstName:'Luke',
+  opPartner1LastName:'Turney',
+  opPartner2FirstName:'Paul',
+  opPartner2LastName:'Turney',
+  opPartnershipPostcode:'NN7 2EF',
+  opPartnershipAddress:'WEST HALL FARM, QUINTON, NORTHAMPTON',
+  opFirstName:'Luke',
+  opLastName:'Turney',
+  opContactPosition:'Partner',
+  opContactTelephone:'01604 123456',
+  opContactEmail:'luke@email.com',
+  opContactEmailConfirm:'luke@email.com',
+  opContactPostcode:'NN7 2EF',
+  opContactAddress:'WEST HALL FARM, QUINTON, NORTHAMPTON',
+  isFarm:'yes',
+  isFarmer:'yes',
+  siteGridRef:'',
+  siteDescription:'',
+  siteAddress:'Quinton Green Farm, Quinton Green, Northampton',
+  siteAddressNumber: 'Quinton Green Farm',
+  siteAddress1: 'Quinton Green',
+  siteAddress2: '',
+  siteTown: 'Northampton',
+  sitePostcode: 'NN7 2EG',
+  Exemptions: [
+    'U1',
+    'U8',
+    'U10',
+    'U12',
+    'U13',
+    'U15',
+    'D1',
+    'D7',
+    'S2',
+    'S3'
+  ]
+}
 
-// Backup 12:00: WEX033970
 
-// July 2nd sessions: ###############
-// WEX155754
-// WEX155905
-// WEX155967
-
-// July 4th session: ###############
-// WEX155897
-
-// July 9th sessions: ###############
-// WEX064386
-// WEX155625
-
-// July 11 session: ###############
-// WEX155541
+const WEX155541Data = {
+  registerChoice:'startNew',
+  regNumber:'WEX155541',
+  expiryDate:'10 January 2022',
+  countryChoice:'',
+  appFirstName:'George N.F.',
+  appLastName:'Browning',
+  appTelephoneNumber:'01926123456',
+  appEmail:'george@email.com',
+  appEmailConfirm:'george@email.com',
+  operatorType:'Partnership',
+  opPartnershipName: 'George N.F. Browning',
+  opPartner1FirstName:'George N.F.',
+  opPartner1LastName:'Browning',
+  opPartner2FirstName:'Gillian A.',
+  opPartner2LastName:'Browning',
+  opPartnershipPostcode:'CV23 9PD',
+  opPartnershipAddress:'FELDON FOREST FARM, FISHPOOLS ROAD, FRANKTON, RUGBY',
+  opFirstName:'George N.F.',
+  opLastName:'Browning',
+  opContactPosition:'Partner',
+  opContactTelephone:'01926123456',
+  opContactEmail:'george@email.com',
+  opContactEmailConfirm:'george@email.com',
+  opContactPostcode:'CV23 9PD',
+  opContactAddress:'FELDON FOREST FARM, FISHPOOLS ROAD, FRANKTON, RUGBY',
+  isFarm:'yes',
+  isFarmer:'yes',
+  siteGridRef:'',
+  siteDescription:'',
+  siteAddress:'FELDON FOREST FARM, FISHPOOLS ROAD, FRANKTON, RUGBY',
+  siteAddressNumber: 'FELDON FOREST FARM',
+  siteAddress1: 'FISHPOOLS ROAD',
+  siteAddress2: 'FRANKTON',
+  siteTown: 'RUGBY',
+  sitePostcode: 'CV23 9PD',
+  Exemptions: [
+    'U1',
+    'U4',
+    'U8',
+    'U10',
+    'U12',
+    'U13',
+    'T23',
+    'D1',
+    'D3',
+    'D7'
+  ]
+}
 
 
 // Load sample data
@@ -873,9 +950,17 @@ router.get('/WEX155897', function (req, res) {
     res.redirect('/' + folder + '/email-renew')
 })
 
+router.get('/WEX155625', function (req, res) {
+    req.session.data = WEX155625Data
+    req.session.data.selectAddress = WEX155625Data.siteAddress
+    res.redirect('/' + folder + '/email-renew')
+})
 
-WEX155897Data
-
+router.get('/WEX155541', function (req, res) {
+    req.session.data = WEX155541Data
+    req.session.data.selectAddress = WEX155541Data.siteAddress
+    res.redirect('/' + folder + '/email-renew')
+})
 
 
 

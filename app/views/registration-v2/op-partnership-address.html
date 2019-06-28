@@ -27,7 +27,7 @@
         <h1 class="govuk-heading-l">{{ pageHead }}</h1>
 
         <p class="govuk-body">Postcode<br>
-        <strong>{{ data.opLtdCompanyPostcode if data.opLtdCompanyPostcode else "BS1 2DF" }}</strong>
+        <strong>{{ data.opPartnershipPostcode if data.opPartnershipPostcode else "BS1 2DF" }}</strong>
         &nbsp; <a href="javascript:history.back();">Change postcode</a>
 
           {{ govukSelect({
@@ -35,6 +35,7 @@
             name: "opPartnershipAddress",
             items: [
             {value: "",text: "11 addresses found"},
+            {value: data.selectAddress,text: data.selectAddress, selected: checked("siteAddress", data.selectAddress)},
             {value: "3, GRANGE ROAD, BRISTOL",text: "3, GRANGE ROAD, BRISTOL", selected: checked("opPartnershipAddress", "3, GRANGE ROAD, BRISTOL")},
             {value: "5, GRANGE ROAD, BRISTOL",text: "5, GRANGE ROAD, BRISTOL", selected: checked("opPartnershipAddress", "5, GRANGE ROAD, BRISTOL")},
             {value: "7, GRANGE ROAD, BRISTOL",text: "7, GRANGE ROAD, BRISTOL", selected: checked("opPartnershipAddress", "7, GRANGE ROAD, BRISTOL")},
