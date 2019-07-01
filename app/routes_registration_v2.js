@@ -959,6 +959,47 @@ const WEX155541Data = {
   ]
 }
 
+// Skanka
+const WEX062219Data = {
+  registerChoice:'startNew',
+  regNumber:'WEX062219',
+  expiryDate:'22 September 2019',
+  countryChoice:'',
+  appFirstName:'Martin',
+  appLastName:'Neeson',
+  appTelephoneNumber:'01923 776 666',
+  appEmail:'martin.neeson@skanska.co.uk',
+  appEmailConfirm:'martin.neeson@skanska.co.uk',
+  operatorType:'Limited company',
+  opLtdCompanyRegNumber:'00191408',
+  opLtdCompanyName:'SKANSKA CONSTRUCTION UK LIMITED',
+  opLtdCompanyPostcode:'WD3 9SW',
+  opLtdCompanyAddress:'Maple Cross House, Denham Way Maple Cross, Rickmansworth, Hertfordshire',
+  opFirstName:'Roger',
+  opLastName:'Wallace',
+  opContactPosition:'Site manager',
+  opContactTelephone:'01923 776 666',
+  opContactEmail:'roger.wallace@skanska.co.uk',
+  opContactEmailConfirm:'roger.wallace@skanska.co.uk',
+  opContactPostcode:'WD3 9SW',
+  opContactAddress:'Maple Cross House, Denham Way Maple Cross, Rickmansworth, Hertfordshire',
+  isFarm:'no',
+  isFarmer:'no',
+  siteGridRef:'ST5260716754',
+  siteAddress:'MEAD AVENUE, HOUNDSTONE BUSINESS PARK, YEOVIL',
+  siteDescription:'',
+  siteAddressNumber: 'MEAD AVENUE',
+  siteAddress1: 'HOUNDSTONE BUSINESS PARK',
+  siteAddress2: '',
+  siteTown: 'YEOVIL',
+  sitePostcode: 'BA22 8RT',
+  Exemptions: [
+    'S1',
+    'S2',
+    'T6'
+  ]
+}
+
 
 // Load sample data #############################
 router.get('/sample-company', function (req, res) {
@@ -976,6 +1017,13 @@ router.get('/sample-partnership', function (req, res) {
 router.get('/sample-individual', function (req, res) {
     req.session.data = individualSampleData
     req.session.data.selectAddress = individualSampleData.siteAddress
+    res.redirect('/' + folder + '/email-renew')
+})
+
+// Skanska sample #############################
+router.get('/WEX062219', function (req, res) {
+    req.session.data = WEX062219Data
+    req.session.data.selectAddress = WEX062219Data.siteAddress
     res.redirect('/' + folder + '/email-renew')
 })
 
