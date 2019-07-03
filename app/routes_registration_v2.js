@@ -959,7 +959,7 @@ const WEX155541Data = {
   ]
 }
 
-// Skanka
+// Skanska
 const WEX062219Data = {
   registerChoice:'startNew',
   regNumber:'WEX062219',
@@ -997,6 +997,124 @@ const WEX062219Data = {
     'S1',
     'S2',
     'T6'
+  ]
+}
+
+
+// 08/07/2019 – WEX137539 – Euston Demolitions Skanska
+const WEX137539Data = {
+  registerChoice:'startNew',
+  regNumber:'WEX137539',
+  expiryDate:'10 July 2021',
+  countryChoice:'England',
+  appFirstName:'Anthony',
+  appLastName:'Bickers',
+  appTelephoneNumber:'01923 776 666',
+  appEmail:'anthony.bickers@costain.co.uk',
+  appEmailConfirm:'anthony.bickers@costain.co.uk',
+  operatorType:'Limited company',
+  opLtdCompanyRegNumber:'00610201',
+  opLtdCompanyName:'Costain Limited',
+  opLtdCompanyPostcode:'SL6 4UB',
+  opLtdCompanyAddress:'COSTAIN HOUSE, VANWALL ROAD, MAIDENHEAD',
+  opFirstName:'Anthony',
+  opLastName:'Bickers',
+  opContactPosition:'Site manager',
+  opContactTelephone:'01923 776 666',
+  opContactEmail:'anthony.bickers@costain.co.uk',
+  opContactEmailConfirm:'anthony.bickers@costain.co.uk',
+  opContactPostcode:'SL6 4UB',
+  opContactAddress:'Costain House, Vanwall Business Park, Maidenhead, Berkshire',
+  isFarm:'no',
+  isFarmer:'no',
+  siteGridRef:'TQ2946382563',
+  siteAddress:'Cottage Hotel, 67-71, Euston Street, Holborn, Somers Town, London',
+  siteDescription:'Cottage Hotel',
+  siteAddressNumber: '67-71, Euston Street',
+  siteAddress1: 'Euston Street, Holborn',
+  siteAddress2: '',
+  siteTown: 'London',
+  sitePostcode: 'NW1 2ET',
+  Exemptions: [
+    'U1'
+  ]
+}
+
+// 15/07/2019 – WEX146102 Willesden Euro Terminal Skanska
+const WEX146102Data = {
+  registerChoice:'startNew',
+  regNumber:'WEX146102',
+  expiryDate:'4 October 2021',
+  countryChoice:'England',
+  opFirstName:'Anthony',
+  opLastName:'Bickers',
+  appTelephoneNumber:'01923 776 666',
+  appEmail:'anthony.bickers@costain.co.uk',
+  appEmailConfirm:'anthony.bickers@costain.co.uk',
+  operatorType:'Limited company',
+  opLtdCompanyRegNumber:'00610201',
+  opLtdCompanyName:'Costain Limited',
+  opLtdCompanyPostcode:'SL6 4UB',
+  opLtdCompanyAddress:'COSTAIN HOUSE, VANWALL ROAD, MAIDENHEAD',
+  opFirstName:'Anthony',
+  opLastName:'Bickers',
+  opContactPosition:'Site manager',
+  opContactTelephone:'01923 776 666',
+  opContactEmail:'anthony.bickers@costain.co.uk',
+  opContactEmailConfirm:'anthony.bickers@costain.co.uk',
+  opContactPostcode:'SL6 4UB',
+  opContactAddress:'Costain House, Vanwall Business Park, Maidenhead, Berkshire',
+  isFarm:'no',
+  isFarmer:'no',
+  siteGridRef:'',
+  siteAddress:'Costain Skanska JV, Willesden Euro Terminal, Channel Gate Road, London',
+  siteDescription:'',
+  siteAddressNumber: 'Willesden Euro Terminal',
+  siteAddress1: 'Channel Gate Road',
+  siteAddress2: '',
+  siteTown: 'London',
+  sitePostcode: 'NW10 6UQ',
+  Exemptions: [
+    'U1'
+  ]
+}
+
+// 22/07/2019 – WEX152443 UCL Buildings Skanska
+const WEX152443Data = {
+  registerChoice:'startNew',
+  regNumber:'WEX152443',
+  expiryDate:'4 December 2021',
+  countryChoice:'England',
+  appFirstName:'Martin',
+  appLastName:'Neeson',
+  appTelephoneNumber:'01923 776 666',
+  appEmail:'anthony.bickers@costain.co.uk',
+  appEmailConfirm:'anthony.bickers@costain.co.uk',
+  operatorType:'Limited company',
+  opLtdCompanyRegNumber:'00610201',
+  opLtdCompanyName:'Costain Limited',
+  opLtdCompanyPostcode:'SL6 4UB',
+  opLtdCompanyAddress:'COSTAIN HOUSE, VANWALL ROAD, MAIDENHEAD',
+  opFirstName:'Anthony',
+  opLastName:'Bickers',
+  opContactPosition:'Site manager',
+  opContactTelephone:'01923 776 666',
+  opContactEmail:'anthony.bickers@costain.co.uk',
+  opContactEmailConfirm:'anthony.bickers@costain.co.uk',
+  opContactPostcode:'SL6 4UB',
+  opContactAddress:'Costain House, Vanwall Business Park, Maidenhead, Berkshire',
+  isFarm:'no',
+  isFarmer:'no',
+  siteGridRef:'',
+  siteAddress:'UCL building, Hampstead Road, Euston',
+  siteDescription:'',
+  siteAddressNumber: 'UCL building',
+  siteAddress1: 'Hampstead Road',
+  siteAddress2: 'Euston',
+  siteTown: 'London',
+  sitePostcode: 'NW12BX',
+  Exemptions: [
+    'U1'
   ]
 }
 
@@ -1107,7 +1225,24 @@ router.get('/WEX155541', function (req, res) {
     res.redirect('/' + folder + '/email-renew')
 })
 
+// 3 skanska
+router.get('/WEX137539', function (req, res) {
+    req.session.data = WEX137539Data
+    req.session.data.selectAddress = WEX137539Data.siteAddress
+    res.redirect('/' + folder + '/email-renew')
+})
 
+router.get('/WEX146102', function (req, res) {
+    req.session.data = WEX146102Data
+    req.session.data.selectAddress = WEX146102Data.siteAddress
+    res.redirect('/' + folder + '/email-renew')
+})
+
+router.get('/WEX152443', function (req, res) {
+    req.session.data = WEX152443Data
+    req.session.data.selectAddress = WEX152443Data.siteAddress
+    res.redirect('/' + folder + '/email-renew')
+})
 
 
 module.exports = router
