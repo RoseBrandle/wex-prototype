@@ -378,7 +378,7 @@ const partnershipSampleData = {
 const WEX026225Data = {
   registerChoice:'startNew',
   regNumber:'WEX026225',
-  expiryDate:'13 July 2019',
+  expiryDate:'5 August 2019',
   countryChoice:'England',
   appFirstName:'R',
   appLastName:'Withers',
@@ -424,7 +424,7 @@ const WEX026225Data = {
 const WEX047274Data = {
   registerChoice:'startNew',
   regNumber:'WEX047274',
-  expiryDate:'27 August 2019',
+  expiryDate:'5 August 2019',
   countryChoice:'England',
   appFirstName:'Richard',
   appLastName:'Dury',
@@ -470,7 +470,7 @@ const WEX047274Data = {
 const WEX024426Data = {
   registerChoice:'startNew',
   regNumber:'WEX024426',
-  expiryDate:'9 July 2019',
+  expiryDate:'5 August 2019',
   countryChoice:'England',
   appFirstName:'Andrew',
   appLastName:'Tanner',
@@ -512,7 +512,7 @@ const WEX024426Data = {
 const WEX055034Data = {
   registerChoice:'startNew',
   regNumber:'WEX055034',
-  expiryDate:'10 September 2019',
+  expiryDate:'5 August 2019',
   countryChoice:'England',
   appFirstName:'Lesley',
   appLastName:'Bowes',
@@ -557,7 +557,7 @@ const WEX055034Data = {
 const WEX064386Data = {
   registerChoice:'startNew',
   regNumber:'WEX064386',
-  expiryDate:'27 September 2019',
+  expiryDate:'5 August 2019',
   countryChoice:'England',
   appFirstName:'James',
   appLastName:'Gibbs',
@@ -601,7 +601,7 @@ const WEX064386Data = {
 const WEX024900Data = {
   registerChoice:'startNew',
   regNumber:'WEX024900',
-  expiryDate:'10 July 2019',
+  expiryDate:'5 August 2019',
   countryChoice:'England',
   appFirstName:'Stuart',
   appLastName:'Tibbs',
@@ -639,7 +639,7 @@ const WEX024900Data = {
 const WEX033970Data = {
   registerChoice:'startNew',
   regNumber:'WEX033970',
-  expiryDate:'1 August 2019',
+  expiryDate:'5 August 2019',
   countryChoice:'England',
   appFirstName:'Christine',
   appLastName:'Hayes',
@@ -681,7 +681,7 @@ const WEX033970Data = {
 const WEX155754Data = {
   registerChoice:'startNew',
   regNumber:'WEX155754',
-  expiryDate:'13 January 2022',
+  expiryDate:'5 August 2019',
   countryChoice:'England',
   appFirstName:'Kitty',
   appLastName:'Campbell',
@@ -720,7 +720,7 @@ const WEX155754Data = {
 const WEX155967Data = {
   registerChoice:'startNew',
   regNumber:'WEX155967',
-  expiryDate:'14 January 2022',
+  expiryDate:'5 August 2019',
   countryChoice:'England',
   appFirstName:'Martin',
   appLastName:'Caunce',
@@ -765,7 +765,7 @@ const WEX155967Data = {
 const WEX155905Data = {
   registerChoice:'startNew',
   regNumber:'WEX155905',
-  expiryDate:'14 January 2022',
+  expiryDate:'5 August 2019',
   countryChoice:'England',
   appFirstName:'Iain',
   appLastName:'Mortimer',
@@ -808,7 +808,7 @@ const WEX155905Data = {
 const WEX155897Data = {
   registerChoice:'startNew',
   regNumber:'WEX155897',
-  expiryDate:'14 January 2022',
+  expiryDate:'5 August 2019',
   countryChoice:'England',
   appFirstName:'Thomas',
   appLastName:'Heritage',
@@ -861,7 +861,7 @@ const WEX155897Data = {
 const WEX155625Data = {
   registerChoice:'startNew',
   regNumber:'WEX155625',
-  expiryDate:'13 January 2022',
+  expiryDate:'5 August 2019',
   countryChoice:'England',
   appFirstName:'Turney',
   appLastName:'Partners',
@@ -912,7 +912,7 @@ const WEX155625Data = {
 const WEX155541Data = {
   registerChoice:'startNew',
   regNumber:'WEX155541',
-  expiryDate:'10 January 2022',
+  expiryDate:'5 August 2019',
   countryChoice:'England',
   appFirstName:'George N.F.',
   appLastName:'Browning',
@@ -963,7 +963,7 @@ const WEX155541Data = {
 const WEX062219Data = {
   registerChoice:'startNew',
   regNumber:'WEX062219',
-  expiryDate:'22 September 2019',
+  expiryDate:'5 August 2019',
   countryChoice:'England',
   appFirstName:'Martin',
   appLastName:'Neeson',
@@ -1005,7 +1005,7 @@ const WEX062219Data = {
 const WEX137539Data = {
   registerChoice:'startNew',
   regNumber:'WEX137539',
-  expiryDate:'10 July 2021',
+  expiryDate:'5 August 2019',
   countryChoice:'England',
   appFirstName:'Anthony',
   appLastName:'Bickers',
@@ -1044,7 +1044,7 @@ const WEX137539Data = {
 const WEX146102Data = {
   registerChoice:'startNew',
   regNumber:'WEX146102',
-  expiryDate:'4 October 2021',
+  expiryDate:'5 August 2019',
   countryChoice:'England',
   opFirstName:'Anthony',
   opLastName:'Bickers',
@@ -1083,7 +1083,7 @@ const WEX146102Data = {
 const WEX152443Data = {
   registerChoice:'startNew',
   regNumber:'WEX152443',
-  expiryDate:'4 December 2021',
+  expiryDate:'5 August 2019',
   countryChoice:'England',
   appFirstName:'Martin',
   appLastName:'Neeson',
