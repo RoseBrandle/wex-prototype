@@ -1,0 +1,56 @@
+{% set pageHead = "What's the postcode for the address of the waste operation?" %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{ pageHead }}
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="{{ formAction if formAction else data.formAction }}" method="post" class="form">
+
+        <h1 class="govuk-heading-l">{{ pageHead }}</h1>
+
+        {{ govukInput({
+          label: {
+            text: "Please enter a UK postcode"
+          },
+          hint: {
+            text: "For example, BS1 5AH"
+          },
+          classes: "govuk-input--width-10",
+          id: "sitePostcode",
+          name: "sitePostcode",
+          value: data.sitePostcode
+        }) }}
+
+
+        {{ govukButton({
+          text: "Find address"
+        }) }}
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <p class="govuk-body-s">&copy; Crown copyright and database rights 2018 Ordnance Survey 100024198. Use of this addressing data is subject to the <a target="_blank" href="https://wex-tst.aws.defra.cloud/pages/os-terms">address data terms and conditions (opens new tab)</a>.</p>
+
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
