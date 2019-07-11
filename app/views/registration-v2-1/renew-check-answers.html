@@ -1,4 +1,4 @@
-{% set pageHead = "Do you want to renew using these details?" %}
+{% set pageHead = "Do you want to renew with these details?" %}
 
 {% extends "layout.html" %}
 
@@ -35,7 +35,7 @@
 {% from "./json/exemption-json.html" import exemptions %}
 
 
-<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<dl class="govuk-summary-list govuk-!-margin-bottom-0">
 
 {% for code in data.Exemptions %}
 
@@ -49,10 +49,11 @@
     <dd class="govuk-summary-list__value">
         {{ exData.Title }}
     </dd>
-    <dd class="govuk-summary-list__actions">
+    <dd class="govuk-summary-list__actions" style="width:25%">
         <a class="govuk-link" href="{{ exData.URL }}" target="_blank">
         Check {{ exCode }} rules <span class="govuk-visually-hidden">- opens new tab</span>
         </a>
+        {% if loop.first %}<br>links open in a new tab{% endif %}
     </dd>
 </div>
 
@@ -66,6 +67,12 @@
 {% endfor %}
 
 </dl>
+
+
+{{ govukInsetText({
+  text: "To add or remove exemptions, select ‘I need to make changes’ below.",
+  classes: "govuk-!-margin-bottom-9"
+}) }}
 
 
 <!-- ###################################################################### -->
@@ -321,12 +328,12 @@
     {
       value: "Yes",
       checked: data.renewalChoice==="Yes",
-      text: "Yes, renew with these details"
+      text: "Renew with these details"
     },
     {
       value: "No",
       checked: data.renewalChoice==="No",
-      text: "No, I need to make changes"
+      text: "I need to make changes"
     }
   ]
 }) }}
