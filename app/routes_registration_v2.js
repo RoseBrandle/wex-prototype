@@ -456,8 +456,7 @@ const WEX142263Data = {
   siteTown: 'Chesterfield',
   sitePostcode: 'NO POSTCODE',
   Exemptions: [
-    'U1',
-    'XX' // fake data
+    'U1'
   ]
 }
 
