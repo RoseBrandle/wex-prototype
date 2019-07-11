@@ -421,6 +421,87 @@ const WEX026225Data = {
   ]
 }
 
+// WEX142263
+const WEX142263Data = {
+  registerChoice:'startNew',
+  regNumber:'WEX142263',
+  expiryDate:'12 August 2019',
+  countryChoice:'England',
+  appFirstName:'Ian',
+  appLastName:'Burton',
+  appTelephoneNumber:'01246 812 123',
+  appEmail:'ian@email.co.uk',
+  appEmailConfirm:'ian@email.co.uk',
+  operatorType:'Limited company',
+  opLtdCompanyRegNumber:'03944198',
+  opLtdCompanyName:'Vertase F.L.I. Limited',
+  opLtdCompanyPostcode:'BS20 6PN',
+  opLtdCompanyAddress:'MIDDLE BRIDGE BUSINESS PARK, UNIT 1, BRISTOL ROAD, PORTISHEAD, BRISTOL',
+  opFirstName:'Ian',
+  opLastName:'Burton',
+  opContactPosition:'Permit Manager',
+  opContactTelephone:'01246 812 123',
+  opContactEmail:'ian@email.co.uk',
+  opContactEmailConfirm:'ian@email.co.uk',
+  opContactPostcode:'BS1 6XN',
+  opContactAddress:'B BOND WAREHOUSE, THE CREATE CENTRE, SMEATON ROAD, BRISTOL',
+  isFarm:'no',
+  isFarmer:'no',
+  siteGridRef:'SK3915173403',
+  siteAddress:'Former Greyhound Stadium, Station Road, Brimington, Chesterfield',
+  siteDescription:'',
+  siteAddressNumber: 'Former Greyhound Stadium',
+  siteAddress1: 'Station Road',
+  siteAddress2: 'Brimington',
+  siteTown: 'Chesterfield',
+  sitePostcode: 'NO POSTCODE',
+  Exemptions: [
+    'U1',
+    'XX' // fake data
+  ]
+}
+
+
+
+// WEX113454
+const WEX113454Data = {
+  registerChoice:'startNew',
+  regNumber:'WEX113454',
+  expiryDate:'12 August 2019',
+  countryChoice:'England',
+  appFirstName:'Jane',
+  appLastName:'Stephenson',
+  appTelephoneNumber:'0117 930 4355',
+  appEmail:'info@resourcefutures.co.uk',
+  appEmailConfirm:'info@resourcefutures.co.uk',
+  operatorType:'Limited company',
+  opLtdCompanyRegNumber:'05753433',
+  opLtdCompanyName:'Resource Futures Limited',
+  opLtdCompanyPostcode:'BS1 6XN',
+  opLtdCompanyAddress:'B BOND WAREHOUSE, THE CREATE CENTRE, SMEATON ROAD, BRISTOL',
+  opFirstName:'Jane',
+  opLastName:'Stephenson',
+  opContactPosition:'Site manager',
+  opContactTelephone:'0117 930 4355',
+  opContactEmail:'info@resourcefutures.co.uk',
+  opContactEmailConfirm:'info@resourcefutures.co.uk',
+  opContactPostcode:'BS1 6XN',
+  opContactAddress:'B BOND WAREHOUSE, THE CREATE CENTRE, SMEATON ROAD, BRISTOL',
+  isFarm:'no',
+  isFarmer:'no',
+  siteGridRef:'SE 24751 20399',
+  siteAddress:'Unit 204, Bretton Street Entreprise Centre, Bretton Street, Dewsbury',
+  siteDescription:'',
+  siteAddressNumber: 'Unit 204, Bretton Street Entreprise Centre',
+  siteAddress1: 'Bretton Street',
+  siteAddress2: '',
+  siteTown: 'Dewsbury',
+  sitePostcode: 'WF12 9DB',
+  Exemptions: [
+    'D5'
+  ]
+}
+
 const WEX047274Data = {
   registerChoice:'startNew',
   regNumber:'WEX047274',
@@ -1137,6 +1218,24 @@ router.get('/sample-individual', function (req, res) {
     req.session.data.selectAddress = individualSampleData.siteAddress
     res.redirect('/' + folder + '/email-renew')
 })
+
+
+// Extras for lab #############################
+router.get('/WEX113454', function (req, res) {
+    req.session.data = WEX113454Data
+    req.session.data.selectAddress = WEX113454Data.siteAddress
+    req.session.data.opSelectAddress = WEX113454Data.opLtdCompanyAddress
+    res.redirect('/' + folder + '/email-renew')
+})
+
+router.get('/WEX142263', function (req, res) {
+    req.session.data = WEX142263Data
+    req.session.data.selectAddress = WEX142263Data.siteAddress
+    req.session.data.opSelectAddress = WEX142263Data.opLtdCompanyAddress
+    res.redirect('/' + folder + '/email-renew')
+})
+
+
 
 // Skanska sample #############################
 router.get('/WEX062219', function (req, res) {
