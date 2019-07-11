@@ -4,6 +4,7 @@ const router = express.Router()
 // all routes for registration v1
 router.use('/registration-v1', require('./routes_registration_v1'))
 router.use('/registration-v2', require('./routes_registration_v2'))
+router.use('/registration-v2-1', require('./routes_registration_v2-1'))
 
 // RENEWALS
 router.post('/renewals-check', function (req, res) {
