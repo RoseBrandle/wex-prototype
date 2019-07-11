@@ -31,7 +31,21 @@
               </h1>
             </legend>
 
+            {{ govukDetails({
+              summaryText: "Check the rules before you add an exemption",
+              html: '
+                  <h2 class="govuk-heading-s govuk-!-font-weight-regular">Exemptions categories</h2>
+                  <ul class="govuk-list">
+                    <li><a class="govuk-link" href="https://www.gov.uk/government/collections/waste-exemptions-using-waste" target="_blank">Using waste: U1 to U16 (links open in a new tab)</a></li>
+                    <li><a class="govuk-link" href="https://www.gov.uk/government/collections/waste-exemptions-treating-waste" target="_blank">Treating waste: T1 to T33</a></li>
+                    <li><a class="govuk-link" href="https://www.gov.uk/government/collections/waste-exemptions-disposing-of-waste" target="_blank">Disposing of waste: D1 to D8</a></li>
+                    <li><a class="govuk-link" href="https://www.gov.uk/government/collections/waste-exemptions-storing-waste" target="_blank">Storing waste: S1 to S3</a></li>
+                  </ul>
+              '
+            }) }}
+
             <p class="govuk-body">Select all the waste exemptions you need to add to the registration</p>
+
             <table class="govuk-table">
               <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
