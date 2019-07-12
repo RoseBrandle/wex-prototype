@@ -21,157 +21,172 @@
 {% block content %}
 
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+         <div class="govuk-grid-row">
+           <div class="govuk-grid-column-two-thirds">
 
-      <form action="{{ formAction if formAction else data.formAction }}" method="post" class="form">
+             <form action="{{ formAction if formAction else data.formAction }}" method="post" class="form">
 
-        <h1 class="govuk-heading-l">{{ pageHead }}</h1>
+               <h1 class="govuk-heading-l">{{ pageHead }}</h1>
 
-         <p class="govuk-body">We will send a copy of this summary in a confirmation email</p>
+              <p class="govuk-body">We will send a copy of this summary in a confirmation email</p>
 
-         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-         <h2 class="govuk-heading-m">You told us</h2>
-         <p>the waste operation will take place in <strong>{{ data.countryChoice }}</strong></p>
 
-         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-         <h2 class="govuk-heading-m">Your details</h2>
-         <ul class="govuk-list govuk-list--bullet">
-           <li>your name is <strong>{{ data.appFirstName }} {{ data.appLastName }}</strong></li>
-           <li>your phone number is <strong>{{ data.appTelephoneNumber }}</strong></li>
-           <li>your email is <strong>{{ data.appEmail }}</strong></li>
-         </ul>
+               {% from "./json/exemption-json.html" import exemptions %}
 
-         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-         <h2 class="govuk-heading-m">Operator details</h2>
-         <ul class="govuk-list govuk-list--bullet">
-           <li>the operator is a <strong>{{ data.operatorType|lower }}</strong></li>
+               <h2 class="govuk-heading-m">Selected exemptions</h2>
 
-           {% if data.operatorType=="Limited company" %}
-             <li>the company name is <strong>{{ data.opLtdCompanyName }}</strong></li>
-             <li>the Companies House number is <strong>{{ data.opLtdCompanyRegNumber }}</strong></li>
-           {% endif %}
+               <ul class="govuk-list govuk-list--bullet">
 
-           {% if data.operatorType=="Individual or sole trader" %}
-             <li>their name is <strong>{{ data.individualName }}</strong></li>
-           {% endif %}
+                 {% if data.Exemptions|typeof =="string" %}
+                     {% for exCode, exData in exemptions %}
+                        {% if( data.Exemptions==exCode ) %}
+                            <li>{{ exCode }} - {{ exData.Title }}</li>
+                        {% endif %}
+                     {% else %}
+                       <p>No data</p>
+                     {% endfor %}
+                 {% else %}
+                     {% for code in data.Exemptions %}
 
-           {% if data.operatorType=="Partnership" %}
-             <li>partnership name is <strong>{{data.opPartnershipName}}</strong></li>
-             <li> the partners are:<br>
-             <strong>{{data.opPartner1FirstName}} {{data.opPartner1LastName}}</strong><br>
-             <strong>{{data.opPartner2FirstName}} {{data.opPartner2LastName}}</strong>
-           {% endif %}
+                         {% for exCode, exData in exemptions %}
+                            {% if( code==exCode ) %}
+                                <li>{{ exCode }} - {{ exData.Title }}</li>
+                            {% endif %}
+                         {% else %}
+                           <p>No data</p>
+                         {% endfor %}
 
-         </ul>
+                     {% else %}
+                       <p>No exemptions selected</p>
+                     {% endfor %}
+                 {% endif %}
 
-         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-         <h2 class="govuk-heading-m">Operator address</h2>
-          <p class="govuk-body">
 
-            {% if data.operatorType=="Limited company" %}
-              {{data.opLtdCompanyAddress}}<br>
-              {{data.opLtdCompanyPostcode}}
-            {% endif %}
+               </ul>
 
-            {% if data.operatorType=="Individual or sole trader" %}
-              {{data.individualAddress}}<br>
-              {{data.individualPostcode}}
-            {% endif %}
-
-            {% if data.operatorType=="Partnership" %}
-              {{data.opPartnershipAddress}}<br>
-              {{data.opPartnershipPostcode}}
-            {% endif %}
-
-          </p>
-
-         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-         <h2 class="govuk-heading-m">Contact details</h2>
-         <ul class="govuk-list govuk-list--bullet">
-           <li>the contact's name is <strong>{{ data.opFirstName }} {{ data.opLastName }}</strong></li>
-           <li>the contact's position is <strong>{{ data.opContactPosition if data.opContactPosition else "not given" }}</strong></li>
-           <li>the contact's phone number is <strong>{{ data.opContactTelephone }}</strong></li>
-           <li>the contact's email is <strong>{{ data.opContactEmail }}</strong></li>
-         </ul>
-
-         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-         <h2 class="govuk-heading-m">Contact address</h2>
-         <p class="govuk-body">
-         {{ data.opContactAddress }}<br>
-         {{ data.opContactPostcode }}
-         </p>
-
-         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-         <h2 class="govuk-heading-m">Farming information</h2>
-         <ul class="govuk-list govuk-list--bullet">
-           <li>the operation <strong>will{{ "" if data.isFarm=="yes" else " not" }}</strong> take place on a farm</li>
-           <li>the operator <strong>is{{ "" if data.isFarmer=="yes" else " not" }}</strong> a farmer</li>
-         </ul>
 
          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-          {% if data.siteDescription=="" %}
+                 {% if data.siteDescription=="" %}
 
-              <h2 class="govuk-heading-m">Site address</h2>
-              <p class="govuk-body">
-              {{ data.siteAddress }}<br>
-              {{ data.sitePostcode }}
-              </p>
+                     <h2 class="govuk-heading-m">Site address</h2>
+                     <p class="govuk-body">
+                     {{ data.siteAddress }}<br>
+                     {{ data.sitePostcode }}
+                     </p>
 
-          {% else %}
+                 {% else %}
 
-              <h2 class="govuk-heading-m">Site location</h2>
-              <ul class="govuk-list govuk-list--bullet">
-              <li>the site is located at grid reference <strong>{{ data.siteGridRef }}</strong></li>
-              <li>the site description is <strong>{{ data.siteDescription }}</strong></li>
-              </ul>
+                     <h2 class="govuk-heading-m">Site location</h2>
+                     <ul class="govuk-list govuk-list--bullet">
+                     <li>the site is located at grid reference <strong>{{ data.siteGridRef }}</strong></li>
+                     <li>the site description is <strong>{{ data.siteDescription }}</strong></li>
+                     </ul>
 
-          {% endif %}
+                 {% endif %}
 
-
-         {% from "./json/exemption-json.html" import exemptions %}
 
          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-         <h2 class="govuk-heading-m">Selected exemptions</h2>
+
+                <h2 class="govuk-heading-m">You told us</h2>
+                <p>the waste operation will take place in <strong>{{ data.countryChoice }}</strong></p>
 
 
-         <ul class="govuk-list govuk-list--bullet">
+         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-           {% if data.Exemptions|typeof =="string" %}
-               {% for exCode, exData in exemptions %}
-                  {% if( data.Exemptions==exCode ) %}
-                      <li>{{ exCode }} - {{ exData.Title }}</li>
+                <h2 class="govuk-heading-m">Operator details</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>the operator is a <strong>{{ data.operatorType|lower }}</strong></li>
+
+                  {% if data.operatorType=="Limited company" %}
+                    <li>the company name is <strong>{{ data.opLtdCompanyName }}</strong></li>
+                    <li>the Companies House number is <strong>{{ data.opLtdCompanyRegNumber }}</strong></li>
                   {% endif %}
-               {% else %}
-                 <p>No data</p>
-               {% endfor %}
-           {% else %}
-               {% for code in data.Exemptions %}
 
-                   {% for exCode, exData in exemptions %}
-                      {% if( code==exCode ) %}
-                          <li>{{ exCode }} - {{ exData.Title }}</li>
-                      {% endif %}
-                   {% else %}
-                     <p>No data</p>
-                   {% endfor %}
+                  {% if data.operatorType=="Individual or sole trader" %}
+                    <li>their name is <strong>{{ data.individualName }}</strong></li>
+                  {% endif %}
 
-               {% else %}
-                 <p>No exemptions selected</p>
-               {% endfor %}
-           {% endif %}
+                  {% if data.operatorType=="Partnership" %}
+                    <li>partnership name is <strong>{{data.opPartnershipName}}</strong></li>
+                    <li> the partners are:<br>
+                    <strong>{{data.opPartner1FirstName}} {{data.opPartner1LastName}}</strong><br>
+                    <strong>{{data.opPartner2FirstName}} {{data.opPartner2LastName}}</strong>
+                  {% endif %}
+
+                </ul>
 
 
-         </ul>
+         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">Operator address</h2>
+                 <p class="govuk-body">
+
+                   {% if data.operatorType=="Limited company" %}
+                     {{data.opLtdCompanyAddress}}<br>
+                     {{data.opLtdCompanyPostcode}}
+                   {% endif %}
+
+                   {% if data.operatorType=="Individual or sole trader" %}
+                     {{data.individualAddress}}<br>
+                     {{data.individualPostcode}}
+                   {% endif %}
+
+                   {% if data.operatorType=="Partnership" %}
+                     {{data.opPartnershipAddress}}<br>
+                     {{data.opPartnershipPostcode}}
+                   {% endif %}
+
+                 </p>
 
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-      </form>
-    </div>
-  </div>
+                <h2 class="govuk-heading-m">Contact details</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>the contact's name is <strong>{{ data.opFirstName }} {{ data.opLastName }}</strong></li>
+                  <li>the contact's position is <strong>{{ data.opContactPosition if data.opContactPosition else "not given" }}</strong></li>
+                  <li>the contact's phone number is <strong>{{ data.opContactTelephone }}</strong></li>
+                  <li>the contact's email is <strong>{{ data.opContactEmail }}</strong></li>
+                </ul>
+
+
+         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">Contact address</h2>
+                <p class="govuk-body">
+                {{ data.opContactAddress }}<br>
+                {{ data.opContactPostcode }}
+                </p>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                <h2 class="govuk-heading-m">Farming information</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>the operation <strong>will{{ "" if data.isFarm=="yes" else " not" }}</strong> take place on a farm</li>
+                  <li>the operator <strong>is{{ "" if data.isFarmer=="yes" else " not" }}</strong> a farmer</li>
+                </ul>
+
+
+
+         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+               <h2 class="govuk-heading-m">Person who filled in the form</h2>
+               <ul class="govuk-list govuk-list--bullet">
+                 <li>name is <strong>{{ data.appFirstName }} {{ data.appLastName }}</strong></li>
+                 <li>phone number is <strong>{{ data.appTelephoneNumber }}</strong></li>
+                 <li>email is <strong>{{ data.appEmail }}</strong></li>
+               </ul>
+
+
+         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+                 {{ govukButton({
+                   text: "Continue"
+                 }) }}
+
+               </form>
+             </div>
+           </div>
 
 {% endblock %}

@@ -20,303 +20,181 @@
 {% block content %}
 
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-      <form action="{{ formAction if formAction else data.formAction }}" method="post" class="form">
+    <form action="{{ formAction if formAction else data.formAction }}" method="post" class="form">
 
-        <h1 class="govuk-heading-l">{{ pageHead }}</h1>
-
-
-<!-- ###################################################################### -->
-<h2 class="govuk-heading-m">Exemptions</h2>
-
-{% from "./json/exemption-json.html" import exemptions %}
+      <h1 class="govuk-heading-l">{{ pageHead }}</h1>
 
 
-<dl class="govuk-summary-list govuk-!-margin-bottom-0">
+      {% from "./json/exemption-json.html" import exemptions %}
 
-{% set exCounter=0 %}
+      <h2 class="govuk-heading-m">Selected exemptions</h2>
 
-{% for code in data.Exemptions %}
+      <ul class="govuk-list govuk-list--bullet">
 
+        {% if data.Exemptions|typeof =="string" %}
+            {% for exCode, exData in exemptions %}
+               {% if( data.Exemptions==exCode ) %}
+                   <li>{{ exCode }} - {{ exData.Title }}</li>
+               {% endif %}
+            {% else %}
+              <p>No data</p>
+            {% endfor %}
+        {% else %}
+            {% for code in data.Exemptions %}
 
-    {% for exCode, exData in exemptions %}
-       {% if( code==exCode ) %}
+                {% for exCode, exData in exemptions %}
+                   {% if( code==exCode ) %}
+                       <li>{{ exCode }} - {{ exData.Title }}</li>
+                   {% endif %}
+                {% else %}
+                  <p>No data</p>
+                {% endfor %}
 
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key wex-width-very-narrow">
-                    {{ exCode }}
-                </dt>
-                <dd class="govuk-summary-list__value" style="width:45%">
-                    {{ exData.Title }}
-                </dd>
-                <dd class="govuk-summary-list__actions" style="width:25%">
-                    <a class="govuk-link" href="{{ exData.URL }}" target="_blank">
-                    Check {{ exCode }} rules <span class="govuk-visually-hidden">- opens new tab</span>
-                    </a>
-                    {% if exCounter==0 %}<br>links open in a new tab{% endif %}
-                </dd>
-            </div>
-
-            {% set exCounter=1 %}
-
-       {% endif %}
-    {% else %}
-      <p>No data</p>
-    {% endfor %}
-
-{% else %}
-  <p>No exemptions selected</p>
-{% endfor %}
-
-</dl>
+            {% else %}
+              <p>No exemptions selected</p>
+            {% endfor %}
+        {% endif %}
 
 
-{{ govukInsetText({
-  text: "To add or remove exemptions, select ‘I need to make changes’ below.",
-  classes: "govuk-!-margin-bottom-9"
-}) }}
+      </ul>
+
+      {{ govukDetails({
+        summaryText: "Check the rules before you add an exemption",
+        html: '
+            <h2 class="govuk-heading-s govuk-!-font-weight-regular">Exemptions categories</h2>
+            <ul class="govuk-list">
+              <li><a class="govuk-link" href="https://www.gov.uk/government/collections/waste-exemptions-using-waste" target="_blank">Using waste: U1 to U16 (links open in a new tab)</a></li>
+              <li><a class="govuk-link" href="https://www.gov.uk/government/collections/waste-exemptions-treating-waste" target="_blank">Treating waste: T1 to T33</a></li>
+              <li><a class="govuk-link" href="https://www.gov.uk/government/collections/waste-exemptions-disposing-of-waste" target="_blank">Disposing of waste: D1 to D8</a></li>
+              <li><a class="govuk-link" href="https://www.gov.uk/government/collections/waste-exemptions-storing-waste" target="_blank">Storing waste: S1 to S3</a></li>
+            </ul>
+        '
+      }) }}
+
+      {{ govukInsetText({
+        text: "To add or remove exemptions, select ‘I need to make changes’ below.",
+        classes: "govuk-!-margin-bottom-0"
+      }) }}
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 
-<!-- ###################################################################### -->
 
-<h2 class="govuk-heading-m">Site or address for waste operation</h2>
+        {% if data.siteDescription=="" %}
 
-<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <h2 class="govuk-heading-m">Site address</h2>
+            <p class="govuk-body">
+            {{ data.siteAddress }}<br>
+            {{ data.sitePostcode }}
+            </p>
 
-  {% if data.siteDescription=="" %}
+        {% else %}
 
-        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-                Site address
-            </dt>
-            <dd class="govuk-summary-list__value">
-                {{ data.siteAddress }}<br>
-                {{ data.sitePostcode }}
-            </dd>
-            <dd class="govuk-summary-list__actions"></dd>
-        </div>
+            <h2 class="govuk-heading-m">Site location</h2>
+            <ul class="govuk-list govuk-list--bullet">
+            <li>the site is located at grid reference <strong>{{ data.siteGridRef }}</strong></li>
+            <li>the site description is <strong>{{ data.siteDescription }}</strong></li>
+            </ul>
 
-    {% else %}
-
-        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-                Grid reference
-            </dt>
-            <dd class="govuk-summary-list__value">
-                {{ data.siteGridRef }}<br>
-                <a href="https://gridreferencefinder.com/os.php?gr={{ data.siteGridRef | replace(" ", "") }}|{{ data.siteDescription | replace(" ", "_s_") | replace(",", "_c_") }}" target="_blank">
-                  Check on Grid Reference Finder site (opens new tab)
-                </a>
-            </dd>
-            <dd class="govuk-summary-list__actions"></dd>
-        </div>
-        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-                Description
-            </dt>
-            <dd class="govuk-summary-list__value">
-
-              {{ data.siteDescription }}
-            </dd>
-            <dd class="govuk-summary-list__actions"></dd>
-        </div>
-
-    {% endif %}
-
-</dl>
+        {% endif %}
 
 
-<!-- ###################################################################### -->
-<h2 class="govuk-heading-m">Business or organisation carrying out the waste operation</h2>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
-    <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-            Type
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{ data.operatorType }}
-        </dd>
-        <dd class="govuk-summary-list__actions"></dd>
-    </div>
-
-{% if data.operatorType=="Limited company" %}
-    <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-            Company name
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{ data.opLtdCompanyName }}
-        </dd>
-        <dd class="govuk-summary-list__actions"></dd>
-    </div>
-
-    <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-            Companies House number
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{ data.opLtdCompanyRegNumber }}
-        </dd>
-        <dd class="govuk-summary-list__actions"></dd>
-    </div>
-{% endif %}
-
-{% if data.operatorType=="Individual or sole trader" %}
-    <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-            Name
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{ data.individualName }}
-        </dd>
-        <dd class="govuk-summary-list__actions"></dd>
-    </div>
-{% endif %}
-
-{% if data.operatorType=="Partnership" %}
-    <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-            Partnership name
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data.opPartnershipName}}
-        </dd>
-        <dd class="govuk-summary-list__actions"></dd>
-    </div>
-    <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-            Partners
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{data.opPartner1FirstName}} {{data.opPartner1LastName}}<br>
-            {{data.opPartner2FirstName}} {{data.opPartner2LastName}}
-        </dd>
-        <dd class="govuk-summary-list__actions"></dd>
-    </div>
-{% endif %}
-
-<div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-        Address
-    </dt>
-    <dd class="govuk-summary-list__value">
-
-      {% if data.operatorType=="Limited company" %}
-        {{data.opLtdCompanyAddress}}<br>
-        {{data.opLtdCompanyPostcode}}
-      {% endif %}
-
-      {% if data.operatorType=="Individual or sole trader" %}
-        {{data.individualAddress}}<br>
-        {{data.individualPostcode}}
-      {% endif %}
-
-      {% if data.operatorType=="Partnership" %}
-        {{data.opPartnershipAddress}}<br>
-        {{data.opPartnershipPostcode}}
-      {% endif %}
-
-    </dd>
-    <dd class="govuk-summary-list__actions"></dd>
-</div>
-</dl>
+       <h2 class="govuk-heading-m">You told us</h2>
+       <p>the waste operation will take place in <strong>{{ data.countryChoice }}</strong></p>
 
 
-<!-- ###################################################################### -->
-<h2 class="govuk-heading-m">Contact for the waste operation</h2>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+       <h2 class="govuk-heading-m">Operator details</h2>
+       <ul class="govuk-list govuk-list--bullet">
+         <li>the operator is a <strong>{{ data.operatorType|lower }}</strong></li>
 
-    <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-            Name
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{ data.opFirstName }} {{ data.opLastName }}{{ ", "+data.opContactPosition if data.opContactPosition else "" }}
-        </dd>
-        <dd class="govuk-summary-list__actions"></dd>
-    </div>
-    <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-            Contact details
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{ data.opContactTelephone }}<br>
-            {{ data.opContactEmail }}
-        </dd>
-        <dd class="govuk-summary-list__actions"></dd>
-    </div>
-    <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-            Address
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data.opContactAddress }}<br>
-          {{ data.opContactPostcode }}
-        </dd>
-        <dd class="govuk-summary-list__actions"></dd>
-    </div>
+         {% if data.operatorType=="Limited company" %}
+           <li>the company name is <strong>{{ data.opLtdCompanyName }}</strong></li>
+           <li>the Companies House number is <strong>{{ data.opLtdCompanyRegNumber }}</strong></li>
+         {% endif %}
 
-</dl>
+         {% if data.operatorType=="Individual or sole trader" %}
+           <li>their name is <strong>{{ data.individualName }}</strong></li>
+         {% endif %}
 
-<!-- ###################################################################### -->
-<h2 class="govuk-heading-m">Farming information</h2>
+         {% if data.operatorType=="Partnership" %}
+           <li>partnership name is <strong>{{data.opPartnershipName}}</strong></li>
+           <li> the partners are:<br>
+           <strong>{{data.opPartner1FirstName}} {{data.opPartner1LastName}}</strong><br>
+           <strong>{{data.opPartner2FirstName}} {{data.opPartner2LastName}}</strong>
+         {% endif %}
 
-<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
-    <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-            On a farm
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{ data.isFarm|title }}
-        </dd>
-        <dd class="govuk-summary-list__actions"></dd>
-    </div>
-    <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-            Is a farmer
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{ data.isFarmer|title }}
-        </dd>
-        <dd class="govuk-summary-list__actions"></dd>
-    </div>
-
-</dl>
-
-<!-- ###################################################################### -->
-<h2 class="govuk-heading-m">Person who registered the exemptions</h2>
-
-<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
-    <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-            Name
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{ data.appFirstName }} {{ data.appLastName }}
-        </dd>
-        <dd class="govuk-summary-list__actions"></dd>
-    </div>
-    <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-            Contact details
-        </dt>
-        <dd class="govuk-summary-list__value">
-            {{ data.appTelephoneNumber }}<br>
-            {{ data.appEmail }}
-        </dd>
-        <dd class="govuk-summary-list__actions"></dd>
-    </div>
-
-</dl>
+       </ul>
 
 
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+       <h2 class="govuk-heading-m">Operator address</h2>
+        <p class="govuk-body">
+
+          {% if data.operatorType=="Limited company" %}
+            {{data.opLtdCompanyAddress}}<br>
+            {{data.opLtdCompanyPostcode}}
+          {% endif %}
+
+          {% if data.operatorType=="Individual or sole trader" %}
+            {{data.individualAddress}}<br>
+            {{data.individualPostcode}}
+          {% endif %}
+
+          {% if data.operatorType=="Partnership" %}
+            {{data.opPartnershipAddress}}<br>
+            {{data.opPartnershipPostcode}}
+          {% endif %}
+
+        </p>
+
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+       <h2 class="govuk-heading-m">Contact details</h2>
+       <ul class="govuk-list govuk-list--bullet">
+         <li>the contact's name is <strong>{{ data.opFirstName }} {{ data.opLastName }}</strong></li>
+         <li>the contact's position is <strong>{{ data.opContactPosition if data.opContactPosition else "not given" }}</strong></li>
+         <li>the contact's phone number is <strong>{{ data.opContactTelephone }}</strong></li>
+         <li>the contact's email is <strong>{{ data.opContactEmail }}</strong></li>
+       </ul>
+
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+       <h2 class="govuk-heading-m">Contact address</h2>
+       <p class="govuk-body">
+       {{ data.opContactAddress }}<br>
+       {{ data.opContactPostcode }}
+       </p>
+
+       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+       <h2 class="govuk-heading-m">Farming information</h2>
+       <ul class="govuk-list govuk-list--bullet">
+         <li>the operation <strong>will{{ "" if data.isFarm=="yes" else " not" }}</strong> take place on a farm</li>
+         <li>the operator <strong>is{{ "" if data.isFarmer=="yes" else " not" }}</strong> a farmer</li>
+       </ul>
+
+
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Person who filled in the form</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>name is <strong>{{ data.appFirstName }} {{ data.appLastName }}</strong></li>
+        <li>phone number is <strong>{{ data.appTelephoneNumber }}</strong></li>
+        <li>email is <strong>{{ data.appEmail }}</strong></li>
+      </ul>
+
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 {{ govukRadios({
   idPrefix: "renewalChoice",
