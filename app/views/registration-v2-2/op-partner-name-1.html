@@ -1,0 +1,59 @@
+{% set pageHead = "Partner details" %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{ pageHead }}
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="{{ formAction if formAction else data.formAction }}" method="post" class="form">
+
+        <h1 class="govuk-heading-l">{{ pageHead }}</h1>
+
+        <p class="govuk-body">Enter the name for each partner of the business.</p>
+
+        {{ govukInput({
+          label: {
+            text: "First name"
+          },
+          classes: "govuk-input--width-20",
+          id: "opPartner1FirstName",
+          name: "opPartner1FirstName",
+          value: data.opPartner1FirstName
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Last name"
+          },
+          classes: "govuk-input--width-20",
+          id: "opPartner1LastName",
+          name: "opPartner1LastName",
+          value: data.opPartner1LastName
+        }) }}
+
+        {{ govukButton({
+          text: "Add another person"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

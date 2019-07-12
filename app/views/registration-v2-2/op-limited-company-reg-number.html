@@ -1,0 +1,57 @@
+{% set pageHead = "What's the registration number of the company?" %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{ pageHead }}
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="{{ formAction if formAction else data.formAction }}" method="post" class="form">
+
+        <h1 class="govuk-heading-l">{{ pageHead }}</h1>
+
+        {{ govukInput({
+          label: {
+            text: "Registration number"
+          },
+          hint: {
+            text: "An 8 digit number, or 2 letters followed by a 6 digit number"
+          },
+          classes: "govuk-input--width-10",
+          id: "opLtdCompanyRegNumber",
+          name: "opLtdCompanyRegNumber",
+          value: data.opLtdCompanyRegNumber
+        }) }}
+
+        {{ govukDetails({
+          summaryText: "What's a registration number?",
+          text: "This is issued when the company is registered, and can be found on your Certificate of Incorporation and any paperwork from Companies House."
+        }) }}
+
+        <p class="govuk-body">We'll look this number up in the Companies House register to make sure it belongs to an active company.</p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

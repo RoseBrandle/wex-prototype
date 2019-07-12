@@ -1,0 +1,357 @@
+{% set pageHead = "Do you want to renew with these details?" %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{ pageHead }}
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="{{ formAction if formAction else data.formAction }}" method="post" class="form">
+
+        <h1 class="govuk-heading-l">{{ pageHead }}</h1>
+
+
+<!-- ###################################################################### -->
+<h2 class="govuk-heading-m">Exemptions</h2>
+
+{% from "./json/exemption-json.html" import exemptions %}
+
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-0">
+
+{% set exCounter=0 %}
+
+{% for code in data.Exemptions %}
+
+
+    {% for exCode, exData in exemptions %}
+       {% if( code==exCode ) %}
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key wex-width-very-narrow">
+                    {{ exCode }}
+                </dt>
+                <dd class="govuk-summary-list__value" style="width:45%">
+                    {{ exData.Title }}
+                </dd>
+                <dd class="govuk-summary-list__actions" style="width:25%">
+                    <a class="govuk-link" href="{{ exData.URL }}" target="_blank">
+                    Check {{ exCode }} rules <span class="govuk-visually-hidden">- opens new tab</span>
+                    </a>
+                    {% if exCounter==0 %}<br>links open in a new tab{% endif %}
+                </dd>
+            </div>
+
+            {% set exCounter=1 %}
+
+       {% endif %}
+    {% else %}
+      <p>No data</p>
+    {% endfor %}
+
+{% else %}
+  <p>No exemptions selected</p>
+{% endfor %}
+
+</dl>
+
+
+{{ govukInsetText({
+  text: "To add or remove exemptions, select ‘I need to make changes’ below.",
+  classes: "govuk-!-margin-bottom-9"
+}) }}
+
+
+<!-- ###################################################################### -->
+
+<h2 class="govuk-heading-m">Site or address for waste operation</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+  {% if data.siteDescription=="" %}
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Site address
+            </dt>
+            <dd class="govuk-summary-list__value">
+                {{ data.siteAddress }}<br>
+                {{ data.sitePostcode }}
+            </dd>
+            <dd class="govuk-summary-list__actions"></dd>
+        </div>
+
+    {% else %}
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Grid reference
+            </dt>
+            <dd class="govuk-summary-list__value">
+                {{ data.siteGridRef }}<br>
+                <a href="https://gridreferencefinder.com/os.php?gr={{ data.siteGridRef | replace(" ", "") }}|{{ data.siteDescription | replace(" ", "_s_") | replace(",", "_c_") }}" target="_blank">
+                  Check on Grid Reference Finder site (opens new tab)
+                </a>
+            </dd>
+            <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Description
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {{ data.siteDescription }}
+            </dd>
+            <dd class="govuk-summary-list__actions"></dd>
+        </div>
+
+    {% endif %}
+
+</dl>
+
+
+<!-- ###################################################################### -->
+<h2 class="govuk-heading-m">Business or organisation carrying out the waste operation</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            Type
+        </dt>
+        <dd class="govuk-summary-list__value">
+            {{ data.operatorType }}
+        </dd>
+        <dd class="govuk-summary-list__actions"></dd>
+    </div>
+
+{% if data.operatorType=="Limited company" %}
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            Company name
+        </dt>
+        <dd class="govuk-summary-list__value">
+            {{ data.opLtdCompanyName }}
+        </dd>
+        <dd class="govuk-summary-list__actions"></dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            Companies House number
+        </dt>
+        <dd class="govuk-summary-list__value">
+            {{ data.opLtdCompanyRegNumber }}
+        </dd>
+        <dd class="govuk-summary-list__actions"></dd>
+    </div>
+{% endif %}
+
+{% if data.operatorType=="Individual or sole trader" %}
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+            {{ data.individualName }}
+        </dd>
+        <dd class="govuk-summary-list__actions"></dd>
+    </div>
+{% endif %}
+
+{% if data.operatorType=="Partnership" %}
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            Partnership name
+        </dt>
+        <dd class="govuk-summary-list__value">
+            {{data.opPartnershipName}}
+        </dd>
+        <dd class="govuk-summary-list__actions"></dd>
+    </div>
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            Partners
+        </dt>
+        <dd class="govuk-summary-list__value">
+            {{data.opPartner1FirstName}} {{data.opPartner1LastName}}<br>
+            {{data.opPartner2FirstName}} {{data.opPartner2LastName}}
+        </dd>
+        <dd class="govuk-summary-list__actions"></dd>
+    </div>
+{% endif %}
+
+<div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+        Address
+    </dt>
+    <dd class="govuk-summary-list__value">
+
+      {% if data.operatorType=="Limited company" %}
+        {{data.opLtdCompanyAddress}}<br>
+        {{data.opLtdCompanyPostcode}}
+      {% endif %}
+
+      {% if data.operatorType=="Individual or sole trader" %}
+        {{data.individualAddress}}<br>
+        {{data.individualPostcode}}
+      {% endif %}
+
+      {% if data.operatorType=="Partnership" %}
+        {{data.opPartnershipAddress}}<br>
+        {{data.opPartnershipPostcode}}
+      {% endif %}
+
+    </dd>
+    <dd class="govuk-summary-list__actions"></dd>
+</div>
+</dl>
+
+
+<!-- ###################################################################### -->
+<h2 class="govuk-heading-m">Contact for the waste operation</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+            {{ data.opFirstName }} {{ data.opLastName }}{{ ", "+data.opContactPosition if data.opContactPosition else "" }}
+        </dd>
+        <dd class="govuk-summary-list__actions"></dd>
+    </div>
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            Contact details
+        </dt>
+        <dd class="govuk-summary-list__value">
+            {{ data.opContactTelephone }}<br>
+            {{ data.opContactEmail }}
+        </dd>
+        <dd class="govuk-summary-list__actions"></dd>
+    </div>
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            Address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data.opContactAddress }}<br>
+          {{ data.opContactPostcode }}
+        </dd>
+        <dd class="govuk-summary-list__actions"></dd>
+    </div>
+
+</dl>
+
+<!-- ###################################################################### -->
+<h2 class="govuk-heading-m">Farming information</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            On a farm
+        </dt>
+        <dd class="govuk-summary-list__value">
+            {{ data.isFarm|title }}
+        </dd>
+        <dd class="govuk-summary-list__actions"></dd>
+    </div>
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            Is a farmer
+        </dt>
+        <dd class="govuk-summary-list__value">
+            {{ data.isFarmer|title }}
+        </dd>
+        <dd class="govuk-summary-list__actions"></dd>
+    </div>
+
+</dl>
+
+<!-- ###################################################################### -->
+<h2 class="govuk-heading-m">Person who registered the exemptions</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+            {{ data.appFirstName }} {{ data.appLastName }}
+        </dd>
+        <dd class="govuk-summary-list__actions"></dd>
+    </div>
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            Contact details
+        </dt>
+        <dd class="govuk-summary-list__value">
+            {{ data.appTelephoneNumber }}<br>
+            {{ data.appEmail }}
+        </dd>
+        <dd class="govuk-summary-list__actions"></dd>
+    </div>
+
+</dl>
+
+
+
+{{ govukRadios({
+  idPrefix: "renewalChoice",
+  name: "renewalChoice",
+  fieldset: {
+    legend: {
+      text: pageHead,
+      isPageHeading: false,
+      classes: "govuk-visually-hidden"
+    }
+  },
+  items: [
+    {
+      value: "Yes",
+      checked: data.renewalChoice==="Yes",
+      text: "Renew with these details"
+    },
+    {
+      value: "No",
+      checked: data.renewalChoice==="No",
+      text: "I need to make changes"
+    }
+  ]
+}) }}
+
+
+
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
