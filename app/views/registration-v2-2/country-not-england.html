@@ -1,0 +1,48 @@
+{% set pageHead = "You cannot register your exemption here" %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{ pageHead }}
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">{{ pageHead }}</h1>
+
+      <p class="govuk-body">This service only covers waste operations in England. So you will need to register with the appropriate authority for your region.</p>
+
+{% if data.countryChoice=="Wales" %}
+      <p class="govuk-body">In Wales you need to register with Natural Resources Wales (NRW). For details on how, visit <a href="https://naturalresources.wales/permits-and-permissions/waste/register-your-waste-exemptions">Register your waste exemptions (Wales)</a>.</p>
+{% endif %}
+
+{% if data.countryChoice=="Scotland" %}
+      <p class="govuk-body">In Scotland you need to register with the Scottish Environment Protection Agency (SEPA). For details on how, visit <a href="https://www.sepa.org.uk/regulations/waste/activities-exempt-from-waste-management-licensing">Register your waste exemptions (Scotland)</a>.</p>
+{% endif %}
+
+{% if data.countryChoice=="Northern Ireland" %}
+      <p class="govuk-body">In Northern Ireland, you need to register with the Northern Ireland Environment Agency (NIEA). For details on how, visit <a href="https://www.gov.uk/waste-management-licence-northern-ireland/northern-ireland-environment-agency/apply-for-exemption">Register your waste exemptions (Northern Ireland)</a>.</p>
+{% endif %}
+
+      <p class="govuk-body">If you have any questions about this, please contact our helpline on 03708 506 506.</p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

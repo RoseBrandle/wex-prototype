@@ -1,0 +1,113 @@
+
+<html>
+
+<head>
+  <title>
+    Renew your waste exemptions - expiring 1 June 2019
+  </title>
+</head>
+<body>
+
+{% block content %}
+<div style="margin: 0, auto; padding: 30px; max-width: 600px;">
+<!-- email content starts -->
+
+    <table width="100%" style="color:rgb(0, 0, 0);font-family:Arial;background-color:rgb(0, 0, 0);margin-bottom:20pt;">
+        <tbody>
+            <tr>
+                <td><img src="/public/images/gov-uk-logo.png"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    {% import "includes/macros.html" as macros %}
+
+    {{ macros.para(
+      'Dear ' + data.opFirstName + ' ' + data.opLastName
+    ) }}
+
+    {{ macros.para(
+      '<b>You must renew your waste exemptions by ' + data.expiryDate + '</b>',6
+    ) }}
+
+    {{ macros.para(
+      'If your details are the same, you can renew in a few minutes.<br>
+      Renewals are free.'
+    ) }}
+
+    {{ macros.para(
+      '<b>Renew online at:<br><a target="_blank" href="renew-check-answers?formAction=renew-info">https://wasteexemptions.service.gov.uk/renew/124d7abfc2d1c1b</a></b>'
+    ) }}
+
+    {{ macros.para(
+      'If you no longer carry out these waste operations, you do not need to do anything. You will get one more reminder which you can also ignore.'
+    ) }}
+
+    {{ macros.para(
+      'Site: '
+      + data.siteAddressNumber + ', '
+      + data.siteAddress1 + ', '
+      + data.siteAddress2 + ' '
+      + data.siteTown + ' '
+      + data.sitePostcode
+    ) }}
+
+    <div style="margin-top:12pt;margin-bottom:0pt;">
+        <font face="Arial" size="4">
+        Your current exemptions:<br>
+          <ul>
+
+            {% from "./json/exemption-json.html" import exemptions %}
+
+            {% for code in data.Exemptions %}
+
+                {% for exCode, exData in exemptions %}
+                   {% if( code==exCode ) %}
+
+                    <li>{{ exCode }} {{ exData.Title }}</li>
+
+                   {% endif %}
+                {% else %}
+                  <p>No data</p>
+                {% endfor %}
+
+            {% else %}
+              <p>No exemptions selected</p>
+            {% endfor %}
+
+      </ul>
+    </font>
+    </div>
+
+
+    {{ macros.para(
+      'Registration number: ' + data.regNumber
+    ) }}
+
+    <div style="font-family:Arial;max-width:600px;">
+        <div style="margin-top:30pt;margin-bottom:10pt;">
+            <img width="200" height="57" alt="" src="/public/images/ea_logo_sm.png">
+        </div>
+    </div>
+
+    {{ macros.para(
+      'Environment Agency<br>
+      Telephone 03708 506 506, Monday to Friday (8am to 6pm)<br>
+      <a href="mailto:enquiries@environment-agency.gov.uk">enquiries@environment-agency.gov.uk</a>'
+  ) }}
+
+  {{ macros.para(
+    'This is an automated email, please do not reply.'
+  ) }}
+
+  {{ macros.para(
+    '&nbsp;'
+  ) }}
+
+
+<!-- email content ends -->
+</div>
+{% endblock %}
+
+</body>
+</html>

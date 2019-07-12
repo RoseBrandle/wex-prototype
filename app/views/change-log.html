@@ -26,10 +26,35 @@
       </h1>
 
       <h2 class="govuk-heading-m">
-        WEX renewals v2.0 to v2.1
+        WEX renewals v2.1 to v2.2
       </h2>
 
-{% import "includes/macros.html" as macros %}
+{{ govukTable({
+  firstCellIsHeader: true,
+  classes: "wex-align-top",
+  head: [
+    {
+      text: "User need"
+    },
+    {
+      text: "Iteration for research"
+    }
+  ],
+  rows: [
+  [
+    {
+      text: "Check details before renewing"
+    },
+    {
+      text: "We want to test using the current check details pattern rather than the updated one. This is to check if we can release more quickly by using the current pattern."
+    }
+  ]
+  ]
+}) }}
+
+      <h2 class="govuk-heading-m">
+        WEX renewals v2.0 to v2.1
+      </h2>
 
 {{ govukTable({
   firstCellIsHeader: true,
