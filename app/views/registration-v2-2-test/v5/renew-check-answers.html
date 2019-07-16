@@ -1,0 +1,163 @@
+{% set pageHead = "Do you want to renew with these details?" %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{ pageHead }}
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form action="renew-info" method="post" class="form">
+
+        <h1 class="govuk-heading-l">Do you want to renew with these details?</h1>
+
+        <h2 class="govuk-heading-m">Selected exemptions</h2>
+
+        <ul class="govuk-list govuk-list--bullet">
+
+            <li>U4 - Burning of waste as a fuel in a small appliance
+              <a target="_blank" href="info?url=waste-exemption-u4-burning-of-waste-as-a-fuel-in-a-small-appliance&txt=U4">U4 rules</a></li>
+
+            <li>U8 - Using waste for a specified purpose
+              <a target="_blank" href="info?url=waste-exemption-u8-using-waste-for-a-specified-purpose&txt=U8">U8 rules</a></li>
+
+            <li>T6 - Treating waste wood and waste plant matter by chipping, shredding, cutting or pulverising
+              <a target="_blank" href="info?url=waste-exemption-t6-treating-waste-wood-and-waste-plant-matter-by-chipping-shredding-cutting-or-pulverising&txt=T6">T6 rules</a></li>
+
+            <li>T23 - Aerobic composting and associated prior treatment
+              <a target="_blank" href="info?url=waste-exemption-t23-aerobic-composting-and-associated-prior-treatment&txt=T23">T23 rules</a></li>
+
+            <li>D7 - Burning waste in the open
+              <a target="_blank" href="info?url=waste-exemption-d7-burning-waste-in-the-open&txt=D7">D7 rules</a></li>
+
+        </ul>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m">Site address</h2>
+        <p class="govuk-body">
+            HILL FARM, BURRINGTON, BRISTOL
+            <br> BS40 7AX
+        </p>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m">You told us</h2>
+        <p>the waste operation will take place in <strong>England</strong></p>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m">Operator details</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>the operator is a <strong>individual or sole trader</strong></li>
+
+            <li>their name is <strong>Christine Hayes</strong></li>
+
+        </ul>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m">Operator address</h2>
+        <p class="govuk-body">
+
+            HILL FARM, BURRINGTON, BRISTOL
+            <br> BS40 7AX
+
+        </p>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m">Contact details</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>the contact's name is <strong>Christine Hayes</strong></li>
+            <li>the contact's position is <strong>not given</strong></li>
+            <li>the contact's phone number is <strong>07890 456123</strong></li>
+            <li>the contact's email is <strong>christine.hayes@email.co.uk</strong></li>
+        </ul>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m">Contact address</h2>
+        <p class="govuk-body">
+            HILL FARM, BURRINGTON, BRISTOL
+            <br> BS40 7AX
+        </p>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        <h2 class="govuk-heading-m">Farming information</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>the operation <strong>will</strong> take place on a farm</li>
+            <li>the operator <strong>is</strong> a farmer</li>
+        </ul>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m">Person who filled in the form</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>name is <strong>Christine Hayes</strong></li>
+            <li>phone number is <strong>07890 456123</strong></li>
+            <li>email is <strong>christine.hayes@email.co.uk</strong></li>
+        </ul>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset">
+
+                <legend class="govuk-fieldset__legend govuk-visually-hidden">
+
+                    Do you want to renew with these details?
+
+                </legend>
+
+                <div class="govuk-radios">
+
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="renewalChoice-1" name="renewalChoice" type="radio" value="Yes">
+                        <label class="govuk-label govuk-radios__label" for="renewalChoice-1">
+                            Renew with these details
+                        </label>
+                    </div>
+
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="renewalChoice-2" name="renewalChoice" type="radio" value="No">
+                        <label class="govuk-label govuk-radios__label" for="renewalChoice-2">
+                            I need to make changes
+                        </label>
+                    </div>
+
+                </div>
+            </fieldset>
+
+        </div>
+
+        <button type="submit" class="govuk-button">
+            Continue
+        </button>
+
+    </form>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% set pageHead = "Tests" %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{ pageHead }}
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Renewal tests following lab research</h1>
+
+        {% import "includes/macros.html" as macros %}
+
+        <ul class="govuk-list govuk-list--bullet">
+          {{ macros.list( "Email v2.2 - original - 4 links on check details page", "/registration-v2-2-test/orig/email-renew" ) }}
+          {{ macros.list( "No links at all", "/registration-v2-2-test/v1/email-renew" ) }}
+          {{ macros.list( "Single link in email", "/registration-v2-2-test/v2/email-renew" ) }}
+          {{ macros.list( "Multiple links in email", "/registration-v2-2-test/v4/email-renew" ) }}
+          {{ macros.list( "Links next to exemptions - opens in same window", "/registration-v2-2-test/v3/email-renew" ) }}
+          {{ macros.list( "Links next to exemptions - info page", "/registration-v2-2-test/v5/email-renew" ) }}
+          {{ macros.list( "Links next to exemptions - dynamic test", "/registration-v2-2-test/v6/email-renew" ) }}
+        </ul>
+
+    </div>
+  </div>
+
+{% endblock %}
