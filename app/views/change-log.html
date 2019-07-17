@@ -26,6 +26,33 @@
       </h1>
 
       <h2 class="govuk-heading-m">
+        WEX renewals v2.2 to v2.3
+      </h2>
+
+{{ govukTable({
+  firstCellIsHeader: true,
+  classes: "wex-align-top",
+  head: [
+    {
+      text: "User need"
+    },
+    {
+      text: "Iteration for research"
+    }
+  ],
+  rows: [
+  [
+    {
+      text: "Users in round 3 were getting lost in GOV.UK guidance and could not get back to the renew journey."
+    },
+    {
+      text: "1: Provide a guidance link in the email - hypothesis is that users will be able to find their email if they get lost. 2: Provide links direct to the exemption guidance from each selected exemption. 3: Do not open the link in a new tab/window so that the back link is not broken. "
+    }
+  ]
+  ]
+}) }}
+
+      <h2 class="govuk-heading-m">
         WEX renewals v2.1 to v2.2
       </h2>
 
