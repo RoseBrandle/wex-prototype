@@ -37,7 +37,7 @@
         {% if data.Exemptions|typeof =="string" %}
             {% for exCode, exData in exemptions %}
                {% if( data.Exemptions==exCode ) %}
-                   <li>{{ exCode }} - {{ exData.Title }} - <a href="{{ exData.URL }}">{{ exCode }} rules</a></li>
+                   <li>{{ exCode }} - {{ exData.Title }} - <a href="{{ exData.URL }}">{{ exCode }} rules and limits</a></li>
                {% endif %}
             {% else %}
               <p>No data</p>
@@ -47,7 +47,7 @@
 
                 {% for exCode, exData in exemptions %}
                    {% if( code==exCode ) %}
-                       <li>{{ exCode }} - {{ exData.Title }} - <a href="{{ exData.URL }}">{{ exCode }} rules</a></li>
+                       <li>{{ exCode }} - {{ exData.Title }} - <a href="{{ exData.URL }}">{{ exCode }} rules and limits</a></li>
                    {% endif %}
                 {% else %}
                   <p>No data</p>
@@ -210,14 +210,13 @@
           text: "Continue"
         }) }}
 
+
       </form>
     </div>
   </div>
 
-
-
-<p class="govuk-body" style="margin-top:200px;">
-  <a href="renew-check-answers-2" target="_blank" class="govuk-link">Alternative</a>
-</p>
+  <p class="govuk-body" style="margin-top:200px;">
+    <a href="renew-check-answers" target="_blank" class="govuk-link">Alternative</a>
+  </p>
 
 {% endblock %}
