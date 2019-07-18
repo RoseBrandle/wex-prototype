@@ -31,7 +31,7 @@
     ) }}
 
     {{ macros.para(
-      'If your company details and exemptions have not changed, you can renew online in a few minutes. Renewal is free. '
+      'If your registration details and exemptions have not changed, you can renew online in a few minutes. Renewal is free.'
     ) }}
 
     {{ macros.para(
@@ -39,11 +39,7 @@
     ) }}
 
     {{ macros.para(
-      'If you no longer carry out these waste operations, you do not need to do anything. You will get one more reminder which you can also ignore.'
-    ) }}
-
-    {{ macros.para(
-      'Site: '
+      'Site location: '
       + data.siteAddressNumber + ', '
       + data.siteAddress1 + ', '
       + data.siteAddress2 + ' '
@@ -51,9 +47,14 @@
       + data.sitePostcode
     ) }}
 
+    {{ macros.para(
+      'Registration number: ' + data.regNumber
+    ) }}
+
+
     <div style="margin-top:12pt;margin-bottom:0pt;">
         <font face="Arial" size="4">
-        Your current exemptions:<br>
+        These waste exemptions will expire on {{ data.expiryDate }}:<br>
           <ul>
 
             {% from "./json/exemption-json.html" import exemptions %}
@@ -78,14 +79,17 @@
 
       <p>Waste exemption rules and guidance:<br>
         <a href="https://www.gov.uk/guidance/register-your-waste-exemptions-environmental-permits">https://www.gov.uk/guidance/register-your-waste-exemptions-environmental-permits</a></p>
+
+        {{ macros.para(
+          'If you no longer carry out these waste operations, you can ignore any reminders. Your waste exemptions will be removed from the public register when they expire.'
+        ) }}
+
     </font>
 
     </div>
 
 
-    {{ macros.para(
-      'Registration number: ' + data.regNumber
-    ) }}
+
 
     <div style="font-family:Arial;max-width:600px;">
         <div style="margin-top:30pt;margin-bottom:10pt;">
