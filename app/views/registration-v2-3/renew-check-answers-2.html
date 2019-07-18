@@ -37,7 +37,7 @@
         {% if data.Exemptions|typeof =="string" %}
             {% for exCode, exData in exemptions %}
                {% if( data.Exemptions==exCode ) %}
-                   <li>{{ exCode }} - {{ exData.Title }} - <a href="{{ exData.URL }}">{{ exCode }} rules and limits</a></li>
+                   <li>{{ exCode }} - {{ exData.Title }} - <a href="{{ exData.URL }}">{{ exCode }} rules</a></li>
                {% endif %}
             {% else %}
               <p>No data</p>
@@ -47,7 +47,7 @@
 
                 {% for exCode, exData in exemptions %}
                    {% if( code==exCode ) %}
-                       <li>{{ exCode }} - {{ exData.Title }} - <a href="{{ exData.URL }}">{{ exCode }} rules and limits</a></li>
+                       <li>{{ exCode }} - {{ exData.Title }} - <a href="{{ exData.URL }}">{{ exCode }} rules</a></li>
                    {% endif %}
                 {% else %}
                   <p>No data</p>
@@ -57,8 +57,6 @@
               <p>No exemptions selected</p>
             {% endfor %}
         {% endif %}
-
-
       </ul>
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
