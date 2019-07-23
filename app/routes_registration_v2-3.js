@@ -1199,6 +1199,46 @@ const WEX152443Data = {
 }
 
 
+const WEX151981Data = {
+  registerChoice:'startNew',
+  regNumber:'WEX151981',
+  expiryDate:'22 August 2019',
+  countryChoice:'England',
+  appFirstName:'Mark',
+  appLastName:'Warner',
+  appTelephoneNumber:'01342 456123',
+  appEmail:'mark.warner@email.co.uk',
+  appEmailConfirm:'mark.warner@email.co.uk',
+  operatorType:'Individual or sole trader',
+  individualName:'Mark Warner',
+  individualPostcode:'LS8 1LE',
+  individualAddress:'53, DENTON AVENUE, LEEDS',
+  opFirstName:'Mark',
+  opLastName:'Warner',
+  opContactPosition:'',
+  opContactTelephone:'01761 456123',
+  opContactEmail:'mark.warner@email.co.uk',
+  opContactEmailConfirm:'mark.warner@email.co.uk',
+  opContactPostcode:'LS8 1LE',
+  opContactAddress:'53, DENTON AVENUE, LEEDS',
+  isFarm:'no',
+  isFarmer:'no',
+  siteGridRef:'SE2603434883',
+  siteDescription:'',
+  siteAddress:'LENHURST AVENUE, LEEDS',
+  siteAddressNumber: '',
+  siteAddress1: 'LENHURST AVENUE',
+  siteAddress2: '',
+  siteTown: 'LEEDS',
+  sitePostcode: 'LS12 2RE',
+  Exemptions: [
+    'T6',
+    'T13',
+    'T23'
+  ]
+}
+
+
 // Load sample data #############################
 router.get('/sample-company', function (req, res) {
     req.session.data = companySampleData
@@ -1341,6 +1381,16 @@ router.get('/WEX152443', function (req, res) {
     req.session.data.selectAddress = WEX152443Data.siteAddress
     res.redirect('/' + folder + '/email-renew')
 })
+
+router.get('/WEX151981', function (req, res) {
+    req.session.data = WEX151981Data
+    req.session.data.selectAddress = WEX151981Data.siteAddress
+    res.redirect('/' + folder + '/email-renew')
+})
+
+
+
+
 
 
 module.exports = router
