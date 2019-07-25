@@ -30,10 +30,10 @@ Exemption data stored in Google sheet: https://docs.google.com/spreadsheets/d/1f
 Convert CSV to JSON here: http://www.convertcsv.com/csv-to-json.htm
 -->
 
-{% set tU = "Using waste" %}
-{% set tT = "Treating waste" %}
-{% set tS = "Storing waste" %}
-{% set tD = "Disposing of waste" %}
+{% set tU = "Using waste exemptions" %}
+{% set tT = "Treating waste exemptions" %}
+{% set tS = "Storing waste exemptions" %}
+{% set tD = "Disposing of waste exemptions" %}
 {% set tF = "Typical farming exemptions" %}
 {% set tW = "Typical waste operation exemptions" %}
 
@@ -62,9 +62,11 @@ Convert CSV to JSON here: http://www.convertcsv.com/csv-to-json.htm
               {% endif %}
 
 
-                        <p><b><a href="{{ exData.URL }}">{{ exCode }} {{ exData.Title }}</a></b><br>
+                        <p class="govuk-body govuk-!-margin-bottom-1"><b><a href="{{ exData.URL }}">Waste exemption: {{ exCode }} {{ exData.Title }}</a></b><br>
                           {{ exData.Desc }}<br>
                         </p>
+                        <p class="govuk-body govuk-!-font-size-14">28 April 2014  Guidance</p>
+                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
               {% set firstLetterAfter = exCode | truncate(1, true, "") %}
 
@@ -86,9 +88,11 @@ Convert CSV to JSON here: http://www.convertcsv.com/csv-to-json.htm
               {% for exCode, exData in exemptions %}
                   {% if exData.Farming=="Yes" %}
 
-                        <p><b><a href="{{ exData.URL }}">{{ exCode }} {{ exData.Title }}</a></b><br>
+                        <p class="govuk-body govuk-!-margin-bottom-1"><b><a href="{{ exData.URL }}">Waste exemption: {{ exCode }} {{ exData.Title }}</a></b><br>
                           {{ exData.Desc }}<br>
                         </p>
+                        <p class="govuk-body govuk-!-font-size-14">28 April 2014  Guidance</p>
+                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
                   {% endif %}
 
@@ -107,9 +111,11 @@ Convert CSV to JSON here: http://www.convertcsv.com/csv-to-json.htm
                             {% for exCode, exData in exemptions %}
                                 {% if exData.Waste=="Yes" %}
 
-                                      <p><b><a href="{{ exData.URL }}">{{ exCode }} {{ exData.Title }}</a></b><br>
+                                      <p class="govuk-body govuk-!-margin-bottom-1"><b><a href="{{ exData.URL }}">Waste exemption: {{ exCode }} {{ exData.Title }}</a></b><br>
                                         {{ exData.Desc }}<br>
                                       </p>
+                                      <p class="govuk-body govuk-!-font-size-14">28 April 2014  Guidance</p>
+                                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
                                 {% endif %}
 
