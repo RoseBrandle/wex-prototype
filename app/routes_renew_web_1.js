@@ -19,12 +19,41 @@ router.post('/start-check', function (req, res) {
   if (registerChoice === 'startNew') {
     res.redirect('/' + folder + '/country')
   } else if (registerChoice === 'reRegister') {
-    res.redirect('/' + folder + '/country')
+    res.redirect('/' + folder + '/registration-number')
   } else if (registerChoice === 'change') {
     res.redirect('/' + folder + '/contact-ea')
   } else {
     res.redirect('/' + folder + '/start')
   }
+})
+
+// Branching all renewal scenarios based on specified number
+router.post('/renew-check', function (req, res) {
+  let regNum = req.session.data['registrationNumber']
+  var regNumber = regNum.toUpperCase()
+  regNumber = regNum.replace(/\s/g,'')
+
+  var pattern = '/WEX[0-9]{6}/i'
+
+  if (regNumber === '') {
+    res.redirect('/' + folder + '/registration-number?error=noNumber')
+
+  } else if (regNumber === 'WEX223456') {
+    res.redirect('/' + folder + '/registration-number?error=notDueYet')
+
+  } else if (regNumber === 'WEX323456') {
+    res.redirect('/' + folder + '/registration-number-not-recognised')
+
+  } else if (regNumber === 'WEX423456') {
+    res.redirect('/' + folder + '/registration-number-expired')
+
+  } else if ( regNumber.search(pattern) == -1 ) {
+    res.redirect('/' + folder + '/registration-number?error=wrongFormat')
+
+  } else {
+    res.redirect('/' + folder + '/registration-number')
+  }
+
 })
 
 // /country POST action hardcoded to /country-check
