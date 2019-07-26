@@ -1,0 +1,132 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  List of all exemptions
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        List of exemptions
+      </h1>
+<!--
+Exemption data stored in Google sheet: https://docs.google.com/spreadsheets/d/1ffp1oSjtVTtV0OuFy59bnv4P5iyBkimd8UdUpXUQbLY/edit#gid=0
+Convert CSV to JSON here: http://www.convertcsv.com/csv-to-json.htm
+-->
+
+{% set tU = "Using waste exemptions" %}
+{% set tT = "Treating waste exemptions" %}
+{% set tS = "Storing waste exemptions" %}
+{% set tD = "Disposing of waste exemptions" %}
+{% set tF = "Typical farming exemptions" %}
+{% set tW = "Typical waste operation exemptions" %}
+
+
+{% set dateString = "5 November 2015 &nbsp; Guidance" %}
+
+<ul class="govuk-list">
+    <li><a href="#U">{{ tU }}</a></li>
+    <li><a href="#T">{{ tT }}</a></li>
+    <li><a href="#D">{{ tD }}</a></li>
+    <li><a href="#S">{{ tS }}</a></li>
+    <li><a href="#F">{{ tF }}</a></li>
+    <li><a href="#W">{{ tW }}</a></li>
+</ul>
+
+
+{% from "./json/exemption-json.html" import exemptions %}
+
+              {% for exCode, exData in exemptions %}
+
+              {% set firstLetter = exCode | truncate(1, true, "") %}
+
+              {% if firstLetter==firstLetterAfter %}
+              {% else %}
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                        <h2 class="govuk-heading-m" id="{{ firstLetter }}">
+                          {{ firstLetter | replace("U", tU) | replace("T", tT) | replace("S", tS) | replace("D", tD) }}
+                        </h2>
+              {% endif %}
+
+
+                        <p class="govuk-body govuk-!-margin-bottom-1"><b><a href="{{ exData.URL }}">Waste exemption: {{ exCode }} {{ exData.Title }}</a></b><br>
+                          {{ exData.Desc }}<br>
+                        </p>
+                        <p class="govuk-body govuk-!-font-size-14">{{ dateString | safe }}</p>
+                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+              {% set firstLetterAfter = exCode | truncate(1, true, "") %}
+
+              {% else %}
+                <p>No data</p>
+              {% endfor %}
+
+
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+              <h2 class="govuk-heading-m" id="F">
+                {{tF}}
+              </h2>
+
+<!-- ############################################################ -->
+
+              {% for exCode, exData in exemptions %}
+                  {% if exData.Farming=="Yes" %}
+
+                        <p class="govuk-body govuk-!-margin-bottom-1"><b><a href="{{ exData.URL }}">Waste exemption: {{ exCode }} {{ exData.Title }}</a></b><br>
+                          {{ exData.Desc }}<br>
+                        </p>
+                        <p class="govuk-body govuk-!-font-size-14">{{ dateString | safe }}</p>
+                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                  {% endif %}
+
+              {% else %}
+                <p>No data</p>
+              {% endfor %}
+
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                            <h2 class="govuk-heading-m" id="W">
+                              {{tW}}
+                            </h2>
+
+              <!-- ############################################################ -->
+
+                            {% for exCode, exData in exemptions %}
+                                {% if exData.Waste=="Yes" %}
+
+                                      <p class="govuk-body govuk-!-margin-bottom-1"><b><a href="{{ exData.URL }}">Waste exemption: {{ exCode }} {{ exData.Title }}</a></b><br>
+                                        {{ exData.Desc }}<br>
+                                      </p>
+                                      <p class="govuk-body govuk-!-font-size-14">{{ dateString | safe }}</p>
+                                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                                {% endif %}
+
+                            {% else %}
+                              <p>No data</p>
+                            {% endfor %}
+
+    </div>
+  </div>
+
+{% endblock %}
