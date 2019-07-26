@@ -37,6 +37,9 @@ Convert CSV to JSON here: http://www.convertcsv.com/csv-to-json.htm
 {% set tF = "Typical farming exemptions" %}
 {% set tW = "Typical waste operation exemptions" %}
 
+
+{% set dateString = "5 November 2015 &nbsp; Guidance" %}
+
 <ul class="govuk-list">
     <li><a href="#U">{{ tU }}</a></li>
     <li><a href="#T">{{ tT }}</a></li>
@@ -65,7 +68,7 @@ Convert CSV to JSON here: http://www.convertcsv.com/csv-to-json.htm
                         <p class="govuk-body govuk-!-margin-bottom-1"><b><a href="{{ exData.URL }}">Waste exemption: {{ exCode }} {{ exData.Title }}</a></b><br>
                           {{ exData.Desc }}<br>
                         </p>
-                        <p class="govuk-body govuk-!-font-size-14">28 April 2014  Guidance</p>
+                        <p class="govuk-body govuk-!-font-size-14">{{ dateString | safe }}</p>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
               {% set firstLetterAfter = exCode | truncate(1, true, "") %}
@@ -91,7 +94,7 @@ Convert CSV to JSON here: http://www.convertcsv.com/csv-to-json.htm
                         <p class="govuk-body govuk-!-margin-bottom-1"><b><a href="{{ exData.URL }}">Waste exemption: {{ exCode }} {{ exData.Title }}</a></b><br>
                           {{ exData.Desc }}<br>
                         </p>
-                        <p class="govuk-body govuk-!-font-size-14">28 April 2014  Guidance</p>
+                        <p class="govuk-body govuk-!-font-size-14">{{ dateString | safe }}</p>
                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
                   {% endif %}
@@ -114,7 +117,7 @@ Convert CSV to JSON here: http://www.convertcsv.com/csv-to-json.htm
                                       <p class="govuk-body govuk-!-margin-bottom-1"><b><a href="{{ exData.URL }}">Waste exemption: {{ exCode }} {{ exData.Title }}</a></b><br>
                                         {{ exData.Desc }}<br>
                                       </p>
-                                      <p class="govuk-body govuk-!-font-size-14">28 April 2014  Guidance</p>
+                                      <p class="govuk-body govuk-!-font-size-14">{{ dateString | safe }}</p>
                                       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
                                 {% endif %}
