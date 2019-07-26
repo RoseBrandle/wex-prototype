@@ -1,0 +1,138 @@
+{% set pageHead = "We found this registration for WEX123456" %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{ pageHead }}
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/{{folder}}/renew-info" method="post" class="form">
+
+        <h1 class="govuk-heading-l">{{ pageHead }}</h1>
+
+
+<!-- ###################################################################### -->
+<h2 class="govuk-heading-m">Exemptions</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-6">
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key wex-width-very-narrow">
+                    D1
+                </dt>
+                <dd class="govuk-summary-list__value" style="width:45%">
+                    Depositing waste from dredging inland waters
+                </dd>
+                <dd class="govuk-summary-list__actions" style="width:25%">
+                    <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemptions-disposing-of-waste">
+                    D1 rules and limits
+                    </a>
+                </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key wex-width-very-narrow">
+                    D7
+                </dt>
+                <dd class="govuk-summary-list__value" style="width:45%">
+                    Burning waste in the open
+                </dd>
+                <dd class="govuk-summary-list__actions" style="width:25%">
+                    <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-d7-burning-waste-in-the-open">
+                    D7 rules and limits
+                    </a>
+                </dd>
+            </div>
+
+</dl>
+
+
+<!-- ###################################################################### -->
+
+<h2 class="govuk-heading-m">Site or address for waste operation</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-6">
+
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Site address
+            </dt>
+            <dd class="govuk-summary-list__value">
+                Lower field, Oak Tree Farm, Someshire<br>
+                EX14 5TG
+            </dd>
+            <dd class="govuk-summary-list__actions"></dd>
+        </div>
+
+</dl>
+
+
+<!-- ###################################################################### -->
+<h2 class="govuk-heading-m">Business or organisation carrying out the waste operation</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-6">
+
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            Type
+        </dt>
+        <dd class="govuk-summary-list__value">
+            Partnership
+        </dd>
+        <dd class="govuk-summary-list__actions"></dd>
+    </div>
+
+
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            Partnership name
+        </dt>
+        <dd class="govuk-summary-list__value">
+            Our Waste Partnership
+        </dd>
+        <dd class="govuk-summary-list__actions"></dd>
+    </div>
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            Partners
+        </dt>
+        <dd class="govuk-summary-list__value">
+            Roger Brown<br>
+            Jane Brown
+        </dd>
+        <dd class="govuk-summary-list__actions"></dd>
+    </div>
+
+</dl>
+
+
+<input type="hidden" name="renewalChoice" value="webRenewal">
+
+        {{ govukButton({
+          text: "Renew this registration"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

@@ -31,9 +31,9 @@ router.post('/start-check', function (req, res) {
 router.post('/renew-check', function (req, res) {
   let regNum = req.session.data['registrationNumber']
   var regNumber = regNum.toUpperCase()
-  regNumber = regNum.replace(/\s/g,'')
+  regNumber = regNumber.replace(/\s/g,'')
 
-  var pattern = '/WEX[0-9]{6}/i'
+  var pattern = /^WEX[0-9]{6}$/
 
   if (regNumber === '') {
     res.redirect('/' + folder + '/registration-number?error=noNumber')
@@ -47,13 +47,20 @@ router.post('/renew-check', function (req, res) {
   } else if (regNumber === 'WEX423456') {
     res.redirect('/' + folder + '/registration-number-expired')
 
-  } else if ( regNumber.search(pattern) == -1 ) {
+  } else if ( ! regNumber.match(pattern) ) {
     res.redirect('/' + folder + '/registration-number?error=wrongFormat')
 
   } else {
-    res.redirect('/' + folder + '/registration-number')
+    res.redirect('/' + folder + '/renew-web-check-answers')
   }
 
+})
+
+// renew-info ================================================
+router.post('/renew-info', function (req, res) {
+  res.render(folder + '/renew-info',{
+    "formAction":"country"
+  })
 })
 
 // /country POST action hardcoded to /country-check

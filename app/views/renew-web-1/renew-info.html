@@ -60,6 +60,21 @@
             </p>
         {% endif %}
 
+        {% if data.renewalChoice=="webRenewal" %}
+            <h1 class="govuk-heading-l">
+              Check that the details are correct as you go through each screen.
+            </h1>
+            <p class="govuk-body">
+              We can only fill in the form with the details that are on the waste exemptions public register, so you'll have to enter some data again.
+            </p>
+            <p class="govuk-body">
+              You can change any details if you need to.
+            </p>
+            <p class="govuk-body">
+              Your registration is for 3 years. You'll get a new registration number.
+            </p>
+        {% endif %}
+
         {{ govukButton({
           text: "Continue"
         }) }}
