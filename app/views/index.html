@@ -31,6 +31,7 @@
 
 {% import "includes/macros.html" as macros %}
 
+
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 <!-- ########################################################################### -->
 
@@ -43,6 +44,20 @@
       <p class="govuk-body">
         <a href="/prototype-admin/clear-data">Clear stored data</a>
       </p>
+
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <!-- ########################################################################### -->
+
+      <h2 class="govuk-heading-m">
+        Release candidate
+      </h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        {{ macros.list( "Renew journey - company", "/registration-rc/sample-company" ) }}
+        {{ macros.list( "Renew journey - individual", "/registration-rc/sample-individual" ) }}
+        {{ macros.list( "Renew journey - partnership", "/registration-rc/sample-partnership" ) }}
+      </ul>
 
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
