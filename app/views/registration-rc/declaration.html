@@ -1,0 +1,76 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Declaration
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="{{ formAction if formAction else data.formAction }}" method="post" class="form">
+
+        <h1 class="govuk-heading-l">Declaration</h1>
+
+        {{ govukWarningText({
+          text: "You can be prosecuted and fined up to £5,000 if you give false or misleading information.",
+          iconFallbackText: "Warning"
+        }) }}
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>By registering, you confirm that the information you have provided is true</li>
+          <li>The business or organisation carrying out the waste operation has authorised me to provide this information</li>
+        </ul>
+
+        {{ govukCheckboxes({
+          idPrefix: "declaration",
+          name: "declaration",
+          fieldset: {
+            legend: {
+              text: "Declaration",
+              isPageHeading: false,
+              classes: "govuk-visually-hidden"
+            }
+          },
+          items: [
+            {
+              value: "Agree",
+              text: "I understand and agree with the declaration above"
+            }
+          ]
+        }) }}
+
+        <p><a href="#" target="_blank">Privacy: how we use your personal information (opens new tab)</a></p>
+
+
+        {% set a =  [1,2,3,4,5,6,7,8,9]|random %}
+        {% set b =  [1,2,3,4,5,6,7,8,9]|random %}
+        {% set c =  [1,2,3,4,5,6,7,8,9]|random %}
+        {% set d =  [1,2,3,4,5,6,7,8,9]|random %}
+        {% set e =  [1,2,3,4,5,6,7,8,9]|random %}
+        {% set newRegNumber =  'WEX3'+a+b+c+d+e %}
+        <input type="hidden" name="newRegNumber" value="{{newRegNumber}}">
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
