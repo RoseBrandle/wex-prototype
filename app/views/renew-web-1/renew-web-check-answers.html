@@ -1,4 +1,4 @@
-{% set pageHead = "We found this registration for WEX123456" %}
+{% set pageHead = "We found this registration for " + data.regNumber %}
 
 {% extends "layout.html" %}
 
@@ -30,37 +30,61 @@
 
 
 <!-- ###################################################################### -->
+{% from "./json/exemption-json.html" import exemptions %}
+
 <h2 class="govuk-heading-m">Exemptions</h2>
 
 <dl class="govuk-summary-list govuk-!-margin-bottom-6">
 
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key wex-width-very-narrow">
-                    D1
-                </dt>
-                <dd class="govuk-summary-list__value" style="width:45%">
-                    Depositing waste from dredging inland waters
-                </dd>
-                <dd class="govuk-summary-list__actions" style="width:25%">
-                    <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemptions-disposing-of-waste">
-                    D1 rules and limits
-                    </a>
-                </dd>
-            </div>
 
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key wex-width-very-narrow">
-                    D7
-                </dt>
-                <dd class="govuk-summary-list__value" style="width:45%">
-                    Burning waste in the open
-                </dd>
-                <dd class="govuk-summary-list__actions" style="width:25%">
-                    <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-d7-burning-waste-in-the-open">
-                    D7 rules and limits
-                    </a>
-                </dd>
-            </div>
+
+  {% if data.Exemptions|typeof =="string" %}
+      {% for exCode, exData in exemptions %}
+         {% if( data.Exemptions==exCode ) %}
+             <div class="govuk-summary-list__row">
+                 <dt class="govuk-summary-list__key wex-width-very-narrow">
+                     {{ exCode }}
+                 </dt>
+                 <dd class="govuk-summary-list__value" style="width:45%">
+                     {{ exData.Title }}
+                 </dd>
+                 <dd class="govuk-summary-list__actions" style="width:25%">
+                     <a class="govuk-link" href="{{ exData.URL }}">
+                     {{ exCode }} rules and limits
+                     </a>
+                 </dd>
+             </div>
+         {% endif %}
+      {% else %}
+        <p>No data</p>
+      {% endfor %}
+  {% else %}
+      {% for code in data.Exemptions %}
+
+          {% for exCode, exData in exemptions %}
+             {% if( code==exCode ) %}
+             <div class="govuk-summary-list__row">
+                 <dt class="govuk-summary-list__key wex-width-very-narrow">
+                     {{ exCode }}
+                 </dt>
+                 <dd class="govuk-summary-list__value" style="width:45%">
+                     {{ exData.Title }}
+                 </dd>
+                 <dd class="govuk-summary-list__actions" style="width:25%">
+                     <a class="govuk-link" href="{{ exData.URL }}">
+                     {{ exCode }} rules and limits
+                     </a>
+                 </dd>
+             </div>
+             {% endif %}
+          {% else %}
+            <p>No data</p>
+          {% endfor %}
+
+      {% else %}
+        <p>No exemptions selected</p>
+      {% endfor %}
+  {% endif %}
 
 </dl>
 
@@ -71,19 +95,36 @@
 
 <dl class="govuk-summary-list govuk-!-margin-bottom-6">
 
+    {% if data.siteDescription=="" %}
 
         <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
                 Site address
             </dt>
             <dd class="govuk-summary-list__value">
-                Lower field, Oak Tree Farm, Someshire<br>
-                EX14 5TG
+              {{ data.siteAddress }}<br>
+              {{ data.sitePostcode }}
             </dd>
             <dd class="govuk-summary-list__actions"></dd>
         </div>
 
+    {% else %}
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Site location
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Grid reference: {{ data.siteGridRef }}<br>
+              Site description: {{ data.siteDescription }}
+            </dd>
+            <dd class="govuk-summary-list__actions"></dd>
+        </div>
+
+    {% endif %}
+
 </dl>
+
 
 
 <!-- ###################################################################### -->
@@ -96,7 +137,7 @@
             Type
         </dt>
         <dd class="govuk-summary-list__value">
-            Partnership
+            {{ data.operatorType }}
         </dd>
         <dd class="govuk-summary-list__actions"></dd>
     </div>
@@ -104,23 +145,46 @@
 
     <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-            Partnership name
+            {% if data.operatorType=="Limited company" %}
+              Company name
+            {% endif %}
+
+            {% if data.operatorType=="Individual or sole trader" %}
+              Individual or sole trader
+            {% endif %}
+
+            {% if data.operatorType=="Partnership" %}
+              Partnership name
+            {% endif %}
         </dt>
         <dd class="govuk-summary-list__value">
-            Our Waste Partnership
+          {% if data.operatorType=="Limited company" %}
+            {{ data.opLtdCompanyName }}<br>
+            Company number: {{ data.opLtdCompanyRegNumber }}
+          {% endif %}
+
+          {% if data.operatorType=="Individual or sole trader" %}
+            {{ data.individualName }}
+          {% endif %}
+
+          {% if data.operatorType=="Partnership" %}
+            {{data.opPartnershipName}}
+          {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions"></dd>
     </div>
+    {% if data.operatorType=="Partnership" %}
     <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
             Partners
         </dt>
         <dd class="govuk-summary-list__value">
-            Roger Brown<br>
-            Jane Brown
+          {{data.opPartner1FirstName}} {{data.opPartner1LastName}}<br>
+          {{data.opPartner2FirstName}} {{data.opPartner2LastName}}
         </dd>
         <dd class="govuk-summary-list__actions"></dd>
     </div>
+    {% endif %}
 
 </dl>
 
