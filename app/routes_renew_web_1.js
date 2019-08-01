@@ -196,9 +196,23 @@ router.post('/renew-check', function (req, res) {
     if ( samples[regNumber] ){
       req.session.data = samples[regNumber]
       req.session.data.selectAddress = samples[regNumber].siteAddress
+
+      switch ( req.session.data.operatorType ) {
+        case 'Limited company':
+          req.session.data.opSelectAddress = samples[regNumber].opLtdCompanyAddress
+          break
+        case 'Individual or sole trader':
+          req.session.data.opSelectAddress = samples[regNumber].individualAddress
+          break
+        case "Partnership":
+          req.session.data.opSelectAddress = samples[regNumber].opPartnershipAddress
+          break
+      }
+
     } else {
       req.session.data = samples.WEX354267   // individual
       req.session.data.selectAddress = samples.WEX354267.siteAddress
+      req.session.data.opSelectAddress = samples.WEX354267.individualAddress
     }
     // Then load page
     res.redirect('/' + folder + '/renew-web-check-answers')
