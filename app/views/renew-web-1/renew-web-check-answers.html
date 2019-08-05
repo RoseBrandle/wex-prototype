@@ -191,7 +191,9 @@
 
 <input type="hidden" name="renewalChoice" value="webRenewal">
 
-<p>You will be able to change these details if you need to.</p>
+{{ govukInsetText({
+  text: "You will be able to change these details if you need to."
+}) }}
 
         {{ govukButton({
           text: "Renew this registration"
