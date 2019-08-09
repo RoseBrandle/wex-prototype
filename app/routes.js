@@ -10,6 +10,14 @@ router.use('/registration-v2-3', require('./routes_registration_v2-3'))
 router.use('/registration-rc', require('./routes_registration_rc'))
 router.use('/renew-web-1', require('./routes_renew_web_1'))
 
+// start page URL to match GOV short link
+
+
+
+router.get('/renew-waste-exemption', function (req, res) {
+    res.redirect('/startpage/startbutton-v2')
+})
+
 // RENEWALS
 router.post('/renewals-check', function (req, res) {
   let renewalsChoice = req.session.data['wasteExemptionOptions']
