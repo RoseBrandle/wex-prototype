@@ -16,28 +16,28 @@ var samples = {}
 samples.WEX339257 = {
   registerChoice:'reRegister',
   regNumber:'WEX339257',
-  expiryDate:'20 August 2019',
-  countryChoice:'',
-  appFirstName:'',
-  appLastName:'',
-  appTelephoneNumber:'',
-  appEmail:'',
-  appEmailConfirm:'',
+  expiryDate:'31 July 2019',
+  countryChoice:'England',
+  appFirstName:'Rachel',
+  appLastName:'Conway',
+  appTelephoneNumber:'0117 978 1234',
+  appEmail:'rachel@ap-email.com',
+  appEmailConfirm:'rachel@ap-email.com',
   operatorType:'Limited company',
   opLtdCompanyRegNumber:'AB123456',
   opLtdCompanyName:'Farm Techniques Ltd',
   opLtdCompanyPostcode:'BS4 5FT',
   opLtdCompanyAddress:'WEEB WAY, COLLSTON, TREWBRIDGE',
-  opFirstName:'',
-  opLastName:'',
-  opContactPosition:'',
-  opContactTelephone:'',
-  opContactEmail:'',
-  opContactEmailConfirm:'',
-  opContactPostcode:'',
-  opContactAddress:'',
-  isFarm:'',
-  isFarmer:'',
+  opFirstName:'Bruce',
+  opLastName:'Wallace',
+  opContactPosition:'Site manager',
+  opContactTelephone:'07806 123 456',
+  opContactEmail:'darici@mailinator.net',
+  opContactEmailConfirm:'darici@mailinator.net',
+  opContactPostcode:'BS34 9GH',
+  opContactAddress:'WEEB WAY, COLLSTON, TREWBRIDGE',
+  isFarm:'yes',
+  isFarmer:'yes',
   siteGridRef:'ST 58132 72695',
   siteAddress:'WEEB WAY, COLLSTON, TREWBRIDGE',
   siteDescription:'Lower field, Oak Tree Farm. Parcel ED/1234',
@@ -51,8 +51,7 @@ samples.WEX339257 = {
     'U8',
     'T1',
     'D7',
-    'S2',
-    'S3'
+    'S2'
   ]
 }
 
@@ -60,13 +59,13 @@ samples.WEX339257 = {
 samples.WEX354267 = {
   registerChoice:'reRegister',
   regNumber:'WEX354267',
-  expiryDate:'20 August 2019',
-  countryChoice:'',
-  appFirstName:'',
-  appLastName:'',
-  appTelephoneNumber:'',
-  appEmail:'',
-  appEmailConfirm:'',
+  expiryDate:'14 July 2019',
+  countryChoice:'England',
+  appFirstName:'Sarah',
+  appLastName:'Williams',
+  appTelephoneNumber:'01342 456123',
+  appEmail:'sarah.williams@email.co.uk',
+  appEmailConfirm:'sarah.williams@email.co.uk',
   operatorType:'Individual or sole trader',
   individualName:'Sarah Williams',
   individualPostcode:'BD45 3UY',
@@ -74,13 +73,13 @@ samples.WEX354267 = {
   opFirstName:'Sarah',
   opLastName:'Williams',
   opContactPosition:'',
-  opContactTelephone:'',
-  opContactEmail:'',
-  opContactEmailConfirm:'',
-  opContactPostcode:'',
-  opContactAddress:'',
-  isFarm:'',
-  isFarmer:'',
+  opContactTelephone:'01761 456123',
+  opContactEmail:'sarah.williams@email.co.uk',
+  opContactEmailConfirm:'sarah.williams@email.co.uk',
+  opContactPostcode:'BD45 3UY',
+  opContactAddress:'THE OLD FARM, TRUSCOTT, BEDFORDSHIRE',
+  isFarm:'yes',
+  isFarmer:'yes',
   siteGridRef:'ST5320762142',
   siteDescription:'',
   siteAddress:'THE OLD FARM, TRUSCOTT, BEDFORDSHIRE',
@@ -94,12 +93,7 @@ samples.WEX354267 = {
     'U2',
     'U4',
     'U8',
-    'U10',
-    'U13',
-    'T1',
-    'D1',
-    'D7',
-    'S2'
+    'U10'
   ]
 }
 
@@ -107,32 +101,32 @@ samples.WEX354267 = {
 samples.WEX432123 = {
   registerChoice:'reRegister',
   regNumber:'WEX432123',
-  expiryDate:'20 August 2019',
-  countryChoice:'',
-  appFirstName:'',
-  appLastName:'',
-  appTelephoneNumber:'',
-  appEmail:'',
-  appEmailConfirm:'',
+  expiryDate:'7 August 2019',
+  countryChoice:'England',
+  appFirstName:'Brian',
+  appLastName:'Purdy',
+  appTelephoneNumber:'06611456123',
+  appEmail:'b.purdy@email.com',
+  appEmailConfirm:'b.purdy@email.com',
   operatorType:'Partnership',
-  opPartnershipName: 'Fiona and Mark Jones',
-  opPartner1FirstName:'Fiona',
-  opPartner1LastName:'Jones',
-  opPartner2FirstName:'Mark',
-  opPartner2LastName:'Jones',
-  individualName:'Fiona Jones',
+  opPartnershipName: 'Brian Purdy',
+  opPartner1FirstName:'Brian',
+  opPartner1LastName:'Purdy',
+  opPartner2FirstName:'Jane',
+  opPartner2LastName:'Purdy',
+  individualName:'Brian Purdy',
   opPartnershipPostcode:'TS23 6NQ',
   opPartnershipAddress:'SUMMER FARM, LONDON ROAD, COMPTON PUGWORTH, NEATON',
-  opFirstName:'',
-  opLastName:'',
-  opContactPosition:'',
-  opContactTelephone:'',
-  opContactEmail:'',
-  opContactEmailConfirm:'',
-  opContactPostcode:'',
-  opContactAddress:'',
-  isFarm:'',
-  isFarmer:'',
+  opFirstName:'Brian',
+  opLastName:'Purdy',
+  opContactPosition:'Partner',
+  opContactTelephone:'06611456123',
+  opContactEmail:'b.purdy@email.com',
+  opContactEmailConfirm:'b.purdy@email.com',
+  opContactPostcode:'TS23 6NQ',
+  opContactAddress:'SUMMER FARM, LONDON ROAD, COMPTON PUGWORTH, NEATON',
+  isFarm:'yes',
+  isFarmer:'no',
   siteGridRef:'ST5564758136',
   siteDescription:'',
   siteAddress:'SUMMER FARM, LONDON ROAD, COMPTON PUGWORTH, NEATON',
@@ -171,9 +165,9 @@ router.post('/renew-check', function (req, res) {
   let regNum = req.session.data['registrationNumber']
   var regNumber = regNum.toUpperCase()
   regNumber = regNumber.replace(/\s/g,'')
-  req.session.data.regNumber = regNumber   // store nice format number in data object
+  req.session.data.registrationNumber = regNumber   // store nice format number in data object
 
-  var pattern = /^WEX[0-9]{6}$/
+  var pattern = /^[A-Z]{6}$/
 
   if (regNumber === '') {
     res.redirect('/' + folder + '/registration-number?error=noNumber')
@@ -210,12 +204,12 @@ router.post('/renew-check', function (req, res) {
       }
 
     } else {
-      req.session.data = samples.WEX354267   // individual
-      req.session.data.selectAddress = samples.WEX354267.siteAddress
-      req.session.data.opSelectAddress = samples.WEX354267.individualAddress
+      req.session.data = samples.WEX432123   // individual
+      req.session.data.selectAddress = samples.WEX432123.siteAddress
+      req.session.data.opSelectAddress = samples.WEX432123.individualAddress
     }
     // Then load page
-    res.redirect('/' + folder + '/renew-web-check-answers')
+    res.redirect('/' + folder + '/renew-check-answers?formAction=renew-info')
   }
 
 })

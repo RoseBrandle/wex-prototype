@@ -16,7 +16,7 @@ router.use('/renew-web-2', require('./routes_renew_web_2'))
 
 
 router.get('/renew-waste-exemption', function (req, res) {
-    res.redirect('/startpage/startbutton-v2')
+    res.redirect('/startpage/startbutton-v3-code')
 })
 
 // RENEWALS

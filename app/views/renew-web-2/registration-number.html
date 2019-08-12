@@ -1,4 +1,4 @@
-{% set pageHead = "Enter your registration number" %}
+{% set pageHead = "Enter the renewal code from your reminder letter" %}
 
 {% extends "layout.html" %}
 
@@ -25,10 +25,10 @@
 
 
 {% if data.error == "noNumber" %}
-      {% set errorText = "Enter your registration number" %}
+      {% set errorText = "Enter the renewal code" %}
 
 {% elseif data.error == "wrongFormat" %}
-      {% set errorText = "Registration number is not in the correct format" %}
+      {% set errorText = "Renewal code should be 6 capital letters" %}
 
 {% elseif data.error == "notDueYet" %}
       {% set errorText = "WEX223456 is not due for renewal until August 2019" %}
@@ -57,16 +57,18 @@
 
       {% endif %}
 
-      <h1 class="govuk-heading-l">{{ pageHead }}</h1>
+      <!-- <h1 class="govuk-heading-l">{{ pageHead }}</h1> -->
 
       <form action="/{{folder}}/renew-check" method="post" class="form">
 
         {{ govukInput({
           label: {
-            text: "Waste exemptions registration number"
+            text: "Enter the renewal code from your reminder letter",
+            classes: "govuk-label--l",
+            isPageHeading: true
           },
           hint: {
-            text: "For example, WEX123456"
+            text: "For example, DYSEWC"
           },
           classes: "govuk-input--width-10",
           id: "registrationNumber",
@@ -74,13 +76,6 @@
           value: data.registrationNumber,
           errorMessage: errorTextObject
         }) }}
-
-
-        {{ govukDetails({
-          summaryText: "I cannot find my registration number",
-          html: "<p>Your waste exemptions registration number is on the email we sent you when you registered your exemptions, and your renewal letter.</p><p>If you cannot find it, call the Environment Agency helpline on 03708 506506 (Monday to Friday, 8am to 6pm).</p>"
-        }) }}
-
 
         {{ govukButton({
           text: "Continue"
