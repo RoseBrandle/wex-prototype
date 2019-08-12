@@ -9,6 +9,7 @@ router.use('/registration-v2-2', require('./routes_registration_v2-2'))
 router.use('/registration-v2-3', require('./routes_registration_v2-3'))
 router.use('/registration-rc', require('./routes_registration_rc'))
 router.use('/renew-web-1', require('./routes_renew_web_1'))
+router.use('/renew-web-2', require('./routes_renew_web_2'))
 
 // start page URL to match GOV short link
 
