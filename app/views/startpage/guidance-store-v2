@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Waste exemptions guidance | How to register | Gov.uk
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Guidance</span>
+      <h1 class="govuk-heading-l">Storing waste: waste exemptions</h1>
+      <p class="govuk-body-l">Read through the list of exemptions for storing waste. The storing waste exemptions cover the storage of specific waste materials in secure containers and at secure sites, and storing sludge. You need to comply with the limits and conditions set out.</p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <br />
+      <p class="govuk-body-s">Published 1 February 2016 <br />
+        Last updated 6 April 2018<br />
+        From: <a href="https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs"><b>Department for Environment, Food & Rural Affairs</b></a> and <a href="https://www.gov.uk/government/organisations/environment-agency"><b>Environment Agency</b></a>
+      </p>
+      <br />
+      <!--
+        <strong class="govuk-tag">
+        &nbsp;Applies to: <strong>England (see guidance for Northern Ireland, Scotland, and Wales</strong>)
+      </strong>
+      -->
+      <p>
+A waste exemption is a waste operation that is exempt from needing environmental permit. Each exemption has specific limits and conditions you need to operate within. 
+      </p>
+<p>The exemptions for storing waste cover a range of operations, such as the storage of specific waste materials in secure containers and at secure sites, and storing sludge to be used in accordance with the Sludge (Use in Agriculture) Regulations 1989.</p>
+<p>
+If you want to operate under a waste exemption you must register that exemption with the Environment Agency. If you don’t, you will not be exempt from needing a permit.</p>
+<p>
+You register T22 with the authority responsible for granting an authorisation under the Animal By-products Regulations.
+      </p>
+<p>Registering an exemption does not remove the need to apply for other permits or permissions. For example, you may need planning permission for your waste operation, or a water discharge permit. 
+</p>
+
+ <h2 class="govuk-heading-m">Storing waste: waste exemptions</h2>
+   <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemptions-storing-waste">S1 storing waste in secure containers</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-s2-storing-waste-in-a-secure-place">S2 storing waste in a secure place</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/guidance/waste-exemption-s3-storing-sludge">S3 storing sludge</a>
+        </li>
+      </ul>
+</div>
+
+{% endblock %}
