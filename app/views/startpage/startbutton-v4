@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Waste exemptions guidance | How to register | Gov.uk
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Guidance</span>
+      <h1 class="govuk-heading-l">Register or renew waste exemptions (England)</h1>
+      <p class="govuk-body-l">
+How to register or renew waste exemptions. Some waste activities such as storing, using, treating or disposing of waste can operate under a waste exemption.</p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <br />
+      <p class="govuk-body-s">Published 1 February 2016 <br />
+        Last updated XX August 2019<br />
+        From: <a href="https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs"><b>Department for Environment, Food & Rural Affairs</b></a> and <a href="https://www.gov.uk/government/organisations/environment-agency"><b>Environment Agency</b></a></p>
+      <br />
+      <div class="govuk-!-padding-bottom-7">
+        <div class="govuk-!-padding-bottom-1"><p class="govuk-body-s">Contents</p></div>
+        <div class="govuk-!-padding-bottom-1">&mdash; <a href="#exemptions">When you need a waste exemption</a><br /></div>
+        <div class="govuk-!-padding-bottom-1">&mdash; <a href="#costs">Costs</a><br /></div>
+        <div class="govuk-!-padding-bottom-1">&mdash; <a href="#choose">Choose the right exemption</a><br /></div>
+        <div class="govuk-!-padding-bottom-1">&mdash; <a href="#registerrenew">Register or renew your exemptions</a><br /></div>
+        <div class="govuk-!-padding-bottom-1">&mdash; <a href="#linear">Bulk registrations and linear networks</a><br /></div>
+        <div class="govuk-!-padding-bottom-7">&mdash; <a href="#contact">Contact the Environment Agency</a><br /></div>
+
+<h2 class="govuk-heading-l" id="exemptions">When you need a waste exemption</h2>
+<p>A waste exemption is a waste operation that is exempt from needing an environmental permit. Each exemption has limits and conditions that you must comply with.</p>
+
+<p>To find out if there is an exemption for your waste operation, and check that you meet the conditions, see <a href="#choose">choose the right exemptions</a>.</p>
+
+<p>If you cannot meet the limits and conditions of an exemption, you may need to <a href="https://www.gov.uk/guidance/check-if-you-need-an-environmental-permit">apply for an environmental permit</a>.</p>
+
+<h3 class="govuk-heading-m" id="nfwd">Storing waste activities that do not need to be registered</h3>
+<p>If you store waste temporarily, you may not need to register the relevant exemption, although you must still comply with the terms and conditions. The activities that do not need to be registered are:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li><a href="https://www.gov.uk/guidance/waste-exemption-nwfd-2-temporary-storage-at-the-place-of-production--2">temporary storage of waste where it was produced, pending its collection</a> (storing waste produced on site and applying 'ancillary' treatments, such as compacting and baling)</li>
+<li><a href="https://www.gov.uk/guidance/waste-exemption-nwfd-3-temporary-storage-of-waste-at-a-place-controlled-by-the-producer">temporary storage of waste at a place controlled by the producer</a> (storing waste produced at one site at another site, such as a supermarket returning packaging from its shop to a distribution centre)</li>
+<li><a href="https://www.gov.uk/guidance/waste-exemption-nwfd-4-temporary-storage-at-a-collection-point">temporary storage at a collection point</a> (for example, where a shop offers a collection point for batteries)</li>
+</ul>
+
+<h2 class="govuk-heading-l" id="costs">Costs</h2>
+<p>It’s free to register waste exemptions, and registration lasts for 3 years.</p>
+<p>The exception is the <a href="https://www.gov.uk/guidance/waste-exemption-t11-repairing-or-refurbishing-waste-electrical-and-electronic-equipment-weee">T11 WEEE exemption</a>, which covers repairing or refurbishing waste electrical and electronic equipment (WEEE). This costs £1,221 to register for 3 years. To register this exemption, use <a href="https://www.gov.uk/government/publications/form-wex001-registering-exempt-waste-operations">form WEEEX001</a>.
+
+<h2 class="govuk-heading-l" id="choose">Choose the right exemptions</h2>
+
+<p>Waste exemptions are listed in 4 categories. Read the guidance to:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>decide which waste exemptions apply to your operations</li>
+<li>check you can meet all the limits and conditions</li>
+</ul>
+
+<p><a href="https://www.gov.uk/government/collections/waste-exemptions-using-waste">Using waste (exemptions U1 to U16)</a><br />
+These cover operations such as using waste in construction, spreading waste materials on the land and burning of waste as fuel.</p>
+<p><a href="https://www.gov.uk/government/collections/waste-exemptions-using-waste">Disposing of waste (exemptions D1 to D8)</a><br />
+These cover operations such as depositing sanitary waste, agricultural waste and spoil from dredging inland waters, and burning specific waste in an incinerator or in the open.</p>
+<p><a href="https://www.gov.uk/government/collections/waste-exemptions-storing-waste">Storing waste (exemptions S1 to S3)</a><br />
+These cover the storage of certain waste materials in secure containers, at secure sites and storing sludge. You may not need to register an exemption if you are <a href="#nfwd">temporarily storing waste</a>.</p>
+<p><a href="https://www.gov.uk/government/collections/waste-exemptions-using-waste">Treating waste (exemptions T1 to T33)</a><br />
+These cover operations such as preparing, recovering, sorting and treating certain waste materials, such as waste wood and plant matter.</p>
+
+<h2 class="govuk-heading-l" id="registerrenew">Register or renew your exemptions</h2>
+<p>When you have found the right exemption, and checked that your operation meets the limits and conditions, you need to register it with us.</p>
+<p>You must renew your waste exemption registration every 3 years if you’re still using it.</p>
+
+<a href="/renew-web-1/start" role="button" draggable="false" class="govuk-button govuk-button--start">
+  Register or renew
+</a>
+
+<h3 class="govuk-heading-m">Before you start</h3>
+<p>You'll need to know:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>the exemptions you want to register (for example, U1 use of waste in construction)</li>
+<li>the name, address and contact details of the person, business or organisation carrying out the waste operation</li>
+<li>the site address and postcode where the exemption will be used, or a National Grid reference (for example, ST 58132 72695)</li>
+<li>for a limited company or limited liability partnership, the company registration number and registered address</li>
+</ul>
+
+<p>If you do not operate within the limits and conditions of your exemption, you will not be exempt.</p>
+<p>The Environment Agency will de-register your exemption, and you could be prosecuted, especially if your activity harms people or the environment.</p>
+
+<h2 class="govuk-heading-l" id="linear">Bulk registrations and linear networks</h2>
+<h3 class="govuk-heading-m">Bulk registrations</h3>
+<p>If you have more than 30 sites, register using the <a href="https://www.gov.uk/government/publications/waste-exemptions-bulk-registration-form">bulk and linear networks registration form</a>.</p>
+
+<h3 class="govuk-heading-m">Linear networks – road, river, canal or railway</h3>
+<p>Some exempt operations take place on a stretch of road, river, canal or railway, rather than a <a href="https://www.gov.uk/government/publications/the-meaning-of-place-under-the-new-waste-exemption-system">single place</a>. To register U1, U12, D1 and D2 exemptions for a linear network, complete the <a href="https://www.gov.uk/government/publications/waste-exemptions-bulk-registration-form">linear network registration form</a>.</p>
+
+<h2 class="govuk-heading-l" id="contact">Contact the Environment Agency</h2>
+<h3 class="govuk-heading-m">General enquiries</h3>
+<p>National Customer Contact Centre<br />
+PO Box 544<br />
+Rotherham<br />
+S60 1BY</p>
+
+<p>Email<br />
+enquiries@environment-agency.gov.uk</p>
+
+<p>Telephone<br />
+03708 506 506</p>
+
+<p>Telephone from outside the UK (Monday to Friday, 8am to 6pm GMT)<br />
++44 (0) 114 282 5312</p>
+<p class="comments">Monday to Friday, 8am to 6pm</p>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+</div>
+
+{% endblock %}
